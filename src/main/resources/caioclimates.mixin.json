@@ -3,10 +3,10 @@
   "package": "com.caiocesarmods.caioclimates.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "MixinWidget"
+    "BiomeBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "refmap": "modid.mixin-refmap.json"
+  "refmap": "caioclimates.mixin-refmap.json"
 }
