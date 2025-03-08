@@ -9,30 +9,26 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
-import javax.annotation.Nullable;
+@Mixin(value = World.class, priority = 900)
+public class BiomePrecipitationMixin {
 
-@Mixin(value = Biome.class, priority = 900)
-public class BiomeMixin {
+    @Redirect(method = "isRainingAt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/biome/Biome;getPrecipitation()Lnet/minecraft/world/biome/Biome$RainType;"))
 
-    @Inject(method = "getPrecipitation", at = @At("HEAD"), cancellable = true)
-
-    private void modifyPrecipitation(CallbackInfoReturnable<Biome.RainType> cir) {
+    public Biome.RainType getRainType(Biome biome, BlockPos pos) {
         World world = Minecraft.getInstance().world;
-        if (world == null) return;
 
         Season currentSeason = Season.valueOf(SeasonHandler.getSeason(world.getDayTime()));
 
         ClimateType climate = ClimateTypeHandler.getClimateForBiome((Biome)(Object)this);
 
         if (climate.hasRain(currentSeason)) {
-            cir.setReturnValue(Biome.RainType.RAIN);
+            return Biome.RainType.RAIN;
         } else {
-            cir.setReturnValue(Biome.RainType.NONE);
+            return Biome.RainType.NONE;
         }
     }
 }
+

@@ -2,12 +2,11 @@
   "required": true,
   "package": "com.caiocesarmods.caioclimates.mixin",
   "compatibilityLevel": "JAVA_8",
+  "refmap": "caioclimates.refmap.json",
   "client": [
-    "BiomeMixin",
-    "BiomeTemperatureMixin"
+    "BiomePrecipitationMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "refmap": "caioclimates.mixin-refmap.json"
+  }
 }

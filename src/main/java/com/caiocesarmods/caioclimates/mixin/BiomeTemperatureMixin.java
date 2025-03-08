@@ -1,4 +1,4 @@
-package com.caiocesarmods.caioclimates.mixin;
+/*package com.caiocesarmods.caioclimates.mixin;
 
 import com.caiocesarmods.caioclimates.Climate.ClimateType;
 import com.caiocesarmods.caioclimates.Climate.ClimateTypeHandler;
@@ -16,9 +16,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(value = Biome.class, priority = 900)
 public class BiomeTemperatureMixin {
 
-    @Inject(method = "getTemperature", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getTemperatureAtPosition", at = @At("HEAD"), cancellable = true)
 
-    private void modifyTemperature(BlockPos pos, CallbackInfoReturnable<Float> cir) {
+    public void modifyTemperature(BlockPos pos, CallbackInfoReturnable<Float> cir) {
         World world = Minecraft.getInstance().world;
 
         if (world == null) return;
@@ -31,4 +31,4 @@ public class BiomeTemperatureMixin {
 
         cir.setReturnValue(newTemperature);
     }
-}
+}*/
