@@ -91,8 +91,12 @@ public class ClimateTypeHandler {
             return ClimateType.ICE_CAP;
         } else if (temp < 0.4F) {
             return ClimateType.TAIGA;
-        } else if (temp < 0.8F) {
+        } else if (temp < 0.7F) {
             return ClimateType.MARITIME_HUMID_TEMPERATE;
+        } else if (temp < 0.8F) {
+            return ClimateType.HUMID_TEMPERATE;
+        }else if (temp < 0.9F) {
+            return ClimateType.HUMID_SUBTROPICAL;
         } else {
             return rainType == Biome.RainType.NONE ? ClimateType.TROPICAL_DESERT : ClimateType.TROPICAL_RAINFOREST;
         }
