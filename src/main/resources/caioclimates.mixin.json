@@ -3,7 +3,8 @@
   "package": "com.caiocesarmods.caioclimates.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "BiomeBuilderMixin"
+    "BiomeMixin",
+    "BiomeTemperatureMixin"
   ],
   "injectors": {
     "defaultRequire": 1
