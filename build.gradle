@@ -24,7 +24,7 @@ group = 'com.caiocesarmods.caioclimates'
 
 base {
     archivesName = 'caioclimates'
-    }
+}
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
@@ -33,7 +33,7 @@ println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getPro
 minecraft {
 
 //    mappings channel: 'official', version: '1.16.5'
-    mappings channel: 'snapshot', version: '20210309-1.16.5'
+    mappings channel: 'official', version: '1.16.5'
 
     runs {
         client {
@@ -107,7 +107,7 @@ tasks.named('jar', Jar).configure {
                 "TweakOrder": 0,
                 "MixinConfigs" : "caioclimates.mixin.json"
         ])
-}
+    }
 
 
 // This is the preferred method to reobfuscate your jar file
@@ -135,3 +135,4 @@ publishing {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+

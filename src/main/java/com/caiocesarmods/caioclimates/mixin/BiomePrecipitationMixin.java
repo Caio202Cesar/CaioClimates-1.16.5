@@ -21,7 +21,7 @@ public abstract class BiomePrecipitationMixin {
         Biome biome = (Biome) (Object) this;
 
         // Get the world time
-        long dayTime = Minecraft.getInstance().world.getDayTime();
+        long dayTime = Minecraft.getInstance().level.getDayTime();
 
         // Determine the current season
         String currentSeasonName = SeasonHandler.getSeason(dayTime);

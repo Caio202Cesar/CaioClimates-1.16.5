@@ -19,8 +19,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Biome.class)
 public abstract class BiomeTemperatureMixin {
 
-    @Inject(method = "getTemperature", at = @At("HEAD"), cancellable = true)
-    private void modifyTemperature(BlockPos pos, CallbackInfoReturnable<Float> cir) {
+    @Inject(method = "getBaseTemperature", at = @At("HEAD"), cancellable = true)
+    private void onGetBaseTemperature(CallbackInfoReturnable<Float> cir) {
         Biome biome = (Biome) (Object) this;
 
         // Get the current server
@@ -28,7 +28,7 @@ public abstract class BiomeTemperatureMixin {
         if (server == null) return; // Server not available
 
         // Get the world (Overworld)
-        ServerWorld world = server.getWorld(World.OVERWORLD);
+        ServerWorld world = server.getLevel(World.OVERWORLD);
         if (world == null) return; // World not available
 
         // Get the world time

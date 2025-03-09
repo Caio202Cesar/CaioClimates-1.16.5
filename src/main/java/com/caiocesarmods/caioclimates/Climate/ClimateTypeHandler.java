@@ -84,7 +84,7 @@ public class ClimateTypeHandler {
         if (biomeID != null && BIOME_CLIMATE_MAP.containsKey(biomeID)) {
             return BIOME_CLIMATE_MAP.get(biomeID);
         }
-        float temp = biome.getTemperature();
+        float temp = biome.getBaseTemperature();
         Biome.RainType rainType = biome.getPrecipitation();
 
         if (temp < 0.15F) {
