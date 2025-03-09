@@ -62,7 +62,7 @@ public class ClimateTypeHandler {
         BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:swamp_hills"), ClimateType.HUMID_SUBTROPICAL);
         BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:ice_spikes"), ClimateType.ICE_CAP);
         BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:modified_jungle"), ClimateType.TROPICAL_RAINFOREST);
-        BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:modified_jungle"), ClimateType.TROPICAL_RAINFOREST_EDGE);
+        BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:modified_jungle_edge"), ClimateType.TROPICAL_RAINFOREST_EDGE);
         BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:tall_birch_forest"), ClimateType.HEMIBOREAL_HUMID_TEMPERATE);
         BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:dark_forest_hills"), ClimateType.MARITIME_HUMID_TEMPERATE);
         BIOME_CLIMATE_MAP.put(new ResourceLocation("minecraft:snowy_taiga_mountains"), ClimateType.SNOWY_TAIGA);
@@ -81,7 +81,7 @@ public class ClimateTypeHandler {
 
     public static ClimateType getClimateForBiome(Biome biome) {
         ResourceLocation biomeID = biome.getRegistryName();
-        if (BIOME_CLIMATE_MAP.containsKey(biomeID)) {
+        if (biomeID != null && BIOME_CLIMATE_MAP.containsKey(biomeID)) {
             return BIOME_CLIMATE_MAP.get(biomeID);
         }
         float temp = biome.getTemperature();
@@ -89,16 +89,23 @@ public class ClimateTypeHandler {
 
         if (temp < 0.15F) {
             return ClimateType.ICE_CAP;
+        } else if (temp < 0.2F) {
+            return ClimateType.TUNDRA;
         } else if (temp < 0.4F) {
             return ClimateType.TAIGA;
+        } else if (temp < 0.6F) {
+            return ClimateType.HEMIBOREAL_HUMID_TEMPERATE;
         } else if (temp < 0.7F) {
-            return ClimateType.MARITIME_HUMID_TEMPERATE;
+            return rainType == Biome.RainType.NONE ? ClimateType.MEDITERRANEAN_MARITIME_TEMPERATE : ClimateType.MARITIME_HUMID_TEMPERATE;
         } else if (temp < 0.8F) {
             return ClimateType.HUMID_TEMPERATE;
         }else if (temp < 0.9F) {
-            return ClimateType.HUMID_SUBTROPICAL;
-        } else {
-            return rainType == Biome.RainType.NONE ? ClimateType.TROPICAL_DESERT : ClimateType.TROPICAL_RAINFOREST;
+            return rainType == Biome.RainType.NONE ? ClimateType.MEDITERRANEAN_HOT : ClimateType.HUMID_SUBTROPICAL;
+        } else if (temp < 1.3F) {
+            return rainType == Biome.RainType.NONE ? ClimateType.TROPICAL_SAVANNA : ClimateType.TROPICAL_RAINFOREST;
+        }
+        else {
+            return ClimateType.TROPICAL_DESERT;
         }
     }
 }
