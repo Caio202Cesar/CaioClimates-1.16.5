@@ -89,16 +89,16 @@ public class ClimateTypeHandler {
 
         if (temp < 0.15F) {
             return ClimateType.ICE_CAP;
-        } else if (temp < 0.2F) {
+        } else if (temp < 0.25F) {
             return ClimateType.TUNDRA;
         } else if (temp < 0.4F) {
             return ClimateType.TAIGA;
-        } else if (temp < 0.6F) {
-            return ClimateType.HEMIBOREAL_HUMID_TEMPERATE;
         } else if (temp < 0.7F) {
-            return rainType == Biome.RainType.NONE ? ClimateType.MEDITERRANEAN_MARITIME_TEMPERATE : ClimateType.MARITIME_HUMID_TEMPERATE;
-        } else if (temp < 0.8F) {
+            return ClimateType.HEMIBOREAL_HUMID_TEMPERATE;
+        } else if (temp < 0.75F) {
             return ClimateType.HUMID_TEMPERATE;
+        } else if (temp < 0.8F) {
+            return rainType == Biome.RainType.NONE ? ClimateType.MEDITERRANEAN_MARITIME_TEMPERATE : ClimateType.MARITIME_HUMID_TEMPERATE;
         }else if (temp < 0.9F) {
             return rainType == Biome.RainType.NONE ? ClimateType.MEDITERRANEAN_HOT : ClimateType.HUMID_SUBTROPICAL;
         } else if (temp < 1.3F) {
