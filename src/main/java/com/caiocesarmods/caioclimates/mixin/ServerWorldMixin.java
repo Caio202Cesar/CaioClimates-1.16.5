@@ -15,6 +15,10 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(ServerWorld.class)
 public abstract class ServerWorldMixin {
 
+    static {
+        System.out.println("[CaioClimate] ServerWorldMixin loaded!");
+    }
+
     @Redirect(
             method = "tickEnvironment",
             at = @At(
@@ -28,6 +32,8 @@ public abstract class ServerWorldMixin {
             BlockPos pos
     ) {
         ServerWorld world = (ServerWorld) (Object) this;
+
+        //System.out.println("[CaioClimate] Snow check at " + pos + " | biome=" + biome.getRegistryName());
 
         // Vanilla height limit
         if (pos.getY() < 0 || pos.getY() >= 256) {
@@ -68,6 +74,8 @@ public abstract class ServerWorldMixin {
                         pos,
                         world
                 );
+
+        //System.out.println("[CaioClimate] Snow chance = " + snowChance);
 
         /*
          * --------------------------------

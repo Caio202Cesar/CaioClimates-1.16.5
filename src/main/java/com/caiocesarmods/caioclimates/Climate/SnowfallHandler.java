@@ -7,32 +7,50 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 
+import java.util.Random;
+
 public class SnowfallHandler {
 
     public static float getSnowChance(Biome biome, BlockPos pos, World world) {
 
+        System.out.println(
+                "[CaioClimate] SnowfallHandler.getSnowChance() called!"
+        );
+
         // Base biome temperature
         float temperature = biome.getTemperature(pos);
+
+        System.out.println(
+                "[CaioClimate] Temperature = "
+                        + temperature
+        );
 
         /*
          * Base snow probability.
          *
          * 0.90F and above = essentially no snow
-         * 0.69F and below = essentially guaranteed
+         * 0.64F and below = essentially guaranteed
          */
         float snowChance;
 
         if (temperature >= 0.90F) {
-            snowChance = 0.0F;
-        } else if (temperature <= 0.69F) {
-            snowChance = 1.0F;
-        } else {
-            float normalized =
-                    (0.90F - temperature) / 0.40F;
 
-            // Non-linear curve: colder climates
-            // become snowy much more rapidly.
-            snowChance = normalized * normalized;
+            snowChance = 0.0F;
+
+        } else {
+
+            float normalized =
+                    (0.90F - temperature) / 0.26F;
+
+            normalized =
+                    MathHelper.clamp(
+                            normalized,
+                            0.0F,
+                            1.0F
+                    );
+
+            snowChance =
+                    (float) Math.pow(normalized, 4.0);
         }
 
         /*
@@ -94,11 +112,30 @@ public class SnowfallHandler {
          * --------------------------------
          */
         // Never allow the probability outside 0–100%.
-        return MathHelper.clamp(
+        float finalChance = MathHelper.clamp(
                 snowChance,
                 0.0F,
                 1.0F
         );
 
+        System.out.println(
+                "[CaioClimate] Final snow chance = "
+                        + finalChance
+        );
+
+        return finalChance;
+
+    }
+
+    public static boolean shouldSnow(
+            Biome biome,
+            BlockPos pos,
+            World world,
+            Random random
+    ) {
+        float snowChance =
+                getSnowChance(biome, pos, world);
+
+        return random.nextFloat() < snowChance;
     }
 }
