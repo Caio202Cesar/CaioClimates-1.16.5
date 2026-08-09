@@ -4,8 +4,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "caioclimates.refmap.json",
   "mixins": [
-    "BiomePrecipitationMixin",
-    "BiomeTemperatureMixin"
+
   ],
   "client": [],
   "server": [],
