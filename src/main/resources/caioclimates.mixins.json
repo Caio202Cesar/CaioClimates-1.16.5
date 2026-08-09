@@ -5,7 +5,8 @@
   "refmap": "caioclimates.refmap.json",
   "mixins": [
     "ServerWorldMixin",
-    "WorldRendererMixin"
+    "WorldRendererMixin",
+    "SnowBlockMixin"
   ],
   "client": [],
   "server": [],
