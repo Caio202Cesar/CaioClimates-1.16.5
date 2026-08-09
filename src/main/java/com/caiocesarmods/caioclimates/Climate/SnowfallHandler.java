@@ -18,13 +18,13 @@ public class SnowfallHandler {
          * Base snow probability.
          *
          * 0.90F and above = essentially no snow
-         * 0.5F and below = essentially guaranteed
+         * 0.69F and below = essentially guaranteed
          */
         float snowChance;
 
         if (temperature >= 0.90F) {
             snowChance = 0.0F;
-        } else if (temperature <= 0.5F) {
+        } else if (temperature <= 0.69F) {
             snowChance = 1.0F;
         } else {
             float normalized =

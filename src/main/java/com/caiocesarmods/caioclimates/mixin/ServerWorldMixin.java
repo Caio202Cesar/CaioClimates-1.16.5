@@ -1,8 +1,11 @@
 package com.caiocesarmods.caioclimates.mixin;
 
 import com.caiocesarmods.caioclimates.Climate.SnowfallHandler;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,12 +29,51 @@ public abstract class ServerWorldMixin {
     ) {
         ServerWorld world = (ServerWorld) (Object) this;
 
+        // Vanilla height limit
+        if (pos.getY() < 0 || pos.getY() >= 256) {
+            return false;
+        }
+
+        // Vanilla light check
+        if (worldReader.getLightFor(
+                LightType.BLOCK,
+                pos
+        ) >= 10) {
+            return false;
+        }
+
+        // The position must be air
+        BlockState blockState =
+                worldReader.getBlockState(pos);
+
+        if (!blockState.isAir(worldReader, pos)) {
+            return false;
+        }
+
+        // Snow must be able to exist here
+        if (!Blocks.SNOW.getDefaultState()
+                .isValidPosition(worldReader, pos)) {
+            return false;
+        }
+
+        /*
+         * --------------------------------
+         * CLIMATE SNOW PROBABILITY
+         * --------------------------------
+         */
+
         float snowChance =
                 SnowfallHandler.getSnowChance(
                         biome,
                         pos,
                         world
                 );
+
+        /*
+         * --------------------------------
+         * RANDOM SNOWFALL EVENT
+         * --------------------------------
+         */
 
         return world.rand.nextFloat() < snowChance;
     }
