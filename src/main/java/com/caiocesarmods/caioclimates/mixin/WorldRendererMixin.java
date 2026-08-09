@@ -3,9 +3,12 @@ package com.caiocesarmods.caioclimates.mixin;
 import com.caiocesarmods.caioclimates.Climate.SnowfallHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.client.event.sound.SoundEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -49,5 +52,44 @@ public class WorldRendererMixin {
         }
 
         return snow ? 0.14F : 0.15F;
+    }
+
+    @Redirect(
+            method = "addRainParticles",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/world/ClientWorld;playSound(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/SoundEvent;Lnet/minecraft/util/SoundCategory;FFZ)V"
+            )
+    )
+    private void modifyRainSound(
+            ClientWorld instance, BlockPos p_184156_1_, net.minecraft.util.SoundEvent p_184156_2_, SoundCategory p_184156_3_, float p_184156_4_, float p_184156_5_, boolean p_184156_6_
+    ) {
+        Biome biome = instance.getBiome(p_184156_1_);
+
+        if (SnowfallHandler.shouldSnow(
+                biome,
+                p_184156_1_,
+                instance
+        )) {
+
+            System.out.println(
+                    "[CaioClimate] Suppressed rain sound at "
+                            + p_184156_1_
+                            + " | biome="
+                            + biome.getRegistryName()
+            );
+
+            return;
+        }
+
+        // Normal vanilla rain sound
+        instance.playSound(
+                p_184156_1_,
+                p_184156_2_,
+                p_184156_3_,
+                p_184156_4_,
+                p_184156_5_,
+                p_184156_6_
+        );
     }
 }
