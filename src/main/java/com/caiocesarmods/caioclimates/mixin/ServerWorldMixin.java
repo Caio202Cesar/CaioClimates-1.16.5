@@ -1,8 +1,12 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.FrostHandler;
 import com.caiocesarmods.caioclimates.Climate.SnowfallHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.LightType;
@@ -69,6 +73,83 @@ public abstract class ServerWorldMixin {
          */
 
         return SnowfallHandler.shouldSnow(
+                biome,
+                pos,
+                world
+        );
+    }
+
+    @Redirect(
+            method = "tickEnvironment",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/biome/Biome;doesWaterFreeze(Lnet/minecraft/world/IWorldReader;Lnet/minecraft/util/math/BlockPos;)Z"
+            )
+    )
+    private boolean modifyWaterFreezing(
+            Biome biome,
+            IWorldReader worldReader,
+            BlockPos pos
+    ) {
+
+        ServerWorld world =
+                (ServerWorld) (Object) this;
+
+        /*
+         * --------------------------------
+         * VANILLA PHYSICAL CONDITIONS
+         * --------------------------------
+         */
+
+        if (pos.getY() < 0 || pos.getY() >= 256) {
+            return false;
+        }
+
+        if (worldReader.getLightFor(
+                LightType.BLOCK,
+                pos
+        ) >= 10) {
+            return false;
+        }
+
+        BlockState blockState =
+                worldReader.getBlockState(pos);
+
+        FluidState fluidState =
+                worldReader.getFluidState(pos);
+
+        if (fluidState.getFluid() != Fluids.WATER) {
+            return false;
+        }
+
+        if (!(blockState.getBlock()
+                instanceof FlowingFluidBlock)) {
+            return false;
+        }
+
+        /*
+         * --------------------------------
+         * EDGE REQUIREMENT
+         * --------------------------------
+         */
+
+        boolean surroundedByWater =
+                worldReader.hasWater(pos.west())
+                        && worldReader.hasWater(pos.east())
+                        && worldReader.hasWater(pos.north())
+                        && worldReader.hasWater(pos.south());
+
+        if (surroundedByWater) {
+            return false;
+        }
+
+        /*
+         * --------------------------------
+         * CLIMATE FROST DECISION
+         * --------------------------------
+         */
+
+        return FrostHandler.shouldFreeze(
                 biome,
                 pos,
                 world

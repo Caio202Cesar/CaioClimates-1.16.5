@@ -113,6 +113,17 @@ public class FrostHandler {
                 world
         );
 
+        System.out.println(
+                "[CaioClimate] Frost check at "
+                        + pos
+                        + " | biome="
+                        + biome.getRegistryName()
+                        + " | temperature="
+                        + biome.getTemperature(pos)
+                        + " | frostChance="
+                        + FrostHandler.getFrostChance(biome, pos, world)
+        );
+
         return world.rand.nextFloat() < chance;
     }
 }
