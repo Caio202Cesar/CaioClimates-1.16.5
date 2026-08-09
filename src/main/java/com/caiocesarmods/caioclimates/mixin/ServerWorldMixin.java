@@ -33,14 +33,16 @@ public abstract class ServerWorldMixin {
     ) {
         ServerWorld world = (ServerWorld) (Object) this;
 
-        //System.out.println("[CaioClimate] Snow check at " + pos + " | biome=" + biome.getRegistryName());
+        /*
+         * --------------------------------
+         * VANILLA PHYSICAL CONDITIONS
+         * --------------------------------
+         */
 
-        // Vanilla height limit
         if (pos.getY() < 0 || pos.getY() >= 256) {
             return false;
         }
 
-        // Vanilla light check
         if (worldReader.getLightFor(
                 LightType.BLOCK,
                 pos
@@ -48,7 +50,6 @@ public abstract class ServerWorldMixin {
             return false;
         }
 
-        // The position must be air
         BlockState blockState =
                 worldReader.getBlockState(pos);
 
@@ -56,7 +57,6 @@ public abstract class ServerWorldMixin {
             return false;
         }
 
-        // Snow must be able to exist here
         if (!Blocks.SNOW.getDefaultState()
                 .isValidPosition(worldReader, pos)) {
             return false;
@@ -64,25 +64,14 @@ public abstract class ServerWorldMixin {
 
         /*
          * --------------------------------
-         * CLIMATE SNOW PROBABILITY
+         * CLIMATE SNOW DECISION
          * --------------------------------
          */
 
-        float snowChance =
-                SnowfallHandler.getSnowChance(
-                        biome,
-                        pos,
-                        world
-                );
-
-        //System.out.println("[CaioClimate] Snow chance = " + snowChance);
-
-        /*
-         * --------------------------------
-         * RANDOM SNOWFALL EVENT
-         * --------------------------------
-         */
-
-        return world.rand.nextFloat() < snowChance;
+        return SnowfallHandler.shouldSnow(
+                biome,
+                pos,
+                world
+        );
     }
 }

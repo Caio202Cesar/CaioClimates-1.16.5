@@ -5,6 +5,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -61,7 +62,7 @@ public class SnowfallHandler {
          * Higher elevations receive a
          * small increase in snow chance.
          */
-        int altitude = pos.getY();
+        int altitude = getAltitude(world, pos);
 
         if (altitude > 100) {
 
@@ -127,7 +128,15 @@ public class SnowfallHandler {
 
     }
 
-    private static int debugCounter = 0;
+    private static int getAltitude(World world, BlockPos pos) {
+
+        BlockPos terrainPos = world.getHeight(
+                Heightmap.Type.MOTION_BLOCKING,
+                pos
+        );
+
+        return terrainPos.getY() - 63;
+    }
 
     public static boolean shouldSnow(
             Biome biome,
@@ -146,27 +155,14 @@ public class SnowfallHandler {
 
         long weatherPeriod = world.getGameTime() / 1200L;
 
-        long seed =
-                weatherPeriod
-                        + (long) pos.getX() * 341873128712L
-                        + (long) pos.getZ() * 132897987541L;
+        int biomeId = biome.getRegistryName() != null
+                ? biome.getRegistryName().hashCode()
+                : 0;
+
+        long seed = weatherPeriod * 341873128712L + biomeId;
 
         Random random = new Random(seed);
 
-        boolean snow = random.nextFloat() < snowChance;
-
-        // DEBUG — print only occasionally
-        if (debugCounter++ % 500 == 0) {
-            System.out.println(
-                    "[CaioCesarBiomes] SnowfallHandler active!"
-                            + " | biome=" + biome.getRegistryName()
-                            + " | pos=" + pos
-                            + " | temperature=" + biome.getTemperature(pos)
-                            + " | snowChance=" + snowChance
-                            + " | result=" + snow
-            );
-        }
-
-        return snow;
+        return random.nextFloat() < snowChance;
     }
 }
