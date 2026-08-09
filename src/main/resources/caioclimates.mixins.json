@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "caioclimates.refmap.json",
   "mixins": [
-    "ServerWorldMixin"
+    "ServerWorldMixin",
+    "WorldRendererMixin"
   ],
   "client": [],
   "server": [],

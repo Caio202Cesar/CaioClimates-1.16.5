@@ -127,15 +127,46 @@ public class SnowfallHandler {
 
     }
 
+    private static int debugCounter = 0;
+
     public static boolean shouldSnow(
             Biome biome,
             BlockPos pos,
-            World world,
-            Random random
+            World world
     ) {
-        float snowChance =
-                getSnowChance(biome, pos, world);
+        float snowChance = getSnowChance(biome, pos, world);
 
-        return random.nextFloat() < snowChance;
+        if (snowChance <= 0.0F) {
+            return false;
+        }
+
+        if (snowChance >= 1.0F) {
+            return true;
+        }
+
+        long weatherPeriod = world.getGameTime() / 1200L;
+
+        long seed =
+                weatherPeriod
+                        + (long) pos.getX() * 341873128712L
+                        + (long) pos.getZ() * 132897987541L;
+
+        Random random = new Random(seed);
+
+        boolean snow = random.nextFloat() < snowChance;
+
+        // DEBUG — print only occasionally
+        if (debugCounter++ % 500 == 0) {
+            System.out.println(
+                    "[CaioCesarBiomes] SnowfallHandler active!"
+                            + " | biome=" + biome.getRegistryName()
+                            + " | pos=" + pos
+                            + " | temperature=" + biome.getTemperature(pos)
+                            + " | snowChance=" + snowChance
+                            + " | result=" + snow
+            );
+        }
+
+        return snow;
     }
 }
