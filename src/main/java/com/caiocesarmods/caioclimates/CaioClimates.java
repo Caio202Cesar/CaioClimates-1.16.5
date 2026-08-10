@@ -1,8 +1,7 @@
 package com.caiocesarmods.caioclimates;
 
-import com.caiocesarmods.caioclimates.Climate.BiomeDroughtSetup;
+import com.caiocesarmods.caioclimates.Climate.DroughtPatternRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,10 +39,14 @@ public class CaioClimates {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        DroughtPatternRegistry.registerDefaults();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(BiomeDroughtSetup::register);
+        event.enqueueWork(() -> {
+
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

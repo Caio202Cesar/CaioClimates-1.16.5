@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.DroughtHandler;
 import com.caiocesarmods.caioclimates.Climate.DroughtPattern;
 import com.caiocesarmods.caioclimates.Climate.DroughtPatternRegistry;
 import com.caiocesarmods.caioclimates.Climate.SnowfallHandler;
@@ -10,6 +11,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.sound.SoundEvent;
@@ -136,5 +138,54 @@ public class WorldRendererMixin {
                             + " | pattern=" + pattern
             );
         }
+    }
+
+    @Redirect(
+            method = "renderRainSnow",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/biome/Biome;getPrecipitation()Lnet/minecraft/world/biome/Biome$RainType;"
+            )
+    )
+    private Biome.RainType caioClimateModifyPrecipitation(
+            Biome biome
+    ) {
+
+        DroughtPattern pattern =
+                DroughtPatternRegistry.get(biome);
+
+        /*
+         * Not a drought-pattern biome.
+         * Vanilla behavior.
+         */
+        if (pattern == null) {
+            return biome.getPrecipitation();
+        }
+
+        ClientWorld world =
+                Minecraft.getInstance().world;
+
+        if (world == null) {
+            return Biome.RainType.NONE;
+        }
+
+        /*
+         * Minecraft's global weather must actually
+         * be a rain event.
+         */
+        if (!world.isRaining()) {
+            return Biome.RainType.NONE;
+        }
+
+        /*
+         * Our drought system decides whether this
+         * biome participates in the rain event.
+         */
+        return DroughtHandler.shouldRain(
+                biome,
+                world
+        )
+                ? Biome.RainType.RAIN
+                : Biome.RainType.NONE;
     }
 }

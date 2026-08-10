@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DroughtPatternRegistry {
+
     private static final Map<ResourceLocation, DroughtPattern> PATTERNS =
             new HashMap<>();
 
@@ -21,6 +22,7 @@ public class DroughtPatternRegistry {
     }
 
     public static DroughtPattern get(Biome biome) {
+
         ResourceLocation id = biome.getRegistryName();
 
         if (id == null) {
@@ -28,5 +30,15 @@ public class DroughtPatternRegistry {
         }
 
         return PATTERNS.get(id);
+    }
+
+    public static void registerDefaults() {
+
+        register(
+                "caiocesarbiomes:mediterranean_scrubland",
+                DroughtPattern.DRY_SUMMER
+        );
+
+        // Add other dry biomes here.
     }
 }
