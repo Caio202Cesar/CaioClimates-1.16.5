@@ -1,5 +1,7 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.DroughtPattern;
+import com.caiocesarmods.caioclimates.Climate.DroughtPatternRegistry;
 import com.caiocesarmods.caioclimates.Climate.SnowfallHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
@@ -7,6 +9,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.sound.SoundEvent;
@@ -96,19 +99,6 @@ public class WorldRendererMixin {
         );
     }
 
-    @Redirect(
-            method = "renderRainSnow",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/world/biome/Biome;getPrecipitation()Lnet/minecraft/world/biome/Biome$RainType;"
-            )
-    )
-    private Biome.RainType modifyPrecipitation(
-            Biome biome
-    ) {
-        return biome.getPrecipitation();
-    }
-
     @Inject(
             method = "renderRainSnow",
             at = @At("HEAD"),
@@ -122,6 +112,29 @@ public class WorldRendererMixin {
             double z,
             CallbackInfo ci
     ) {
-        // Our climate-aware renderer
+        ClientWorld world = Minecraft.getInstance().world;
+
+        if (world == null) {
+            return;
+        }
+
+        BlockPos pos = new BlockPos(
+                MathHelper.floor(x),
+                MathHelper.floor(y),
+                MathHelper.floor(z)
+        );
+
+        Biome biome = world.getBiome(pos);
+
+        DroughtPattern pattern =
+                DroughtPatternRegistry.get(biome);
+
+        if (pattern != null) {
+            System.out.println(
+                    "[CaioClimate] Drought biome detected: "
+                            + biome.getRegistryName()
+                            + " | pattern=" + pattern
+            );
+        }
     }
 }
