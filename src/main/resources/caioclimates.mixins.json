@@ -6,7 +6,8 @@
   "mixins": [
     "ServerWorldMixin",
     "WorldRendererMixin",
-    "SnowBlockMixin"
+    "SnowBlockMixin",
+    "IceBlockMixin"
   ],
   "client": [],
   "server": [],
