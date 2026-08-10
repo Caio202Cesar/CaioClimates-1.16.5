@@ -33,12 +33,23 @@ public class DroughtPatternRegistry {
     }
 
     public static void registerDefaults() {
+        register("caiocesarbiomes:cork_oak_savanna", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:cork_oak_beach", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:hot_mediterranean_beach", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:mediterranean_conifer_savanna", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:mediterranean_conifer_savanna_beach", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:mediterranean_oak_woodland", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:mediterranean_oak_sparse_woodland", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:mediterranean_scrubland_river", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:mediterranean_savanna_river", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:mediterranean_scrubland", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:oleander_gardens", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:olive_grove", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:olive_grove_beach", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:subtropical_pine_dry_forest", DroughtPattern.DRY_SUMMER);
 
-        register(
-                "caiocesarbiomes:mediterranean_scrubland",
-                DroughtPattern.DRY_SUMMER
-        );
-
-        // Add other dry biomes here.
+        register("caiocesarbiomes:tropical_eucalyptus_dry_forest", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:eucalyptus_savanna", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:dry_tropical_beach", DroughtPattern.DRY_SUMMER);
     }
 }
