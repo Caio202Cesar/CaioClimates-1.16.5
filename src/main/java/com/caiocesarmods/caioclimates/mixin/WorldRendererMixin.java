@@ -2,6 +2,7 @@ package com.caiocesarmods.caioclimates.mixin;
 
 import com.caiocesarmods.caioclimates.Climate.SnowfallHandler;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.SoundCategory;
@@ -11,7 +12,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.sound.SoundEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WorldRenderer.class)
 public class WorldRendererMixin {
@@ -91,5 +94,34 @@ public class WorldRendererMixin {
                 p_184156_5_,
                 p_184156_6_
         );
+    }
+
+    @Redirect(
+            method = "renderRainSnow",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/biome/Biome;getPrecipitation()Lnet/minecraft/world/biome/Biome$RainType;"
+            )
+    )
+    private Biome.RainType modifyPrecipitation(
+            Biome biome
+    ) {
+        return biome.getPrecipitation();
+    }
+
+    @Inject(
+            method = "renderRainSnow",
+            at = @At("HEAD"),
+            cancellable = true
+    )
+    private void climateRenderRainSnow(
+            LightTexture lightmap,
+            float partialTicks,
+            double x,
+            double y,
+            double z,
+            CallbackInfo ci
+    ) {
+        // Our climate-aware renderer
     }
 }

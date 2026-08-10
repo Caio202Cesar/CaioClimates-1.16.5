@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates;
 
+import com.caiocesarmods.caioclimates.Climate.BiomeDroughtSetup;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,11 +42,8 @@ public class CaioClimates {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    private void setup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(BiomeDroughtSetup::register);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
