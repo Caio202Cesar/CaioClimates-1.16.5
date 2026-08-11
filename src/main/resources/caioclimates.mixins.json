@@ -7,7 +7,10 @@
     "ServerWorldMixin",
     "WorldRendererMixin",
     "SnowBlockMixin",
-    "IceBlockMixin"
+    "IceBlockMixin",
+    "BiomeGrassColorMixin",
+    "BiomeFoliageColorMixin"
+
   ],
   "client": [],
   "server": [],
