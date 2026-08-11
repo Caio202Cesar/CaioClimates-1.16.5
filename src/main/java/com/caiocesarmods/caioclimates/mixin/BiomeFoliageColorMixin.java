@@ -5,9 +5,6 @@ import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
 import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureCalculator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.FoliageColors;
 import net.minecraft.world.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,13 +15,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class BiomeFoliageColorMixin {
 
     @Inject(
-            method = "getFoliageColorByClimate",
-            at = @At("HEAD"),
+            method = "getFoliageColor",
+            at = @At("RETURN"),
             cancellable = true
     )
-    private void caioClimateFoliageColor(CallbackInfoReturnable<Integer> cir) {
-
-        Biome biome = (Biome)(Object)this;
+    private void caioClimateFoliageColor(
+            CallbackInfoReturnable<Integer> cir) {
 
         ClientWorld world = Minecraft.getInstance().world;
 
@@ -32,37 +28,37 @@ public abstract class BiomeFoliageColorMixin {
             return;
         }
 
+        Biome biome = (Biome) (Object) this;
+
         DroughtPattern pattern = DroughtPatternRegistry.get(biome);
 
         if (pattern == null) {
             return;
         }
 
-        float temperature = MathHelper.clamp(
-                biome.getTemperature(new BlockPos(0, 64, 0)),
-                0.0F,
-                1.0F
-        );
-
-        float baseHumidity = MathHelper.clamp(
-                biome.getDownfall(),
-                0.0F,
-                1.0F
-        );
-
         float moisture =
                 MoistureCalculator.getMoisture(pattern, world);
 
-        float humidity =
-                baseHumidity + (moisture - baseHumidity) * 0.75F;
-
-        humidity = MathHelper.clamp(humidity, 0.0F, 1.0F);
-
         cir.setReturnValue(
-                FoliageColors.get(
-                        temperature,
-                        humidity
-                )
+                tintFoliage(cir.getReturnValue(), moisture)
         );
+    }
+
+    private static int tintFoliage(int color, float moisture) {
+
+        float amount = moisture * 0.35F;
+
+        int r = (color >> 16) & 255;
+        int g = (color >> 8) & 255;
+        int b = color & 255;
+
+        r = (int) (r * (1.0F - amount));
+
+        g = Math.min(255,
+                (int) (g + (255 - g) * amount));
+
+        b = (int) (b * (1.0F - amount * 0.4F));
+
+        return (r << 16) | (g << 8) | b;
     }
 }
