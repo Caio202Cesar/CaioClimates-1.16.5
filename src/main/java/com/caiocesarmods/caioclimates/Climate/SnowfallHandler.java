@@ -83,7 +83,7 @@ public class SnowfallHandler {
          *
          * Snow is only possible during
          * winter.
-         * Add also chances for FALL in colder climates, even if littler.
+         * Add also chances for FALL in colder climates, even if smaller. Sub-artic biomes should see snow probabilities from early fall (minimal) to mid spring (also minimal).
          */
         String phase =
                 SeasonalPhase.getPhase(world.getDayTime());
