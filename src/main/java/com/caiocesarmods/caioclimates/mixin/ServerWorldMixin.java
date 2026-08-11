@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.Drought.PrecipitationHandler;
 import com.caiocesarmods.caioclimates.Climate.Winter.FrostHandler;
 import com.caiocesarmods.caioclimates.Climate.Winter.SnowfallHandler;
 import net.minecraft.block.BlockState;
@@ -10,6 +11,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.LightType;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,52 +32,37 @@ public abstract class ServerWorldMixin {
                     target = "Lnet/minecraft/world/biome/Biome;doesSnowGenerate(Lnet/minecraft/world/IWorldReader;Lnet/minecraft/util/math/BlockPos;)Z"
             )
     )
-    private boolean modifySnowGeneration(
+    private boolean caioClimateSnowGeneration(
             Biome biome,
-            IWorldReader worldReader,
+            IWorldReader world,
             BlockPos pos
     ) {
-        ServerWorld world = (ServerWorld) (Object) this;
 
         /*
-         * --------------------------------
-         * VANILLA PHYSICAL CONDITIONS
-         * --------------------------------
+         * Our precipitation system is the final authority
+         * over whether this location is actually receiving snow.
          */
+        if (world instanceof World) {
 
-        if (pos.getY() < 0 || pos.getY() >= 256) {
-            return false;
+            World actualWorld =
+                    (World) world;
+
+            Biome actualBiome =
+                    actualWorld.getBiome(pos);
+
+            return PrecipitationHandler.getPrecipitation(
+                    actualBiome,
+                    pos,
+                    actualWorld
+            ) == Biome.RainType.SNOW;
         }
 
-        if (worldReader.getLightFor(
-                LightType.BLOCK,
+        /*
+         * Fallback to vanilla behavior.
+         */
+        return biome.doesSnowGenerate(
+                world,
                 pos
-        ) >= 10) {
-            return false;
-        }
-
-        BlockState blockState =
-                worldReader.getBlockState(pos);
-
-        if (!blockState.isAir(worldReader, pos)) {
-            return false;
-        }
-
-        if (!Blocks.SNOW.getDefaultState()
-                .isValidPosition(worldReader, pos)) {
-            return false;
-        }
-
-        /*
-         * --------------------------------
-         * CLIMATE SNOW DECISION
-         * --------------------------------
-         */
-
-        return SnowfallHandler.shouldSnow(
-                biome,
-                pos,
-                world
         );
     }
 
