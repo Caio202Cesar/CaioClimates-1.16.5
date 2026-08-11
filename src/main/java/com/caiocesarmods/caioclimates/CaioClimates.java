@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates;
 
+import com.caiocesarmods.caioclimates.Climate.ClimateSetup;
 import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
 import com.caiocesarmods.caioclimates.Climate.Moisture.IMoistureData;
 import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureData;
@@ -58,6 +59,8 @@ public class CaioClimates {
         );
 
         event.enqueueWork(() -> {
+
+            ClimateSetup.register();
 
         });
     }
