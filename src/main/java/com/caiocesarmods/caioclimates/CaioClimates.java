@@ -1,8 +1,12 @@
 package com.caiocesarmods.caioclimates;
 
 import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
+import com.caiocesarmods.caioclimates.Climate.Moisture.IMoistureData;
+import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureData;
+import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureStorage;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -44,6 +48,15 @@ public class CaioClimates {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+
+        LOGGER.info("Registering moisture capability...");
+
+        CapabilityManager.INSTANCE.register(
+                IMoistureData.class,
+                new MoistureStorage(),
+                MoistureData::new
+        );
+
         event.enqueueWork(() -> {
 
         });

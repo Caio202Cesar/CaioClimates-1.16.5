@@ -3,6 +3,7 @@ package com.caiocesarmods.caioclimates.Climate.Moisture;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.caiocesarmods.caioclimates.CaioClimates;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +18,7 @@ public class MoistureProvider implements ICapabilitySerializable<INBT> {
     public static Capability<IMoistureData> MOISTURE_CAPABILITY = null;
 
     public static final ResourceLocation ID =
-            new ResourceLocation("yourmodid", "moisture");
+            new ResourceLocation(CaioClimates.MOD_ID, "moisture");
 
     private final IMoistureData instance =
             MOISTURE_CAPABILITY.getDefaultInstance();
@@ -49,5 +50,9 @@ public class MoistureProvider implements ICapabilitySerializable<INBT> {
         MOISTURE_CAPABILITY
                 .getStorage()
                 .readNBT(MOISTURE_CAPABILITY, instance, null, nbt);
+    }
+
+    public void invalidate() {
+        optional.invalidate();
     }
 }
