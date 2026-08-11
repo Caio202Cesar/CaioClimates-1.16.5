@@ -33,6 +33,24 @@ public class DroughtPatternRegistry {
     }
 
     public static void registerDefaults() {
+        register("minecraft:desert", DroughtPattern.ARID);
+        register("minecraft:desert_hills", DroughtPattern.ARID);
+        register("minecraft:desert_lakes", DroughtPattern.ARID);
+
+        register("minecraft:savanna", DroughtPattern.DRY_SUMMER);
+        register("minecraft:savanna_plateau", DroughtPattern.DRY_SUMMER);
+        register("minecraft:shattered_savanna", DroughtPattern.DRY_SUMMER);
+        register("minecraft:shattered_savanna_plateau", DroughtPattern.DRY_SUMMER);
+        register("minecraft:jungle_edge", DroughtPattern.DRY_SUMMER);
+        register("minecraft:modified_jungle_edge", DroughtPattern.DRY_SUMMER);
+
+        register("minecraft:badlands", DroughtPattern.ARID);
+        register("minecraft:wooded_badlands_plateau", DroughtPattern.SEMI_ARID);
+        register("minecraft:badlands_plateau", DroughtPattern.SEMI_ARID);
+        register("minecraft:eroded_badlands", DroughtPattern.ARID);
+        register("minecraft:modified_badlands_plateau", DroughtPattern.SEMI_ARID);
+        register("minecraft:modified_wooded_badlands_plateau", DroughtPattern.SEMI_ARID);
+
         register("caiocesarbiomes:cork_oak_savanna", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:cork_oak_beach", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:hot_mediterranean_beach", DroughtPattern.DRY_SUMMER);
