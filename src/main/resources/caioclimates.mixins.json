@@ -10,7 +10,6 @@
     "IceBlockMixin",
     "BiomeGrassColorMixin",
     "BiomeFoliageColorMixin"
-
   ],
   "client": [],
   "server": [],

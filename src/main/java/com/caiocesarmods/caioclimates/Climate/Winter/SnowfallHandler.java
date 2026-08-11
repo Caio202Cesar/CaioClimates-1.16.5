@@ -17,7 +17,15 @@ public class SnowfallHandler {
                 "[CaioClimate] SnowfallHandler.getSnowChance() called!"
         );
 
-        // Base biome temperature
+        /*
+         * ============================================================
+         * 1. BIOME TEMPERATURE
+         * ============================================================
+         *
+         * 0.90F and above = essentially no snow.
+         * 0.64F and below = essentially guaranteed snow.
+         *
+         */
         float temperature = biome.getTemperature(pos);
 
         System.out.println(
@@ -26,16 +34,18 @@ public class SnowfallHandler {
         );
 
         /*
-         * Base snow probability.
+         * Normal winter snow probability.
          *
-         * 0.90F and above = essentially no snow
-         * 0.64F and below = essentially guaranteed
+         * 0.90F and above = 0%
+         * 0.64F and below = 100%
+         *
+         * This is the normal temperature-based snow curve.
          */
-        float snowChance;
+        float winterSnowChance;
 
         if (temperature >= 0.90F) {
 
-            snowChance = 0.0F;
+            winterSnowChance = 0.0F;
 
         } else {
 
@@ -49,18 +59,15 @@ public class SnowfallHandler {
                             1.0F
                     );
 
-            snowChance =
+            winterSnowChance =
                     (float) Math.pow(normalized, 4.0);
         }
 
-        /*
-         * --------------------------------
-         * 2. ALTITUDE MODIFIER
-         * --------------------------------
-         *
-         * Higher elevations receive a
-         * small increase in snow chance.
-         */
+
+        // ============================================================
+        // 2. ALTITUDE MODIFIER
+        // ============================================================
+
         int altitude = getAltitude(world, pos);
 
         if (altitude > 100) {
@@ -68,82 +75,246 @@ public class SnowfallHandler {
             float altitudeBonus =
                     (altitude - 100) / 15000.0F;
 
-            // Maximum +20%
+            // Maximum +10%
             altitudeBonus =
                     Math.min(0.10F, altitudeBonus);
 
-            snowChance += altitudeBonus;
+            winterSnowChance += altitudeBonus;
         }
 
-        /*
-         * --------------------------------
-         * 3. SEASONAL PHASE
-         * --------------------------------
-         *
-         * Snow is only possible during
-         * winter.
-         * Add also chances for FALL in colder climates, even if smaller. Sub-artic biomes should see snow probabilities from early fall (minimal) to mid spring (also minimal).
-         */
+
+        // ============================================================
+        // 3. SEASONAL PHASE
+        // ============================================================
+
         String phase =
-                SeasonalPhase.getPhase(world.getDayTime());
-
-        switch (phase) {
-
-            case "EARLY_WINTER":
-                snowChance *= 0.50F;
-                break;
-
-            case "MID_WINTER":
-                snowChance *= 1.00F;
-                break;
-
-            case "LATE_WINTER":
-                snowChance *= 0.70F;
-                break;
-
-            default:
-                snowChance = 0.0F;
-                break;
-        }
+                SeasonalPhase.getPhase(
+                        world.getDayTime()
+                );
 
 
         /*
-         * --------------------------------
-         * 4. CLAMP RESULT
-         * --------------------------------
+         * ============================================================
+         * WINTER
+         * ============================================================
+         *
+         * Use the normal winter snow curve.
          */
-        // Never allow the probability outside 0–100%.
-        float finalChance = MathHelper.clamp(
-                snowChance,
-                0.0F,
-                1.0F
-        );
 
-        System.out.println(
-                "[CaioClimate] Final snow chance = "
-                        + finalChance
-        );
+        if (phase.equals("EARLY_WINTER")) {
 
-        return finalChance;
+            winterSnowChance *= 0.50F;
 
+            return MathHelper.clamp(
+                    winterSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+        if (phase.equals("MID_WINTER")) {
+
+            winterSnowChance *= 1.00F;
+
+            return MathHelper.clamp(
+                    winterSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+        if (phase.equals("LATE_WINTER")) {
+
+            winterSnowChance *= 0.70F;
+
+            return MathHelper.clamp(
+                    winterSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+        // ============================================================
+        // 6. SHOULDER-SEASON SNOW
+        // ============================================================
+
+        /*
+         * Shoulder-season snow begins at 0.64F.
+         *
+         * Above 0.64F:
+         *      0%
+         *
+         * At 0.64F:
+         *      approximately 2%
+         *
+         * At 0.40F:
+         *      approximately 90%
+         *
+         * Below 0.40F:
+         *      remains at 90%
+         *
+         * This is intentionally a smooth curve rather than
+         * a hard transition.
+         */
+
+        float shoulderSnowChance = 0.0F;
+
+        if (temperature <= 0.64F) {
+
+            float normalized =
+                    (0.64F - temperature)
+                            / 0.24F;
+
+            normalized =
+                    MathHelper.clamp(
+                            normalized,
+                            0.0F,
+                            1.0F
+                    );
+
+            /*
+             * Start at 2% at 0.64F and increase smoothly
+             * toward 90% at 0.40F.
+             */
+            shoulderSnowChance =
+                    0.02F
+                            + 0.88F
+                            * (float) Math.pow(
+                            normalized,
+                            2.0
+                    );
+
+            shoulderSnowChance =
+                    MathHelper.clamp(
+                            shoulderSnowChance,
+                            0.0F,
+                            0.90F
+                    );
+        }
+
+
+        // ============================================================
+        // 7. FALL
+        // ============================================================
+
+        if (phase.equals("EARLY_FALL")) {
+
+            shoulderSnowChance *= 0.15F;
+
+            return MathHelper.clamp(
+                    shoulderSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+        if (phase.equals("MID_FALL")) {
+
+            shoulderSnowChance *= 0.50F;
+
+            return MathHelper.clamp(
+                    shoulderSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+        if (phase.equals("LATE_FALL")) {
+
+            shoulderSnowChance *= 0.80F;
+
+            return MathHelper.clamp(
+                    shoulderSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+
+        // ============================================================
+        // 8. SPRING
+        // ============================================================
+
+        if (phase.equals("EARLY_SPRING")) {
+
+            shoulderSnowChance *= 0.80F;
+
+            return MathHelper.clamp(
+                    shoulderSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+        if (phase.equals("MID_SPRING")) {
+
+            shoulderSnowChance *= 0.50F;
+
+            return MathHelper.clamp(
+                    shoulderSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+        if (phase.equals("LATE_SPRING")) {
+
+            shoulderSnowChance *= 0.15F;
+
+            return MathHelper.clamp(
+                    shoulderSnowChance,
+                    0.0F,
+                    1.0F
+            );
+        }
+
+
+        // ============================================================
+        // 9. SUMMER
+        // ============================================================
+
+        /*
+         * Summer has no shoulder-season snow.
+         */
+        return 0.0F;
     }
 
-    private static int getAltitude(World world, BlockPos pos) {
 
-        BlockPos terrainPos = world.getHeight(
-                Heightmap.Type.MOTION_BLOCKING,
-                pos
-        );
+    // ================================================================
+    // ALTITUDE
+    // ================================================================
+
+    private static int getAltitude(
+            World world,
+            BlockPos pos
+    ) {
+
+        BlockPos terrainPos =
+                world.getHeight(
+                        Heightmap.Type.MOTION_BLOCKING,
+                        pos
+                );
 
         return terrainPos.getY() - 63;
     }
+
+
+    // ================================================================
+    // DETERMINISTIC SNOW DECISION
+    // ================================================================
 
     public static boolean shouldSnow(
             Biome biome,
             BlockPos pos,
             World world
     ) {
-        float snowChance = getSnowChance(biome, pos, world);
+
+        float snowChance =
+                getSnowChance(
+                        biome,
+                        pos,
+                        world
+                );
 
         if (snowChance <= 0.0F) {
             return false;
@@ -153,16 +324,23 @@ public class SnowfallHandler {
             return true;
         }
 
-        long weatherPeriod = world.getGameTime() / 1200L;
+        long weatherPeriod =
+                world.getGameTime() / 1200L;
 
-        int biomeId = biome.getRegistryName() != null
-                ? biome.getRegistryName().hashCode()
-                : 0;
+        int biomeId =
+                biome.getRegistryName() != null
+                        ? biome.getRegistryName().hashCode()
+                        : 0;
 
-        long seed = weatherPeriod * 341873128712L + biomeId;
+        long seed =
+                weatherPeriod
+                        * 341873128712L
+                        + biomeId;
 
-        Random random = new Random(seed);
+        Random random =
+                new Random(seed);
 
-        return random.nextFloat() < snowChance;
+        return random.nextFloat()
+                < snowChance;
     }
 }
