@@ -1,7 +1,5 @@
 package com.caiocesarmods.caioclimates.Climate.Drought;
 
-import com.caiocesarmods.caioclimates.Climate.ClimateDomain;
-import com.caiocesarmods.caioclimates.Climate.ClimateDomainRegistry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 
