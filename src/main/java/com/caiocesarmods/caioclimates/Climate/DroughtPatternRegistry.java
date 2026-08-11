@@ -51,5 +51,8 @@ public class DroughtPatternRegistry {
         register("caiocesarbiomes:tropical_eucalyptus_dry_forest", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:eucalyptus_savanna", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:dry_tropical_beach", DroughtPattern.DRY_SUMMER);
+
+        register("caiocesarbiomes:hemiboreal_steppe", DroughtPattern.SEMI_ARID);
+
     }
 }

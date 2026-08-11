@@ -83,6 +83,7 @@ public class SnowfallHandler {
          *
          * Snow is only possible during
          * winter.
+         * Add also chances for FALL in colder climates, even if littler.
          */
         String phase =
                 SeasonalPhase.getPhase(world.getDayTime());
