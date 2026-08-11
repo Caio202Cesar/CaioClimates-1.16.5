@@ -133,7 +133,7 @@ publishing {
     }
     repositories {
         maven {
-            url = uri("C:/Users/ADM/IdeaProjects/CaioCesarClimatesMod/mcmodsrepo")
+            url = uri("C:/Users/ADM/IdeaProjects/CaioClimates-1.16.5/mcmodsrepo")
         }
     }
 }
