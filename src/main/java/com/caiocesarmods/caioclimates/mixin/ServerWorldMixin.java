@@ -42,7 +42,7 @@ public abstract class ServerWorldMixin {
          * Our precipitation system is the final authority
          * over whether this location is actually receiving snow.
          */
-        if (world instanceof World) {
+        if (world instanceof World && Blocks.SNOW.getDefaultState().isValidPosition(world, pos)) {
 
             World actualWorld =
                     (World) world;
@@ -55,10 +55,6 @@ public abstract class ServerWorldMixin {
                     pos,
                     actualWorld
             ) == Biome.RainType.SNOW;
-        }
-
-        if (!world.isAirBlock(pos)) {
-            return false;
         }
         /*
          * Fallback to vanilla behavior.
