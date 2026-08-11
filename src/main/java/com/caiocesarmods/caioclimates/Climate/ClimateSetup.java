@@ -93,11 +93,11 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("minecraft:nether_wastes", ClimateDomain.HELL);
 
         ClimateDomainRegistry.register("minecraft:badlands", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
-        ClimateDomainRegistry.register("minecraft:wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
-        ClimateDomainRegistry.register("minecraft:badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
+        ClimateDomainRegistry.register("minecraft:wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
+        ClimateDomainRegistry.register("minecraft:badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
         ClimateDomainRegistry.register("minecraft:eroded_badlands", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
-        ClimateDomainRegistry.register("minecraft:modified_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
-        ClimateDomainRegistry.register("minecraft:modified_wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
+        ClimateDomainRegistry.register("minecraft:modified_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
+        ClimateDomainRegistry.register("minecraft:modified_wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
 
         ClimateDomainRegistry.register("minecraft:the_void", ClimateDomain.NONE);
         ClimateDomainRegistry.register("minecraft:the_end", ClimateDomain.NONE);
@@ -105,7 +105,6 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("minecraft:end_midlands", ClimateDomain.NONE);
         ClimateDomainRegistry.register("minecraft:the_end", ClimateDomain.NONE);
         ClimateDomainRegistry.register("minecraft:small_end_islands", ClimateDomain.NONE);
-
 
         /// Caio Cesar Biomes / Caio Cesar's Naturalistic Voyage
         ClimateDomainRegistry.register("caiocesarbiomes:bamboo_subtropical_laurel_jungle", ClimateDomain.HUMID_SUBTROPICAL);

@@ -1,5 +1,7 @@
 package com.caiocesarmods.caioclimates.Climate.Drought;
 
+import com.caiocesarmods.caioclimates.Climate.ClimateDomain;
+import com.caiocesarmods.caioclimates.Climate.ClimateDomainRegistry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 
@@ -51,6 +53,9 @@ public class DroughtPatternRegistry {
         register("minecraft:modified_badlands_plateau", DroughtPattern.SEMI_ARID);
         register("minecraft:modified_wooded_badlands_plateau", DroughtPattern.SEMI_ARID);
 
+        register("caiocesarbiomes:coastal_subtropical_desert", DroughtPattern.ARID);
+        register("caiocesarbiomes:coastal_subtropical_desert_lomas", DroughtPattern.ARID);
+
         register("caiocesarbiomes:cork_oak_savanna", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:cork_oak_beach", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:hot_mediterranean_beach", DroughtPattern.DRY_SUMMER);
@@ -66,11 +71,35 @@ public class DroughtPatternRegistry {
         register("caiocesarbiomes:olive_grove_beach", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:subtropical_pine_dry_forest", DroughtPattern.DRY_SUMMER);
 
-        register("caiocesarbiomes:tropical_eucalyptus_dry_forest", DroughtPattern.DRY_SUMMER);
-        register("caiocesarbiomes:eucalyptus_savanna", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:stony_mediterranean_shore", DroughtPattern.DRY_SUMMER);
+
         register("caiocesarbiomes:dry_tropical_beach", DroughtPattern.DRY_SUMMER);
 
+        register("caiocesarbiomes:tropical_eucalyptus_dry_forest", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:eucalyptus_savanna", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:eucalyptus_sahel", DroughtPattern.SEMI_ARID);
+
         register("caiocesarbiomes:hemiboreal_steppe", DroughtPattern.SEMI_ARID);
+
+        register("caiocesarbiomes:sahel", DroughtPattern.SEMI_ARID);
+        register("caiocesarbiomes:salt_desert", DroughtPattern.ARID);
+        register("caiocesarbiomes:socotra_dryland",DroughtPattern.ARID);
+
+        register("caiocesarbiomes:temperate_desert", DroughtPattern.ARID);
+        register("caiocesarbiomes:temperate_desert_oasis", DroughtPattern.ARID);
+        register("caiocesarbiomes:temperate_desert_river", DroughtPattern.ARID);
+
+        register("caiocesarbiomes:tropical_desert", DroughtPattern.ARID);
+
+        register("caiocesarbiomes:temperate_rainforest", DroughtPattern.DRY_SUMMER);
+
+        register("brbiomesmod:amazon_rainforest_edge", DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:caatinga_shrubland", DroughtPattern.SEMI_ARID);
+        register("brbiomesmod:cerrado", DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:dunas_restinga", DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:restinga_beach", DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:pantanal",  DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:cocal_forest",  DroughtPattern.DRY_SUMMER);
 
     }
 }
