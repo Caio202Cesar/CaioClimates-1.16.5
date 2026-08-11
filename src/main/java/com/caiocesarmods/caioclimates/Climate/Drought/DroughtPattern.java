@@ -27,9 +27,9 @@ public enum DroughtPattern {
             0.90F,  // LATE_FALL
 
             // WINTER
-            1.00F,  // EARLY_WINTER
+            0.92F,  // EARLY_WINTER
             1.00F,  // MID_WINTER
-            1.00F   // LATE_WINTER
+            0.81F   // LATE_WINTER
     ),
 
     /*

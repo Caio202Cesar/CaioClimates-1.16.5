@@ -2,7 +2,6 @@ package com.caiocesarmods.caioclimates.mixin;
 
 import com.caiocesarmods.caioclimates.Climate.Drought.PrecipitationHandler;
 import com.caiocesarmods.caioclimates.Climate.Winter.FrostHandler;
-import com.caiocesarmods.caioclimates.Climate.Winter.SnowfallHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowingFluidBlock;
@@ -15,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
@@ -57,6 +57,9 @@ public abstract class ServerWorldMixin {
             ) == Biome.RainType.SNOW;
         }
 
+        if (!world.isAirBlock(pos)) {
+            return false;
+        }
         /*
          * Fallback to vanilla behavior.
          */
