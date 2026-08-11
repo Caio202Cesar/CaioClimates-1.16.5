@@ -1,4 +1,4 @@
-package com.caiocesarmods.caioclimates.Climate;
+package com.caiocesarmods.caioclimates.Climate.Winter;
 
 import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import net.minecraft.util.math.BlockPos;
@@ -6,7 +6,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 

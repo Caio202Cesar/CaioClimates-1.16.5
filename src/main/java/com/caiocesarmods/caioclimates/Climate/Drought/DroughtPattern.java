@@ -1,4 +1,4 @@
-package com.caiocesarmods.caioclimates.Climate;
+package com.caiocesarmods.caioclimates.Climate.Drought;
 
 import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 

@@ -1,4 +1,4 @@
-package com.caiocesarmods.caioclimates.Climate;
+package com.caiocesarmods.caioclimates.Climate.Winter;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;

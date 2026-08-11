@@ -1,6 +1,6 @@
 package com.caiocesarmods.caioclimates;
 
-import com.caiocesarmods.caioclimates.Climate.DroughtPatternRegistry;
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;

@@ -1,4 +1,4 @@
-package com.caiocesarmods.caioclimates.Climate;
+package com.caiocesarmods.caioclimates.Climate.Winter;
 
 import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import net.minecraft.util.math.BlockPos;

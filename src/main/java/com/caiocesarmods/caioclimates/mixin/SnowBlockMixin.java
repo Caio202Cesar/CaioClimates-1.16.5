@@ -1,6 +1,6 @@
 package com.caiocesarmods.caioclimates.mixin;
 
-import com.caiocesarmods.caioclimates.Climate.SnowMeltHandler;
+import com.caiocesarmods.caioclimates.Climate.Winter.SnowMeltHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.util.math.BlockPos;

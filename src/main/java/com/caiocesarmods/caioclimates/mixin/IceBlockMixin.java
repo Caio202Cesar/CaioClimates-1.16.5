@@ -1,6 +1,6 @@
 package com.caiocesarmods.caioclimates.mixin;
 
-import com.caiocesarmods.caioclimates.Climate.FrostSmeltingHandler;
+import com.caiocesarmods.caioclimates.Climate.Winter.FrostSmeltingHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.IceBlock;
