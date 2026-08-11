@@ -5,6 +5,7 @@ import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
 import com.caiocesarmods.caioclimates.Climate.Moisture.IMoistureData;
 import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureData;
 import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureStorage;
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerTemperatureSetup;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -61,6 +62,7 @@ public class CaioClimates {
         event.enqueueWork(() -> {
 
             ClimateSetup.register();
+            SummerTemperatureSetup.register();
 
         });
     }
