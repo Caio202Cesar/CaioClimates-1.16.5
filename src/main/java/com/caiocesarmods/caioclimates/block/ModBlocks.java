@@ -35,6 +35,7 @@ public class ModBlocks {
             () -> new BirchWinterBranches(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
                     .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), (Supplier<Block>) Blocks.BIRCH_LEAVES));
 
+    //Dark Oak (Quercus velutina)
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
