@@ -32,8 +32,12 @@ public class ModBlocks {
             () -> new BirchFallLeaves(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
                     .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), ModBlocks.BIRCH_WINTER_BRANCHES));
     public static final RegistryObject<Block> BIRCH_WINTER_BRANCHES = registerBlock("birch_winter_branches",
-            () -> new BirchWinterBranches(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
-                    .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), (Supplier<Block>) Blocks.BIRCH_LEAVES));
+                    () -> new BirchWinterBranches(AbstractBlock.Properties.create(Material.LEAVES)
+                            .hardnessAndResistance(0.2F)
+                            .tickRandomly()
+                            .notSolid()
+                            .sound(SoundType.PLANT)
+                            .harvestTool(ToolType.HOE), Blocks.BIRCH_LEAVES));
 
     //Dark Oak (Quercus velutina)
 
