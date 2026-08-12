@@ -6,6 +6,7 @@ import com.caiocesarmods.caioclimates.Climate.Moisture.IMoistureData;
 import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureData;
 import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureStorage;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerTemperatureSetup;
+import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;

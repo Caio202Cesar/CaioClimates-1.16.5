@@ -1,6 +1,6 @@
 package com.caiocesarmods.caioclimates.mixin;
 
-import com.caiocesarmods.caioclimates.ModBlocks;
+import com.caiocesarmods.caioclimates.block.ModBlocks;
 import com.caiocesarmods.caioclimates.Seasons.Season;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "caioclimates:block/birch_fall_leaves",
+    "particle": "caioclimates:block/birch_fall_leaves"
+  }
+}
