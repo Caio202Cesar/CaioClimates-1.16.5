@@ -9,7 +9,8 @@
     "SnowBlockMixin",
     "IceBlockMixin",
     "BiomeGrassColorMixin",
-    "BiomeFoliageColorMixin"
+    "BiomeFoliageColorMixin",
+    "BirchLeavesRandomTickMixin"
   ],
   "client": [],
   "server": [],
