@@ -10,8 +10,11 @@
     "IceBlockMixin",
     "BiomeGrassColorMixin",
     "BiomeFoliageColorMixin",
+    "LeavesBlockRainParticleMixin",
     "BirchLeavesRandomTickMixin",
-    "LeavesBlockRainParticleMixin"
+    "OakLeavesRandomTickMixin",
+    "DarkOakLeavesRandomTickMixin",
+    "AcaciaLeavesRandomTickMixin"
   ],
   "client": [],
   "server": [],

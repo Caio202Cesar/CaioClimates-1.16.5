@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "caioclimates:acacia_branches",
     "caioclimates:birch_fall_leaves",
     "caioclimates:birch_branches"
   ]

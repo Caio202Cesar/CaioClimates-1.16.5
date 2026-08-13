@@ -1,7 +1,7 @@
 package com.caiocesarmods.caioclimates.mixin;
 
-import com.caiocesarmods.caioclimates.block.ModBlocks;
 import com.caiocesarmods.caioclimates.Seasons.Season;
+import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
@@ -16,19 +16,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Random;
 
 @Mixin(LeavesBlock.class)
-public abstract class BirchLeavesRandomTickMixin {
+public abstract class OakLeavesRandomTickMixin {
 
     @Inject(
             method = "ticksRandomly",
             at = @At("HEAD"),
             cancellable = true
     )
-    private void makeBirchLeavesRandomTick(
+    private void makeOakLeavesRandomTick(
             CallbackInfoReturnable<Boolean> cir) {
 
         LeavesBlock block = (LeavesBlock) (Object) this;
 
-        if (block == Blocks.BIRCH_LEAVES) {
+        if (block == Blocks.OAK_LEAVES) {
             cir.setReturnValue(true);
         }
     }
@@ -37,14 +37,14 @@ public abstract class BirchLeavesRandomTickMixin {
             method = "randomTick",
             at = @At("HEAD")
     )
-    private void birchLeavesSeasonalTick(
+    private void oakLeavesSeasonalTick(
             BlockState state,
             ServerWorld world,
             BlockPos pos,
             Random random,
             CallbackInfo ci) {
 
-        if (state.getBlock() != Blocks.BIRCH_LEAVES) {
+        if (state.getBlock() != Blocks.OAK_LEAVES) {
             return;
         }
 
@@ -55,7 +55,7 @@ public abstract class BirchLeavesRandomTickMixin {
             if (random.nextInt(30) == 0) {
                 world.setBlockState(
                         pos,
-                        ModBlocks.BIRCH_FALL_LEAVES.get().getDefaultState(),
+                        ModBlocks.OAK_FALL_LEAVES.get().getDefaultState(),
                         3
                 );
             }
@@ -65,7 +65,7 @@ public abstract class BirchLeavesRandomTickMixin {
             if (random.nextInt(2) == 0) {
                 world.setBlockState(
                         pos,
-                        ModBlocks.BIRCH_FALL_LEAVES.get().getDefaultState(),
+                        ModBlocks.OAK_FALL_LEAVES.get().getDefaultState(),
                         3
                 );
             }

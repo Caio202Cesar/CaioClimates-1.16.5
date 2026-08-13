@@ -2,8 +2,7 @@ package com.caiocesarmods.caioclimates.block;
 
 import com.caiocesarmods.caioclimates.CaioClimates;
 import com.caiocesarmods.caioclimates.ModItems;
-import com.caiocesarmods.caioclimates.block.SeasonalLeaves.BirchFallLeaves;
-import com.caiocesarmods.caioclimates.block.SeasonalLeaves.BirchWinterBranches;
+import com.caiocesarmods.caioclimates.block.SeasonalLeaves.*;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
