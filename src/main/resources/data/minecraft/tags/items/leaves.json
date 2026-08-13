@@ -3,6 +3,10 @@
   "values": [
     "caioclimates:acacia_branches",
     "caioclimates:birch_fall_leaves",
-    "caioclimates:birch_branches"
+    "caioclimates:birch_branches",
+    "caioclimates:dark_oak_fall_leaves",
+    "caioclimates:dark_oak_branches",
+    "caioclimates:oak_fall_leaves",
+    "caioclimates:oak_branches"
   ]
 }

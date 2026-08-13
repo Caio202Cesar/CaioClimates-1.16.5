@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "caioclimates:block/oak_branches",
+    "particle": "caioclimates:block/oak_branches"
+  }
+}

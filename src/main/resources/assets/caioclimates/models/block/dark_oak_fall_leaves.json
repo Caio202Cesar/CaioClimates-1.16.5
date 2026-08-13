@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "caioclimates:block/dark_oak_fall_leaves",
+    "particle": "caioclimates:block/dark_oak_fall_leaves"
+  }
+}
