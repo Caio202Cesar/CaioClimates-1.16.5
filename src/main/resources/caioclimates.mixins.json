@@ -14,7 +14,8 @@
     "BirchLeavesRandomTickMixin",
     "OakLeavesRandomTickMixin",
     "DarkOakLeavesRandomTickMixin",
-    "AcaciaLeavesRandomTickMixin"
+    "AcaciaLeavesRandomTickMixin",
+    "DefaultBiomeFeaturesMixin"
   ],
   "client": [],
   "server": [],
