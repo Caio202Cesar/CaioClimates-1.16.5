@@ -1,4 +1,9 @@
 {
   "block.caioclimates.birch_fall_leaves": "Birch Leaves",
-  "block.caioclimates.birch_branches": "Birch Branches"
+  "block.caioclimates.birch_branches": "Birch Branches",
+  "block.caioclimates.oak_fall_leaves": "Oak Leaves",
+  "block.caioclimates.oak_branches": "Oak Branches",
+  "block.caioclimates.dark_oak_fall_leaves": "Dark Oak Leaves",
+  "block.caioclimates.dark_oak_branches": "Dark Oak Branches",
+  "block.caioclimates.acacia_branches": "Acacia Branches"
 }
