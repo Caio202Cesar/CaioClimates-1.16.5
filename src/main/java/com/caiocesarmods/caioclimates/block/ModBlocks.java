@@ -47,7 +47,7 @@ public class ModBlocks {
                     .tickRandomly()
                     .notSolid()
                     .sound(SoundType.PLANT)
-                    .harvestTool(ToolType.HOE), Blocks.DARK_OAK_LEAVES));
+                    .harvestTool(ToolType.HOE), Blocks.OAK_LEAVES));
 
     //Dark Oak (Quercus velutina)
     public static final RegistryObject<Block> DARK_OAK_FALL_LEAVES = registerBlock("dark_oak_fall_leaves",

@@ -12,11 +12,6 @@ import java.util.Random;
 public class SnowfallHandler {
 
     public static float getSnowChance(Biome biome, BlockPos pos, World world) {
-
-        System.out.println(
-                "[CaioClimate] SnowfallHandler.getSnowChance() called!"
-        );
-
         /*
          * ============================================================
          * 1. BIOME TEMPERATURE
@@ -27,11 +22,6 @@ public class SnowfallHandler {
          *
          */
         float temperature = biome.getTemperature(pos);
-
-        System.out.println(
-                "[CaioClimate] Temperature = "
-                        + temperature
-        );
 
         /*
          * Normal winter snow probability.
