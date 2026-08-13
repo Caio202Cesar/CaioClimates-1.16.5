@@ -39,7 +39,37 @@ public class ModBlocks {
                             .sound(SoundType.PLANT)
                             .harvestTool(ToolType.HOE), Blocks.BIRCH_LEAVES));
 
+    public static final RegistryObject<Block> OAK_FALL_LEAVES = registerBlock("oak_fall_leaves",
+            () -> new OakFallLeaves(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
+                    .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), ModBlocks.OAK_BRANCHES));
+    public static final RegistryObject<Block> OAK_BRANCHES = registerBlock("oak_branches",
+            () -> new OakWinterBranches(AbstractBlock.Properties.create(Material.LEAVES)
+                    .hardnessAndResistance(0.2F)
+                    .tickRandomly()
+                    .notSolid()
+                    .sound(SoundType.PLANT)
+                    .harvestTool(ToolType.HOE), Blocks.DARK_OAK_LEAVES));
+
     //Dark Oak (Quercus velutina)
+    public static final RegistryObject<Block> DARK_OAK_FALL_LEAVES = registerBlock("dark_oak_fall_leaves",
+            () -> new DarkOakFallLeaves(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
+                    .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), ModBlocks.DARK_OAK_BRANCHES));
+    public static final RegistryObject<Block> DARK_OAK_BRANCHES = registerBlock("dark_oak_branches",
+            () -> new DarkOakWinterBranches(AbstractBlock.Properties.create(Material.LEAVES)
+                    .hardnessAndResistance(0.2F)
+                    .tickRandomly()
+                    .notSolid()
+                    .sound(SoundType.PLANT)
+                    .harvestTool(ToolType.HOE), Blocks.DARK_OAK_LEAVES));
+
+    //Dry season
+    public static final RegistryObject<Block> ACACIA_BRANCHES = registerBlock("acacia_branches",
+            () -> new AcaciaBranches(AbstractBlock.Properties.create(Material.LEAVES)
+                    .hardnessAndResistance(0.2F)
+                    .tickRandomly()
+                    .notSolid()
+                    .sound(SoundType.PLANT)
+                    .harvestTool(ToolType.HOE), Blocks.ACACIA_LEAVES));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
