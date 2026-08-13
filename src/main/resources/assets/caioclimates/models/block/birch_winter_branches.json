@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "caioclimates:block/birch_winter_branches",
-    "particle": "caioclimates:block/birch_winter_branches"
-  }
-}

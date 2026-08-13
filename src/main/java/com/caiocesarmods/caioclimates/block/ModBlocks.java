@@ -30,8 +30,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BIRCH_FALL_LEAVES = registerBlock("birch_fall_leaves",
             () -> new BirchFallLeaves(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
-                    .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), ModBlocks.BIRCH_WINTER_BRANCHES));
-    public static final RegistryObject<Block> BIRCH_WINTER_BRANCHES = registerBlock("birch_winter_branches",
+                    .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), ModBlocks.BIRCH_BRANCHES));
+    public static final RegistryObject<Block> BIRCH_BRANCHES = registerBlock("birch_branches",
                     () -> new BirchWinterBranches(AbstractBlock.Properties.create(Material.LEAVES)
                             .hardnessAndResistance(0.2F)
                             .tickRandomly()
