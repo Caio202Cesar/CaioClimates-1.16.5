@@ -11,10 +11,7 @@
     "BiomeGrassColorMixin",
     "BiomeFoliageColorMixin",
     "LeavesBlockRainParticleMixin",
-    "BirchLeavesRandomTickMixin",
-    "OakLeavesRandomTickMixin",
-    "DarkOakLeavesRandomTickMixin",
-    "AcaciaLeavesRandomTickMixin",
+    "SeasonalLeavesRandomTickMixin",
     "DefaultBiomeFeaturesMixin"
   ],
   "client": [],

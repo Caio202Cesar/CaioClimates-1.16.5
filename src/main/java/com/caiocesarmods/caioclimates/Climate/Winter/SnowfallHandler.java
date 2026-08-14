@@ -91,37 +91,39 @@ public class SnowfallHandler {
          * Use the normal winter snow curve.
          */
 
-        if (phase.equals("EARLY_WINTER")) {
+        if (temperature >= 0.15F) {
+            if (phase.equals("EARLY_WINTER")) {
 
-            winterSnowChance *= 0.50F;
+                winterSnowChance *= 0.50F;
 
-            return MathHelper.clamp(
+                return MathHelper.clamp(
+                        winterSnowChance,
+                        0.0F,
+                        1.0F
+                );
+            }
+
+            if (phase.equals("MID_WINTER")) {
+
+                winterSnowChance *= 1.00F;
+
+                return MathHelper.clamp(
                     winterSnowChance,
                     0.0F,
                     1.0F
-            );
-        }
+                );
+            }
 
-        if (phase.equals("MID_WINTER")) {
+            if (phase.equals("LATE_WINTER")) {
 
-            winterSnowChance *= 1.00F;
+                winterSnowChance *= 0.70F;
 
-            return MathHelper.clamp(
+                return MathHelper.clamp(
                     winterSnowChance,
                     0.0F,
                     1.0F
-            );
-        }
-
-        if (phase.equals("LATE_WINTER")) {
-
-            winterSnowChance *= 0.70F;
-
-            return MathHelper.clamp(
-                    winterSnowChance,
-                    0.0F,
-                    1.0F
-            );
+                );
+            }
         }
 
         // ============================================================
@@ -149,7 +151,7 @@ public class SnowfallHandler {
 
         float shoulderSnowChance = 0.0F;
 
-        if (temperature <= 0.64F) {
+        if (temperature <= 0.64F && temperature >= 0.15F) {
 
             float normalized =
                     (0.64F - temperature)
