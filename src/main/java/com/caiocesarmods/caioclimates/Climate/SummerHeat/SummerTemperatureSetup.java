@@ -33,11 +33,11 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "desert_hills"), 1.5F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "desert_lakes"), 1.5F);
 
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "mountains"), 0.68F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "mountain_edge"), 0.68F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "wooded_mountains"), 0.68F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "gravelly_mountains"), 0.48F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "modified_gravelly_mountains"), 0.48F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "mountains"), 0.4F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "mountain_edge"), 0.4F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "wooded_mountains"), 0.4F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "gravelly_mountains"), 0.2F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "modified_gravelly_mountains"), 0.2F);
 
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "forest"), 0.78F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "wooded_hills"), 0.78F);
