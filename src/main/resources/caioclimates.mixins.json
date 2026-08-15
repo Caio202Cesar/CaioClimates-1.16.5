@@ -13,7 +13,8 @@
     "LeavesBlockRainParticleMixin",
     "SeasonalLeavesRandomTickMixin",
     "DefaultBiomeFeaturesMixin",
-    "SaplingBlockMixin"
+    "SaplingBlockMixin",
+    "BoneMealItemMixin"
   ],
   "client": [],
   "server": [],
