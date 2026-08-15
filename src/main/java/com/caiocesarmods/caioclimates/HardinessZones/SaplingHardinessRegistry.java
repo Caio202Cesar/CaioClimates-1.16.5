@@ -16,7 +16,7 @@ public class SaplingHardinessRegistry {
         register(Blocks.OAK_SAPLING, 4, 10);
         register(Blocks.SPRUCE_SAPLING, 1, 7);
         register(Blocks.BIRCH_SAPLING, 2, 8);
-        register(Blocks.JUNGLE_SAPLING, 10, 12);
+        register(Blocks.JUNGLE_SAPLING, 11, 12); //Max zone 11 because of cacao
         register(Blocks.ACACIA_SAPLING, 9, 12);
         register(Blocks.DARK_OAK_SAPLING, 4, 9);
 
