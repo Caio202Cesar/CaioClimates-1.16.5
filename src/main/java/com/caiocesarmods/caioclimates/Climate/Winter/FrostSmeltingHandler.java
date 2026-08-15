@@ -17,14 +17,30 @@ public class FrostSmeltingHandler {
             BlockState state,
             Random random
     ) {
+        Biome biome = world.getBiome(pos);
+
+        float baseTemperature =
+                biome.getTemperature();
+
         /*
          * --------------------------------
-         * 1. SUNLIGHT
+         * 1. ICE CAP
          * --------------------------------
          *
-         * Ice can melt when exposed to
-         * sufficiently strong sunlight.
+         * Permanent ice.
+         *
+         * No melting even under sunlight.
          */
+        if (baseTemperature < 0.0F) {
+            return false;
+        }
+
+        /*
+         * --------------------------------
+         * 2. SUNLIGHT
+         * --------------------------------
+         */
+
         if (world.getLightFor(
                 LightType.SKY,
                 pos
@@ -32,26 +48,30 @@ public class FrostSmeltingHandler {
             return false;
         }
 
-        Biome biome = world.getBiome(pos);
-
         float temperature =
                 biome.getTemperature(pos);
 
         /*
          * --------------------------------
-         * 2. BASE MELTING CHANCE
+         * 3. BASE MELTING CHANCE
          * --------------------------------
          *
-         * Warm biomes melt ice readily.
-         * Colder biomes preserve it longer.
+         * This is the normal climatic
+         * melting behavior.
          */
+
         float meltChance;
 
         if (temperature >= 0.90F) {
+
             meltChance = 1.0F;
+
         } else if (temperature <= 0.64F) {
+
             meltChance = 0.10F;
+
         } else {
+
             float normalized =
                     (temperature - 0.64F) / 0.26F;
 
@@ -61,21 +81,23 @@ public class FrostSmeltingHandler {
 
         /*
          * --------------------------------
-         * 3. COLD WINTER MODIFIER
+         * 4. WINTER MELTING
          * --------------------------------
          *
-         * If the biome is cold enough to
-         * sustain snowfall throughout
-         * winter, ice is more persistent.
+         * Only warm climates get the
+         * special winter melting behavior.
          */
         String phase =
                 SeasonalPhase.getPhase(
                         world.getDayTime()
                 );
 
-        if (phase.equals("EARLY_WINTER")
-                || phase.equals("MID_WINTER")
-                || phase.equals("LATE_WINTER")) {
+        boolean winter =
+                phase.equals("EARLY_WINTER")
+                        || phase.equals("MID_WINTER")
+                        || phase.equals("LATE_WINTER");
+
+        if (winter && baseTemperature > 0.70F) {
 
             float winterSnowChance =
                     SnowfallHandler.getSnowChance(
@@ -85,13 +107,11 @@ public class FrostSmeltingHandler {
                     );
 
             /*
-             * High winter snow probability
-             * means a colder climate.
-             *
-             * Reduce sunlight melting.
+             * More winter snow =
+             * less ice melting.
              */
-            meltChance *=
-                    (1.0F - winterSnowChance * 0.75F);
+            meltChance *= (1.0F
+                    - winterSnowChance * 0.75F);
         }
 
         return random.nextFloat() < meltChance;
