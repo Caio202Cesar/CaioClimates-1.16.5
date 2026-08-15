@@ -12,7 +12,8 @@
     "BiomeFoliageColorMixin",
     "LeavesBlockRainParticleMixin",
     "SeasonalLeavesRandomTickMixin",
-    "DefaultBiomeFeaturesMixin"
+    "DefaultBiomeFeaturesMixin",
+    "SaplingBlockMixin"
   ],
   "client": [],
   "server": [],
