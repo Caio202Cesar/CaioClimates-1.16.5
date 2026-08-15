@@ -18,7 +18,7 @@ public class SaplingHardinessRegistry {
         register(Blocks.BIRCH_SAPLING, 2, 8);
         register(Blocks.JUNGLE_SAPLING, 10, 12);
         register(Blocks.ACACIA_SAPLING, 9, 12);
-        register(Blocks.DARK_OAK_SAPLING, 4, 8);
+        register(Blocks.DARK_OAK_SAPLING, 4, 9);
 
         // Your custom saplings can also be registered
         // register(TreeBlocks.FIG_SAPLING.get(), 7, 10);
