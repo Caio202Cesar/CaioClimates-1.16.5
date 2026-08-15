@@ -26,8 +26,8 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_beach"), 0.14F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "ice_spikes"), 0.1F);
 
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "plains"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "sunflower_plains"), 0.95F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "plains"), 0.92F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "sunflower_plains"), 0.92F);
 
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "desert"), 1.5F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "desert_hills"), 1.5F);
