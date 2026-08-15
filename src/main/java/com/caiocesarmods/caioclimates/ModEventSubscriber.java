@@ -196,5 +196,67 @@ public class ModEventSubscriber {
                     0.0f                          // downfall
             ));
         }
+
+        if (event.getCategory() == Biome.Category.SAVANNA) {
+
+            ResourceLocation id = event.getName();
+            if (id == null) return;
+
+            String path = id.getPath();
+            String namespace = id.getNamespace();
+
+            // skip mod biomes
+            if (namespace.equals("caiocesarbiomes")) return;
+            if (namespace.equals("brbiomesmod")) return;
+
+            if (path.contains("plateau")) {
+                System.out.println("[DEBUG] Overriding temperature for Savanna: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.NONE,
+                        1.2f,
+                        Biome.TemperatureModifier.NONE,
+                        0.35f));
+            }
+        }
+
+        if (event.getCategory() == Biome.Category.ICY) {
+
+            ResourceLocation id = event.getName();
+            if (id == null) return;
+
+            String path = id.getPath();
+            String namespace = id.getNamespace();
+
+            // skip mod biomes
+            if (namespace.equals("caiocesarbiomes")) return;
+            if (namespace.equals("brbiomesmod")) return;
+
+            if (path.contains("ice")) {
+                System.out.println("[DEBUG] Overriding temperature for Icy Biome: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.NONE,
+                        -0.5f,
+                        Biome.TemperatureModifier.NONE,
+                        0.0f));
+            }
+
+            if (path.contains("frozen")) {
+                System.out.println("[DEBUG] Overriding temperature for Icy Biome: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.NONE,
+                        -0.5f,
+                        Biome.TemperatureModifier.NONE,
+                        0.0f));
+            }
+
+            if (path.contains("snowy")) {
+                System.out.println("[DEBUG] Overriding temperature for Snowy Biome: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.NONE,
+                        0.12f,
+                        Biome.TemperatureModifier.NONE,
+                        0.3f));
+            }
+        }
     }
 }

@@ -24,13 +24,33 @@ public class SnowfallHandler {
         float temperature = biome.getTemperature(pos);
 
         /*
-         * Normal winter snow probability.
+         * ============================================================
+         * 2. ICE-CAP CLIMATE
+         * ============================================================
+         *
+         * Base temperature below 0.0F represents an ice-cap climate.
+         *
+         * These climates have:
+         *
+         *     WINTER = 100% snow
+         *     SUMMER = 100% snow
+         *
+         * Fall and spring are handled later as shoulder seasons.
+         */
+
+        boolean iceCapClimate = temperature < 0.0F;
+
+        /*
+         * ============================================================
+         * 3. NORMAL WINTER SNOW PROBABILITY
+         * ============================================================
          *
          * 0.90F and above = 0%
          * 0.64F and below = 100%
          *
-         * This is the normal temperature-based snow curve.
+         * This curve is used by non-ice-cap climates.
          */
+
         float winterSnowChance;
 
         if (temperature >= 0.90F) {
@@ -84,15 +104,37 @@ public class SnowfallHandler {
 
 
         /*
+         * ========================================================
+         * 7. ICE-CAP biomes have year around snow chance
+         * ========================================================
+         *
+         * Even during the warmest part of the year, the biome
+         * remains a permanent snow climate.
+         */
+        if (iceCapClimate) {
+            if (phase.equals("EARLY_SPRING")
+                    || phase.equals("MID_SPRING")
+                    || phase.equals("LATE_SPRING")
+                    || phase.equals("EARLY_SUMMER")
+                    || phase.equals("MID_SUMMER")
+                    || phase.equals("LATE_SUMMER")
+                    || phase.equals("EARLY_FALL")
+                    || phase.equals("MID_FALL")
+                    || phase.equals("LATE_FALL")) {
+
+                return 1.0F;
+            }
+        }
+
+        /*
          * ============================================================
-         * WINTER
+         * 7. Normal WINTER
          * ============================================================
          *
          * Use the normal winter snow curve.
          */
 
-        if (temperature >= 0.15F) {
-            if (phase.equals("EARLY_WINTER")) {
+        if (phase.equals("EARLY_WINTER")) {
 
                 winterSnowChance *= 0.50F;
 
@@ -101,33 +143,32 @@ public class SnowfallHandler {
                         0.0F,
                         1.0F
                 );
-            }
+        }
 
-            if (phase.equals("MID_WINTER")) {
+        if (phase.equals("MID_WINTER")) {
 
                 winterSnowChance *= 1.00F;
 
                 return MathHelper.clamp(
-                    winterSnowChance,
-                    0.0F,
-                    1.0F
+                        winterSnowChance,
+                        0.0F,
+                        1.0F
                 );
-            }
+        }
 
-            if (phase.equals("LATE_WINTER")) {
+        if (phase.equals("LATE_WINTER")) {
 
                 winterSnowChance *= 0.70F;
 
                 return MathHelper.clamp(
-                    winterSnowChance,
-                    0.0F,
-                    1.0F
+                        winterSnowChance,
+                        0.0F,
+                        1.0F
                 );
-            }
         }
 
         // ============================================================
-        // 6. SHOULDER-SEASON SNOW
+        // 8. SHOULDER-SEASON SNOW
         // ============================================================
 
         /*
@@ -151,7 +192,7 @@ public class SnowfallHandler {
 
         float shoulderSnowChance = 0.0F;
 
-        if (temperature <= 0.64F && temperature >= 0.15F) {
+        if (temperature <= 0.64F && !iceCapClimate) {
 
             float normalized =
                     (0.64F - temperature)
@@ -186,7 +227,7 @@ public class SnowfallHandler {
 
 
         // ============================================================
-        // 7. FALL
+        // 9. FALL
         // ============================================================
 
         if (phase.equals("EARLY_FALL")) {
@@ -222,9 +263,8 @@ public class SnowfallHandler {
             );
         }
 
-
         // ============================================================
-        // 8. SPRING
+        // 10. SPRING
         // ============================================================
 
         if (phase.equals("EARLY_SPRING")) {
@@ -260,17 +300,20 @@ public class SnowfallHandler {
             );
         }
 
-
-        // ============================================================
-        // 9. SUMMER
-        // ============================================================
-
         /*
-         * Summer has no shoulder-season snow.
+         * ============================================================
+         * 12. SUMMER
+         * ============================================================
+         *
+         * Non-ice-cap climates have no snow during summer.
+         *
+         * Ice-cap climates were already handled above and return
+         * 100% throughout summer.
          */
-        return 0.0F;
-    }
 
+        return 0.0F;
+
+    }
 
     // ================================================================
     // ALTITUDE
@@ -295,18 +338,9 @@ public class SnowfallHandler {
     // DETERMINISTIC SNOW DECISION
     // ================================================================
 
-    public static boolean shouldSnow(
-            Biome biome,
-            BlockPos pos,
-            World world
-    ) {
+    public static boolean shouldSnow(Biome biome, BlockPos pos, World world) {
 
-        float snowChance =
-                getSnowChance(
-                        biome,
-                        pos,
-                        world
-                );
+        float snowChance = getSnowChance(biome, pos, world);
 
         if (snowChance <= 0.0F) {
             return false;

@@ -94,9 +94,9 @@ public enum DroughtPattern {
             0.01F,
 
             // SUMMER
-            0.01F,
             0.00F,
-            0.01F,
+            0.00F,
+            0.00F,
 
             // FALL
             0.01F,
