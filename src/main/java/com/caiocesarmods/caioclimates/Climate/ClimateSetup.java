@@ -54,7 +54,7 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("minecraft:swamp", ClimateDomain.HUMID_SUBTROPICAL);
         ClimateDomainRegistry.register("minecraft:swamp_hills", ClimateDomain.HUMID_SUBTROPICAL);
 
-        ClimateDomainRegistry.register("minecraft:snowy_tundra", ClimateDomain.SNOWY);
+        ClimateDomainRegistry.register("minecraft:snowy_tundra", ClimateDomain.TUNDRA);
         ClimateDomainRegistry.register("minecraft:snowy_mountains", ClimateDomain.SNOWY);
         ClimateDomainRegistry.register("minecraft:snowy_beach", ClimateDomain.SNOWY);
         ClimateDomainRegistry.register("minecraft:ice_spikes", ClimateDomain.ICE_CAP);
@@ -92,12 +92,12 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("minecraft:basalt_deltas", ClimateDomain.HELL);
         ClimateDomainRegistry.register("minecraft:nether_wastes", ClimateDomain.HELL);
 
-        ClimateDomainRegistry.register("minecraft:badlands", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
-        ClimateDomainRegistry.register("minecraft:wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
+        ClimateDomainRegistry.register("minecraft:badlands", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
+        ClimateDomainRegistry.register("minecraft:wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_MEDITERRANEAN);
         ClimateDomainRegistry.register("minecraft:badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
-        ClimateDomainRegistry.register("minecraft:eroded_badlands", ClimateDomain.TEMPERATE_CONTINENTAL_DESERT);
+        ClimateDomainRegistry.register("minecraft:eroded_badlands", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
         ClimateDomainRegistry.register("minecraft:modified_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
-        ClimateDomainRegistry.register("minecraft:modified_wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_SEMIARID);
+        ClimateDomainRegistry.register("minecraft:modified_wooded_badlands_plateau", ClimateDomain.TEMPERATE_CONTINENTAL_MEDITERRANEAN);
 
         ClimateDomainRegistry.register("minecraft:the_void", ClimateDomain.NONE);
         ClimateDomainRegistry.register("minecraft:the_end", ClimateDomain.NONE);

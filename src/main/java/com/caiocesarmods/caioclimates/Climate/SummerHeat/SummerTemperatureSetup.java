@@ -20,10 +20,10 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "frozen_ocean"), 0.14F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "deep_frozen_ocean"), 0.14F);
 
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "frozen_river"), 0.14F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_tundra"), 0.14F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_mountains"), 0.14F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_beach"), 0.14F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "frozen_river"), 0.1F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_tundra"), 0.18F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_mountains"), 0.18F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_beach"), 0.18F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "ice_spikes"), 0.1F);
 
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "plains"), 0.92F);
@@ -45,12 +45,12 @@ public class SummerTemperatureSetup {
 
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "taiga"), 0.48F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "taiga_hills"), 0.48F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_taiga"), 0.14F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_taiga_hills"), 0.14F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_taiga"), 0.48F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_taiga_hills"), 0.48F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "giant_tree_taiga"), 0.48F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "giant_tree_taiga_hills"), 0.48F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "taiga_mountains"), 0.48F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_taiga_mountains"), 0.14F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "snowy_taiga_mountains"), 0.48F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "giant_spruce_taiga"), 0.48F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "giant_spruce_taiga_hills"), 0.48F);
 
@@ -90,12 +90,12 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "basalt_deltas"), 3.5F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "nether_wastes"), 4.0F);
 
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "badlands"), 1.0F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "wooded_badlands_plateau"), 1.0F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "badlands_plateau"), 1.0F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "eroded_badlands"), 1.0F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "modified_wooded_badlands_plateau"), 1.0F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "modified_badlands_plateau"), 1.0F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "badlands"), 0.9F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "wooded_badlands_plateau"), 0.9F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "badlands_plateau"), 0.9F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "eroded_badlands"), 0.9F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "modified_wooded_badlands_plateau"), 0.9F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "modified_badlands_plateau"), 0.9F);
 
         /// Caio César's Naturalistic Voyage
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "bamboo_subtropical_laurel_jungle"), 0.95F);

@@ -47,12 +47,12 @@ public class DroughtPatternRegistry {
         register("minecraft:jungle_edge", DroughtPattern.DRY_SUMMER);
         register("minecraft:modified_jungle_edge", DroughtPattern.DRY_SUMMER);
 
-        register("minecraft:badlands", DroughtPattern.ARID);
-        register("minecraft:wooded_badlands_plateau", DroughtPattern.SEMI_ARID);
+        register("minecraft:badlands", DroughtPattern.SEMI_ARID);
+        register("minecraft:wooded_badlands_plateau", DroughtPattern.DRY_SUMMER);
         register("minecraft:badlands_plateau", DroughtPattern.SEMI_ARID);
-        register("minecraft:eroded_badlands", DroughtPattern.ARID);
+        register("minecraft:eroded_badlands", DroughtPattern.SEMI_ARID);
         register("minecraft:modified_badlands_plateau", DroughtPattern.SEMI_ARID);
-        register("minecraft:modified_wooded_badlands_plateau", DroughtPattern.SEMI_ARID);
+        register("minecraft:modified_wooded_badlands_plateau", DroughtPattern.DRY_SUMMER);
 
         register("minecraft:frozen_river", DroughtPattern.SEMI_ARID);
         register("minecraft:snowy_tundra", DroughtPattern.SEMI_ARID);

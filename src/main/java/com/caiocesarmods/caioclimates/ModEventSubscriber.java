@@ -63,7 +63,7 @@ public class ModEventSubscriber {
 
             event.setClimate(new Biome.Climate(
                     Biome.RainType.NONE,     // rain type
-                    0.69f,                    // new temperature - hardiness zone 6
+                    0.59f,                    // new temperature - hardiness zone 5
                     Biome.TemperatureModifier.NONE,
                     0.0f                     // downfall
             ));
@@ -240,22 +240,57 @@ public class ModEventSubscriber {
                         0.0f));
             }
 
-            else if (path.contains("frozen")) {
-                System.out.println("[DEBUG] Overriding temperature for Icy Biome: " + id);
+            else if (path.contains("snowy")) {
+                System.out.println("[DEBUG] Overriding temperature for Snowy Biome: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.RAIN,
+                        0.12f,
+                        Biome.TemperatureModifier.NONE,
+                        0.3f));
+            }
+        }
+
+        if (event.getCategory() == Biome.Category.RIVER) {
+
+            ResourceLocation id = event.getName();
+            if (id == null) return;
+
+            String path = id.getPath();
+            String namespace = id.getNamespace();
+
+            // skip mod biomes
+            if (namespace.equals("caiocesarbiomes")) return;
+            if (namespace.equals("brbiomesmod")) return;
+
+            if (path.contains("frozen")) {
+                System.out.println("[DEBUG] Overriding temperature for Frozen River: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.NONE,
                         -0.5f,
                         Biome.TemperatureModifier.NONE,
                         0.0f));
             }
+        }
 
-            else if (path.contains("snowy")) {
-                System.out.println("[DEBUG] Overriding temperature for Snowy Biome: " + id);
+        if (event.getCategory() == Biome.Category.TAIGA) {
+
+            ResourceLocation id = event.getName();
+            if (id == null) return;
+
+            String path = id.getPath();
+            String namespace = id.getNamespace();
+
+            // skip mod biomes
+            if (namespace.equals("caiocesarbiomes")) return;
+            if (namespace.equals("brbiomesmod")) return;
+
+            if (path.contains("snowy")) {
+                System.out.println("[DEBUG] Overriding temperature for Snowy Taiga: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.NONE,
-                        0.12f,
+                        0.17f,
                         Biome.TemperatureModifier.NONE,
-                        0.3f));
+                        0.4f));
             }
         }
     }
