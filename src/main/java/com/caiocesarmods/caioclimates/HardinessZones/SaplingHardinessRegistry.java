@@ -91,11 +91,11 @@ public class SaplingHardinessRegistry {
         int zone = HardinessZones.getZone(world, pos);
 
         if (zone < range.getMinZone()) {
-            return "The winters here is too cold for this sapling.";
+            return "The winters here are too cold for this sapling.";
         }
 
         if (zone > range.getMaxZone()) {
-            return "The winters here is too hot for this sapling.";
+            return "The winters here are too hot for this sapling.";
         }
 
         // Summer heat

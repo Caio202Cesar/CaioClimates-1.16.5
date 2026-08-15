@@ -62,8 +62,8 @@ public enum DroughtPattern {
      */
     SEMI_ARID(
             // SPRING
-            0.10F,
-            0.08F,
+            0.3F,
+            0.02F,
             0.03F,
 
             // SUMMER
@@ -72,8 +72,8 @@ public enum DroughtPattern {
             0.02F,
 
             // FALL
-            0.15F,
-            0.30F,
+            0.5F,
+            0.10F,
             0.35F,
 
             // WINTER

@@ -37,7 +37,39 @@ public class FrostSmeltingHandler {
 
         /*
          * --------------------------------
-         * 2. SUNLIGHT
+         * 2. SEASON
+         * --------------------------------
+         */
+        String phase =
+                SeasonalPhase.getPhase(
+                        world.getDayTime()
+                );
+
+        boolean winter =
+                phase.equals("EARLY_WINTER")
+                        || phase.equals("MID_WINTER")
+                        || phase.equals("LATE_WINTER");
+
+        /*
+         * --------------------------------
+         * 3. WINTER COLD-CLIMATE RESTRICTION
+         * --------------------------------
+         *
+         * During winter, only climates
+         * warmer than 0.70F can melt ice.
+         *
+         * Therefore:
+         *
+         * <= 0.70F = ice remains frozen
+         * >  0.70F = melting is possible
+         */
+        if (winter && baseTemperature <= 0.64F) {
+            return false;
+        }
+
+        /*
+         * --------------------------------
+         * 4. SUNLIGHT
          * --------------------------------
          */
 
@@ -47,9 +79,6 @@ public class FrostSmeltingHandler {
         ) <= 11) {
             return false;
         }
-
-        float temperature =
-                biome.getTemperature(pos);
 
         /*
          * --------------------------------
@@ -62,18 +91,18 @@ public class FrostSmeltingHandler {
 
         float meltChance;
 
-        if (temperature >= 0.90F) {
+        if (baseTemperature >= 0.90F) {
 
             meltChance = 1.0F;
 
-        } else if (temperature <= 0.64F) {
+        } else if (baseTemperature <= 0.64F) {
 
             meltChance = 0.10F;
 
         } else {
 
             float normalized =
-                    (temperature - 0.64F) / 0.26F;
+                    (baseTemperature - 0.64F) / 0.26F;
 
             meltChance =
                     0.10F + normalized * 0.90F;
@@ -87,17 +116,7 @@ public class FrostSmeltingHandler {
          * Only warm climates get the
          * special winter melting behavior.
          */
-        String phase =
-                SeasonalPhase.getPhase(
-                        world.getDayTime()
-                );
-
-        boolean winter =
-                phase.equals("EARLY_WINTER")
-                        || phase.equals("MID_WINTER")
-                        || phase.equals("LATE_WINTER");
-
-        if (winter && baseTemperature > 0.70F) {
+        if (winter) {
 
             float winterSnowChance =
                     SnowfallHandler.getSnowChance(
@@ -108,10 +127,10 @@ public class FrostSmeltingHandler {
 
             /*
              * More winter snow =
-             * less ice melting.
+             * greater ice persistence.
              */
-            meltChance *= (1.0F
-                    - winterSnowChance * 0.75F);
+            meltChance *=
+                    (1.0F - winterSnowChance * 0.75F);
         }
 
         return random.nextFloat() < meltChance;

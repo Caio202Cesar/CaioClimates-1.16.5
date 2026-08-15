@@ -1,5 +1,8 @@
 package com.caiocesarmods.caioclimates.Climate.Drought;
 
+import com.caiocesarmods.caioclimates.Climate.ClimateDomain;
+import com.caiocesarmods.caioclimates.Climate.ClimateDomainRegistry;
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerTemperatureRegistry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 
@@ -50,6 +53,12 @@ public class DroughtPatternRegistry {
         register("minecraft:eroded_badlands", DroughtPattern.ARID);
         register("minecraft:modified_badlands_plateau", DroughtPattern.SEMI_ARID);
         register("minecraft:modified_wooded_badlands_plateau", DroughtPattern.SEMI_ARID);
+
+        register("minecraft:frozen_river", DroughtPattern.SEMI_ARID);
+        register("minecraft:snowy_tundra", DroughtPattern.SEMI_ARID);
+        register("minecraft:snowy_mountains", DroughtPattern.SEMI_ARID);
+        register("minecraft:snowy_beach", DroughtPattern.SEMI_ARID);
+        register("minecraft:ice_spikes", DroughtPattern.ARID);
 
         register("caiocesarbiomes:coastal_subtropical_desert", DroughtPattern.ARID);
         register("caiocesarbiomes:coastal_subtropical_desert_lomas", DroughtPattern.ARID);

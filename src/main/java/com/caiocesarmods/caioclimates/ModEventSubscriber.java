@@ -240,7 +240,7 @@ public class ModEventSubscriber {
                         0.0f));
             }
 
-            if (path.contains("frozen")) {
+            else if (path.contains("frozen")) {
                 System.out.println("[DEBUG] Overriding temperature for Icy Biome: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.NONE,
@@ -249,7 +249,7 @@ public class ModEventSubscriber {
                         0.0f));
             }
 
-            if (path.contains("snowy")) {
+            else if (path.contains("snowy")) {
                 System.out.println("[DEBUG] Overriding temperature for Snowy Biome: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.NONE,

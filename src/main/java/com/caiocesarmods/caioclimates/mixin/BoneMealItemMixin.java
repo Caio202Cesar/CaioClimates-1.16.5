@@ -18,9 +18,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class BoneMealItemMixin {
 
     @Inject(
-            method = "applyBonemeal*",
-            at = @At("HEAD")
-    )
+            method = "applyBonemeal(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/PlayerEntity;)Z",
+            at = @At("HEAD"),
+            cancellable = true,
+            remap = false
+
+            )
     private static void checkSaplingHardiness(
             ItemStack stack,
             World world,
@@ -50,6 +53,8 @@ public abstract class BoneMealItemMixin {
                     new StringTextComponent(message),
                     player.getUniqueID()
             );
+
+            cir.setReturnValue(false);
         }
     }
 }
