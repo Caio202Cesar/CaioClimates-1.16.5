@@ -1,6 +1,6 @@
 package com.caiocesarmods.caioclimates.mixin;
 
-import com.caiocesarmods.caioclimates.HardinessZones.SaplingHardinessRegistry;
+import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -38,11 +38,11 @@ public abstract class BoneMealItemMixin {
         BlockState state = world.getBlockState(pos);
         Block sapling = state.getBlock();
 
-        if (!SaplingHardinessRegistry.isRegistered(sapling)) {
+        if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
         }
 
-        String message = SaplingHardinessRegistry.getUnsuitableMessage(
+        String message = PlantClimateConditionsRegistry.getUnsuitableMessage(
                 sapling,
                 world,
                 pos

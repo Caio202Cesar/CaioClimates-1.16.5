@@ -11,7 +11,7 @@ import net.minecraft.world.biome.Biome;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SaplingHardinessRegistry {
+public class PlantClimateConditionsRegistry {
     private static final Map<Block, SaplingHardiness> RANGES = new HashMap<>();
     private static final Map<ResourceLocation, SaplingHardiness> MOD_RANGES = new HashMap<>();
 
@@ -54,6 +54,10 @@ public class SaplingHardinessRegistry {
 
         // Your custom saplings can also be registered
         // register(TreeBlocks.FIG_SAPLING.get(), 7, 10);
+    }
+
+    public static String getConditionsForPlant(ResourceLocation id) {
+        return RANGES.getOrDefault(id, SaplingHardiness);
     }
 
     public static boolean isRegistered(Block sapling) {

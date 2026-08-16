@@ -1,17 +1,14 @@
 package com.caiocesarmods.caioclimates.mixin;
 
-import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
-import com.caiocesarmods.caioclimates.HardinessZones.SaplingHardinessRegistry;
+import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -36,11 +33,11 @@ public abstract class SaplingBlockMixin {
     ) {
         Block sapling = state.getBlock();
 
-        if (!SaplingHardinessRegistry.isRegistered(sapling)) {
+        if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
         }
 
-        if (!SaplingHardinessRegistry.isSuitable(sapling, world, pos)) {
+        if (!PlantClimateConditionsRegistry.isSuitable(sapling, world, pos)) {
             ci.cancel();
         }
     }
@@ -59,7 +56,7 @@ public abstract class SaplingBlockMixin {
     ) {
         Block sapling = state.getBlock();
 
-        if (!SaplingHardinessRegistry.isRegistered(sapling)) {
+        if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
         }
 
@@ -70,7 +67,7 @@ public abstract class SaplingBlockMixin {
 
         World world = (World) worldIn;
 
-        if (!SaplingHardinessRegistry.isSuitable(sapling, world, pos)) {
+        if (!PlantClimateConditionsRegistry.isSuitable(sapling, world, pos)) {
             cir.setReturnValue(false);
         }
     }
@@ -89,11 +86,11 @@ public abstract class SaplingBlockMixin {
     ) {
         Block sapling = state.getBlock();
 
-        if (!SaplingHardinessRegistry.isRegistered(sapling)) {
+        if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
         }
 
-        if (!SaplingHardinessRegistry.isSuitable(sapling, world, pos)) {
+        if (!PlantClimateConditionsRegistry.isSuitable(sapling, world, pos)) {
             cir.setReturnValue(false);
         }
     }

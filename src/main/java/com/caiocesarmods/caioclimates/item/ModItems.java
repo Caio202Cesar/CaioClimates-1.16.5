@@ -12,7 +12,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, CaioClimates.MOD_ID);
 
-    public static final RegistryObject<Item> HARDINESS_ZONE_SCANNER = ITEMS.register("hardiness_zone_scanner",
+    public static final RegistryObject<Item> GARDENER_HELPER = ITEMS.register("gardener_helper",
             () -> new HardinessZoneScannerItem(new Item.Properties().group(ItemGroup.TOOLS)));
 
     public static void register(IEventBus eventBus) {

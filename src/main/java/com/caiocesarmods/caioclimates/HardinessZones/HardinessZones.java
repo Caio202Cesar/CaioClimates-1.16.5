@@ -1,12 +1,8 @@
 package com.caiocesarmods.caioclimates.HardinessZones;
 
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class HardinessZones {
     public static int getZone(World world, BlockPos pos) {
@@ -26,9 +22,5 @@ public class HardinessZones {
         if (baseTemp <= 0.89f) return 10; //Warmer Subtropical
         if (baseTemp <= 0.94f) return 11;//Border tropical
         return 12;//Tropical
-    }
-
-    public static String getZoneForSapling(ResourceLocation id) {
-        return SAPLING_ZONES.getOrDefault(id, "Unknown Zone");
     }
 }
