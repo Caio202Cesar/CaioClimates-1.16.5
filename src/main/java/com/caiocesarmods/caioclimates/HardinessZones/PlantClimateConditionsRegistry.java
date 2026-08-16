@@ -11,6 +11,7 @@ import net.minecraft.world.biome.Biome;
 import java.util.HashMap;
 import java.util.Map;
 
+//I'm not able to pitch up general java knowledge and turn it on complex things.
 public class PlantClimateConditionsRegistry {
     private static final Map<Block, SaplingHardiness> RANGES = new HashMap<>();
     private static final Map<ResourceLocation, SaplingHardiness> MOD_RANGES = new HashMap<>();
@@ -57,7 +58,7 @@ public class PlantClimateConditionsRegistry {
     }
 
     public static String getConditionsForPlant(ResourceLocation id) {
-        return RANGES.getOrDefault(id, SaplingHardiness);
+        return MOD_RANGES.getOrDefault(id, new SaplingHardiness(minZone, maxZone, minSummerHeat, maxSummerHeat, restrictedRainType));
     }
 
     public static boolean isRegistered(Block sapling) {
