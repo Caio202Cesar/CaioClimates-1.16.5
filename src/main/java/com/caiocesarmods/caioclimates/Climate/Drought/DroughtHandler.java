@@ -15,18 +15,12 @@ public class DroughtHandler {
 
     private static long lastDay = -1;
 
-
-    public static float getRainChance(
-            Biome biome,
-            World world
-    ) {
+    public static float getRainChance(Biome biome, World world) {
 
         DroughtPattern pattern =
                 DroughtPatternRegistry.get(biome);
 
-        /*
-         * Normal RAIN biomes.
-         */
+        //Normal RAIN biomes.
         if (pattern == null) {
             return biome.getPrecipitation()
                     == Biome.RainType.RAIN
@@ -34,24 +28,16 @@ public class DroughtHandler {
                     : 0.0F;
         }
 
-        SeasonalPhase phase =
-                SeasonalPhase.valueOf(
-                        SeasonalPhase.getPhase(
-                                world.getDayTime()
-                        )
-                );
+        SeasonalPhase phase = SeasonalPhase.valueOf(
+                SeasonalPhase.getPhase(world.getDayTime()));
 
         return pattern.getRainChance(phase);
     }
 
 
-    public static boolean shouldRain(
-            Biome biome,
-            World world
-    ) {
+    public static boolean shouldRain(Biome biome, World world) {
 
-        DroughtPattern pattern =
-                DroughtPatternRegistry.get(biome);
+        DroughtPattern pattern = DroughtPatternRegistry.get(biome);
 
         if (pattern == null) {
             return biome.getPrecipitation()
@@ -65,9 +51,7 @@ public class DroughtHandler {
             return false;
         }
 
-        /*
-         * Minecraft day.
-         */
+        //Minecraft day
         long currentDay =
                 world.getDayTime() / 24000L;
 
