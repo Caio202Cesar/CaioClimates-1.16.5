@@ -1,12 +1,16 @@
 package com.caiocesarmods.caioclimates.HardinessZones;
 
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +38,7 @@ public class PlantClimateConditionsRegistry {
         MOD_RANGES.put(plant, new SaplingHardiness(minZone, maxZone, minSummerHeat, maxSummerHeat, restrictedRainType));
     }
 
+    //How can I return these values in a mensage?
     static {
         // Vanilla saplings
         register(Blocks.OAK_SAPLING, 4, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
@@ -63,6 +68,13 @@ public class PlantClimateConditionsRegistry {
 
     public static boolean isRegistered(Block sapling) {
         return RANGES.containsKey(sapling);
+    }
+
+    private static void drawText(MatrixStack matrixStack, ITextComponent text, float x, float y, int color) {
+        mc.fontRenderer.drawString(
+                y,
+                0xFFFFFF
+        );
     }
 
     public static boolean isSuitable(Block sapling, World world, BlockPos pos) {
