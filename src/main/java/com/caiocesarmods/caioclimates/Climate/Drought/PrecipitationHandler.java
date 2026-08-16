@@ -7,29 +7,14 @@ import net.minecraft.world.biome.Biome;
 
 public class PrecipitationHandler {
 
-    public static Biome.RainType getPrecipitation(
-            Biome biome,
-            BlockPos pos,
-            World world
-    ) {
+    public static Biome.RainType getPrecipitation(Biome biome, BlockPos pos, World world) {
 
-        /*
-         * ====================================================
-         * GLOBAL WEATHER
-         * ====================================================
-         */
-
+        /// Global weather
         if (!world.isRaining()) {
             return Biome.RainType.NONE;
         }
 
-
-        /*
-         * ====================================================
-         * DROUGHT PATTERN
-         * ====================================================
-         */
-
+        /// Drought pattern
         DroughtPattern droughtPattern =
                 DroughtPatternRegistry.get(biome);
 
