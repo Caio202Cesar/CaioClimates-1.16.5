@@ -5,5 +5,7 @@
   "block.caioclimates.oak_branches": "Oak Branches",
   "block.caioclimates.dark_oak_fall_leaves": "Dark Oak Leaves",
   "block.caioclimates.dark_oak_branches": "Dark Oak Branches",
-  "block.caioclimates.acacia_branches": "Acacia Branches"
+  "block.caioclimates.acacia_branches": "Acacia Branches",
+
+  "tooltip.caioclimates.hardiness_scanner": "Press shift and right-click a sapling or vine with me to see a plant's climatic conditions."
 }

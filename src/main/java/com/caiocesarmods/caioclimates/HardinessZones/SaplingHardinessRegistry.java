@@ -3,26 +3,34 @@ package com.caiocesarmods.caioclimates.HardinessZones;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class SaplingHardinessRegistry {
     private static final Map<Block, SaplingHardiness> RANGES = new HashMap<>();
+    private static final Map<ResourceLocation, SaplingHardiness> MOD_RANGES = new HashMap<>();
 
-    public static void register(Block sapling, int minZone, int maxZone,
+    public static void register(Block sapling,
+                                int minZone,
+                                int maxZone,
                                 SummerHeat minSummerHeat,
                                 SummerHeat maxSummerHeat,
                                 Biome.RainType restrictedRainType) {
-        RANGES.put(sapling, new SaplingHardiness(
-                minZone, maxZone,
-                minSummerHeat,
-                maxSummerHeat,
-                restrictedRainType));
+        RANGES.put(sapling, new SaplingHardiness(minZone, maxZone, minSummerHeat, maxSummerHeat, restrictedRainType));
+    }
+
+    public static void registerModPlants(ResourceLocation plant,
+                                int minZone,
+                                int maxZone,
+                                SummerHeat minSummerHeat,
+                                SummerHeat maxSummerHeat,
+                                Biome.RainType restrictedRainType) {
+        MOD_RANGES.put(plant, new SaplingHardiness(minZone, maxZone, minSummerHeat, maxSummerHeat, restrictedRainType));
     }
 
     static {
@@ -33,6 +41,16 @@ public class SaplingHardinessRegistry {
         register(Blocks.JUNGLE_SAPLING, 11, 12, SummerHeat.WARM, SummerHeat.VERY_HOT, Biome.RainType.NONE); //Max zone 11 because of cacao
         register(Blocks.ACACIA_SAPLING, 9, 12, SummerHeat.MILD, SummerHeat.SCORCHING, Biome.RainType.RAIN);
         register(Blocks.DARK_OAK_SAPLING, 4, 9, SummerHeat.MILD, SummerHeat.VERY_HOT, Biome.RainType.NONE);
+
+        // Your custom saplings can also be registered
+        // register(TreeBlocks.FIG_SAPLING.get(), 7, 10);
+    }
+
+    static {
+        // Caio Cesar's Biomes
+        registerModPlants(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),
+                4, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
+
 
         // Your custom saplings can also be registered
         // register(TreeBlocks.FIG_SAPLING.get(), 7, 10);

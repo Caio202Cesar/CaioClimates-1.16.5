@@ -28,8 +28,6 @@ public class HardinessZones {
         return 12;//Tropical
     }
 
-    private static final Map<ResourceLocation, String> SAPLING_ZONES = new HashMap<>();
-
     public static String getZoneForSapling(ResourceLocation id) {
         return SAPLING_ZONES.getOrDefault(id, "Unknown Zone");
     }

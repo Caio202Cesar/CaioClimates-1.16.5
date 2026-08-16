@@ -1,0 +1,11 @@
+{
+  "block.caioclimates.birch_fall_leaves": "Folhas de bétula",
+  "block.caioclimates.birch_branches": "Galhos de bétula",
+  "block.caioclimates.oak_fall_leaves": "Folhas de carvalho",
+  "block.caioclimates.oak_branches": "Galhos de carvalho",
+  "block.caioclimates.dark_oak_fall_leaves": "Folhas de carvalho-escuro",
+  "block.caioclimates.dark_oak_branches": "Galhos de carvalho-escuro",
+  "block.caioclimates.acacia_branches": "Galhos de acácia",
+
+  "tooltip.caioclimates.hardiness_scanner": "Segure shift e clique numa muda ou trepadeira para ver suas condições climáticas de cultivo."
+}

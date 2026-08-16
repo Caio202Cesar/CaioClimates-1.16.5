@@ -1,8 +1,8 @@
 package com.caiocesarmods.caioclimates.block;
 
 import com.caiocesarmods.caioclimates.CaioClimates;
-import com.caiocesarmods.caioclimates.ModItems;
 import com.caiocesarmods.caioclimates.block.SeasonalLeaves.*;
+import com.caiocesarmods.caioclimates.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
