@@ -1,6 +1,7 @@
 package com.caiocesarmods.caioclimates.item;
 
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.VineBlock;
@@ -53,9 +54,10 @@ public class HardinessZoneScannerItem extends Item {
                         state.getBlock() instanceof VineBlock) {
 
                     ResourceLocation id = state.getBlock().getRegistryName();
+                    Block sapling = state.getBlock();
 
                     if (id != null) {
-                        String conditions = PlantClimateConditionsRegistry.getConditionsForPlant(id);
+                        String conditions = PlantClimateConditionsRegistry.getConditionsForPlant(sapling, world, pos);
 
                         player.sendMessage(
                                 new StringTextComponent("§aScanned Plant Climate Conditions: §e" + conditions),

@@ -42,11 +42,7 @@ public abstract class BoneMealItemMixin {
             return;
         }
 
-        String message = PlantClimateConditionsRegistry.getUnsuitableMessage(
-                sapling,
-                world,
-                pos
-        );
+        String message = PlantClimateConditionsRegistry.getUnsuitableMessage(sapling, world, pos);
 
         if (message != null) {
             player.sendMessage(

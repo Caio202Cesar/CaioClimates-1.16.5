@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "DED",
+    "CAC"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "E": {
+      "item": "minecraft:dandelion"
+    },
+    "D": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "item": "caioclimates:gardener_helper",
+    "count": 1
+  }
+}
