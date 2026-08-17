@@ -4,6 +4,7 @@ import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegis
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public abstract class SaplingBlockMixin {
             Random random,
             CallbackInfo ci
     ) {
-        Block sapling = state.getBlock();
+        ResourceLocation sapling = state.getBlock().getRegistryName();
 
         if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
@@ -54,7 +55,7 @@ public abstract class SaplingBlockMixin {
             boolean isClient,
             CallbackInfoReturnable<Boolean> cir
     ) {
-        Block sapling = state.getBlock();
+        ResourceLocation sapling = state.getBlock().getRegistryName();
 
         if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
@@ -84,7 +85,7 @@ public abstract class SaplingBlockMixin {
             BlockState state,
             CallbackInfoReturnable<Boolean> cir
     ) {
-        Block sapling = state.getBlock();
+        ResourceLocation sapling = state.getBlock().getRegistryName();
 
         if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;

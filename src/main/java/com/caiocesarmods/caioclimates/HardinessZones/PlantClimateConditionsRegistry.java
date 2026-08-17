@@ -1,16 +1,10 @@
 package com.caiocesarmods.caioclimates.HardinessZones;
 
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -107,7 +101,7 @@ public class PlantClimateConditionsRegistry {
         return RANGES.containsKey(sapling);
     }
 
-    public static boolean isSuitable(Block sapling, World world, BlockPos pos) {
+    public static boolean isSuitable(ResourceLocation sapling, World world, BlockPos pos) {
         SaplingHardiness range = RANGES.get(sapling);
 
         if (range == null) {
@@ -143,7 +137,7 @@ public class PlantClimateConditionsRegistry {
         return true;
     }
 
-    public static String getUnsuitableMessage(Block sapling, World world, BlockPos pos) {
+    public static String getUnsuitableMessage(ResourceLocation sapling, World world, BlockPos pos) {
         SaplingHardiness range = RANGES.get(sapling);
 
         if (range == null) {

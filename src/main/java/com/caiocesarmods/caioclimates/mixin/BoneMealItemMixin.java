@@ -37,7 +37,7 @@ public abstract class BoneMealItemMixin {
         }
 
         BlockState state = world.getBlockState(pos);
-        ResourceLocation sapling = state.getBlock();
+        ResourceLocation sapling = state.getBlock().getRegistryName();
 
         if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
