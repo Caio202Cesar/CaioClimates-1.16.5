@@ -54,10 +54,9 @@ public class HardinessZoneScannerItem extends Item {
                         state.getBlock() instanceof VineBlock) {
 
                     ResourceLocation id = state.getBlock().getRegistryName();
-                    Block sapling = state.getBlock();
 
                     if (id != null) {
-                        String conditions = PlantClimateConditionsRegistry.getConditionsForPlant(sapling, world, pos);
+                        String conditions = PlantClimateConditionsRegistry.getConditionsForPlant(id, world, pos);
 
                         player.sendMessage(
                                 new StringTextComponent("§aScanned Plant Climate Conditions: §e" + conditions),

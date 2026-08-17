@@ -51,7 +51,7 @@ public class PlantClimateConditionsRegistry {
 
     }
 
-    public static String getConditionsForPlant(Block sapling, World world, BlockPos pos) {
+    public static String getConditionsForPlant(ResourceLocation sapling, World world, BlockPos pos) {
         SaplingHardiness range = RANGES.get(sapling);
 
         if (range == null) {
@@ -103,7 +103,7 @@ public class PlantClimateConditionsRegistry {
         return null;
     }
 
-    public static boolean isRegistered(Block sapling) {
+    public static boolean isRegistered(ResourceLocation sapling) {
         return RANGES.containsKey(sapling);
     }
 

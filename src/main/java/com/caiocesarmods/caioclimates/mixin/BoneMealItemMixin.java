@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
@@ -36,7 +37,7 @@ public abstract class BoneMealItemMixin {
         }
 
         BlockState state = world.getBlockState(pos);
-        Block sapling = state.getBlock();
+        ResourceLocation sapling = state.getBlock();
 
         if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
