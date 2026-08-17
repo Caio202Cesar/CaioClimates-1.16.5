@@ -10,7 +10,8 @@ public enum SummerHeat {
     WARM(0.7F, 0.8F),
     HOT(0.8F, 0.9F),
     VERY_HOT(0.9F, 1.0F),
-    SCORCHING(1.0F, Float.POSITIVE_INFINITY);
+    SCORCHING(1.0F, 2.0F),
+    UNBEARABLE(2.0F, Float.POSITIVE_INFINITY);
 
     private final float min;
     private final float max;

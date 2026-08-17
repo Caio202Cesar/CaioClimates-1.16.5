@@ -1,6 +1,7 @@
 package com.caiocesarmods.caioclimates.HardinessZones;
 
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,75 +27,30 @@ public class PlantClimateConditionsRegistry {
     static {
         // Vanilla saplings
         register(new ResourceLocation("minecraft", "oak_sapling"),
-                4, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
+                4, 10, SummerHeat.COOLER, SummerHeat.SCORCHING, null);
         register(new ResourceLocation("minecraft", "spruce_sapling"),
-                1, 7, SummerHeat.COOLER, SummerHeat.WARM, null);
+                1, 7, SummerHeat.TUNDRA_COLD, SummerHeat.HOT, null);
         register(new ResourceLocation("minecraft", "birch_sapling"),
-                2, 8, SummerHeat.COOLER, SummerHeat.WARM, null);
+                2, 8, SummerHeat.TUNDRA_COLD, SummerHeat.HOT, null);
         register(new ResourceLocation("minecraft", "jungle_sapling"),
-                11, 12, SummerHeat.WARM, SummerHeat.VERY_HOT, Biome.RainType.NONE); //Max zone 11 because of cacao
+                11, 12, SummerHeat.MILD, SummerHeat.SCORCHING, Biome.RainType.NONE); //Max zone 11 because of cacao
         register(new ResourceLocation("minecraft", "acacia_sapling"),
-                9, 12, SummerHeat.MILD, SummerHeat.SCORCHING, Biome.RainType.RAIN);
+                9, 12, SummerHeat.COOLER, SummerHeat.UNBEARABLE, Biome.RainType.RAIN);
         register(new ResourceLocation("minecraft", "dark_oak_sapling"),
-                4, 9, SummerHeat.MILD, SummerHeat.VERY_HOT, Biome.RainType.NONE);
+                4, 9, SummerHeat.COOLER, SummerHeat.SCORCHING, Biome.RainType.NONE);
 
         // register(TreeBlocks.FIG_SAPLING.get(), 7, 10);
         // Caio Cesar's Biomes
         register(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),
-                4, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
+                9, 12, SummerHeat.WARM, SummerHeat.UNBEARABLE, null);
 
     }
 
-    public static String getConditionsForPlant(ResourceLocation sapling, World world, BlockPos pos) {
+    public static String getConditionsForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
 
-        if (range == null) {
-            return null;
-        }
+        return "Minimum Hardiness Zone:" + (range.getMinZone());
 
-        Biome biome = world.getBiome(pos);
-
-        // Hardiness zone
-        int zone = HardinessZones.getZone(world, pos);
-
-        if (zone < range.getMinZone()) {
-            return "The winters here are too cold for this sapling.";
-        }
-
-        if (zone > range.getMaxZone()) {
-            return "The winters here are too hot for this sapling.";
-        }
-
-        // Summer heat
-        SummerHeat summerHeat = SummerHeat.fromTemperature(
-                biome.getTemperature(pos)
-        );
-
-        if (range.getMinSummerHeat() != null
-                && summerHeat.ordinal() < range.getMinSummerHeat().ordinal()) {
-            return "The summers here are too cold for this sapling.";
-        }
-
-        if (range.getMaxSummerHeat() != null
-                && summerHeat.ordinal() > range.getMaxSummerHeat().ordinal()) {
-            return "The summers here are too hot for this sapling.";
-        }
-
-        // RainType
-        Biome.RainType rainType = biome.getPrecipitation();
-
-        if (range.getRestrictedRainType() == rainType) {
-
-            if (rainType == Biome.RainType.NONE) {
-                return "This biome is too dry for this sapling.";
-            }
-
-            if (rainType == Biome.RainType.RAIN) {
-                return "This biome is too wet for this sapling.";
-            }
-        }
-
-        return null;
     }
 
     public static boolean isRegistered(ResourceLocation sapling) {

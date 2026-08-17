@@ -3,8 +3,6 @@ package com.caiocesarmods.caioclimates.HardinessZones;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import net.minecraft.world.biome.Biome;
 
-import java.util.Set;
-
 public class SaplingHardiness {
     private final int minZone;
     private final int maxZone;
@@ -31,17 +29,11 @@ public class SaplingHardiness {
         return zone >= minZone && zone <= maxZone;
     }
 
-    public int getMinZone() {
-        return minZone;
-    }
+    public int getMinZone() {return minZone;}
 
-    public int getMaxZone() {
-        return maxZone;
-    }
+    public int getMaxZone() {return maxZone;}
 
-    public SummerHeat getMinSummerHeat() {
-        return minSummerHeat;
-    }
+    public SummerHeat getMinSummerHeat() {return minSummerHeat;}
 
     public SummerHeat getMaxSummerHeat() {
         return maxSummerHeat;
