@@ -79,10 +79,10 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "dark_forest"), 0.78F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "dark_forest_hills"), 0.78F);
 
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "savanna"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "savanna_plateau"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "shattered_savanna"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "shattered_savanna_plateau"), 0.95F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "savanna"), 0.98F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "savanna_plateau"), 0.98F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "shattered_savanna"), 0.98F);
+        SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "shattered_savanna_plateau"), 0.98F);
 
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "soul_sand_valley"), 4.0F);
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "crimson_forest"), 3.0F);
@@ -194,9 +194,9 @@ public class SummerTemperatureSetup {
 
         SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "caatinga_shrubland"), 1.2F);
 
-        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "cerrado"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "dunas_restinga"), 1.0F);
-        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "restinga_beach"), 1.0F);
+        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "cerrado"), 0.98F);
+        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "dunas_restinga"), 0.98F);
+        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "restinga_beach"), 0.98F);
 
         SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "butia_pampas"), 0.85F);
         SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "pampas_hills"), 0.9F);
@@ -205,8 +205,8 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "pampas_river"), 0.83F);
         SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "pampas_beach"), 0.83F);
 
-        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "pantanal"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "cocal_forest"), 0.95F);
+        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "pantanal"), 0.98F);
+        SummerTemperatureRegistry.register(new ResourceLocation("brbiomesmod", "cocal_forest"), 0.98F);
 
         System.out.println("After: " + SummerTemperatureRegistry.size());
 

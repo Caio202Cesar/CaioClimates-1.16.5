@@ -14,7 +14,9 @@
     "SeasonalLeavesRandomTickMixin",
     "DefaultBiomeFeaturesMixin",
     "SaplingBlockMixin",
-    "BoneMealItemMixin"
+    "BoneMealItemMixin",
+    "BambooSaplingBlockMixin"
+
   ],
   "client": [],
   "server": [],
