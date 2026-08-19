@@ -27,12 +27,15 @@ public class BiomeClimateHUD {
         BlockPos pos = player.getPosition();
         Biome biome = world.getBiome(pos);
 
+
         String season = Season.getSeason(dayTime);
         ClimateDomain climate = ClimateDomainRegistry.get(world, pos);
 
         SummerHeat summerHeat = SummerHeat.fromTemperature(
                 SummerHeatHelper.get(world, pos)
         );
+
+        Biome.RainType rainType = biome.getPrecipitation();
 
         float baseTemp = biome.getTemperature(pos);
         float downfall = biome.getDownfall();
@@ -52,6 +55,9 @@ public class BiomeClimateHUD {
         y += lineHeight;
 
         drawText(mc, event, String.format("Downfall: %.2f", downfall), 10, y);
+        y += lineHeight;
+
+        drawText(mc, event, "Biome Rain Type: " + rainType, 10, y);
         y += lineHeight;
 
         drawText(mc, event, "Global Season: " + season, 10, y);

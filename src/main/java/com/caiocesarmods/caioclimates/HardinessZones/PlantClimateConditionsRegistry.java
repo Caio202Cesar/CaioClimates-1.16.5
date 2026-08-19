@@ -48,11 +48,29 @@ public class PlantClimateConditionsRegistry {
 
     }
 
-    public static String getConditionsForPlant(ResourceLocation sapling) {
+    public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
+        return range.getMinZone();
+    }
 
-        return "Minimum Hardiness Zone:" + (range.getMinZone());
+    public static int getMaxWinterHardinessForPlant(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getMaxZone();
+    }
 
+    public static SummerHeat getMinSummerHeatForPlant(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getMinSummerHeat();
+    }
+
+    public static SummerHeat getMaxSummerHeatForPlant(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getMaxSummerHeat();
+    }
+
+    public static Biome.RainType getWrongRainTypeForPlant(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getRestrictedRainType();
     }
 
     public static boolean isRegistered(ResourceLocation sapling) {

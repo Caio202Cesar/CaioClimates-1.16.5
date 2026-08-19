@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates.item;
 
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,6 +19,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -56,10 +58,20 @@ public class HardinessZoneScannerItem extends Item {
                     ResourceLocation id = state.getBlock().getRegistryName();
 
                     if (id != null) {
-                        String conditions = PlantClimateConditionsRegistry.getConditionsForPlant(id);
+                        int minWinterZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(id);
+                        int maxWinterZone = PlantClimateConditionsRegistry.getMaxWinterHardinessForPlant(id);
+
+                        SummerHeat maxSummerTemperature = PlantClimateConditionsRegistry.getMaxSummerHeatForPlant(id);
+                        SummerHeat minSummerTemperature = PlantClimateConditionsRegistry.getMinSummerHeatForPlant(id);
+
+                        Biome.RainType unsuitableBaseRainType = PlantClimateConditionsRegistry.getWrongRainTypeForPlant(id);
 
                         player.sendMessage(
-                                new StringTextComponent("§aScanned Plant Climate Conditions: §e" + conditions),
+                                new StringTextComponent("§aMinimum Winter Zone: §e" + minWinterZone +
+                                        "\n§aMaximum Winter Zone: §e" + maxWinterZone +
+                                        "\n§aMinimum Summer Temperature: §e" + minSummerTemperature +
+                                        "\n§aMaximum Summer Temperature: §e" + maxSummerTemperature +
+                                        "\n§aUnsuitable Biome Rain Type: §e" + unsuitableBaseRainType),
                                 player.getUniqueID()
                         );
 

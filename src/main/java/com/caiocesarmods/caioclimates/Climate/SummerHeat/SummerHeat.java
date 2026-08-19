@@ -1,8 +1,6 @@
 package com.caiocesarmods.caioclimates.Climate.SummerHeat;
 
-import net.minecraft.util.IStringSerializable;
-
-public enum SummerHeat implements IStringSerializable {
+public enum SummerHeat {
 
     ABSENT(Float.NEGATIVE_INFINITY, -0.10F),
     ICY( -0.10F, 0.15F),
@@ -34,11 +32,6 @@ public enum SummerHeat implements IStringSerializable {
             }
         }
         return WARM;
-    }
-
-    @Override
-    public String getString() {
-        return "";
     }
 }
 
