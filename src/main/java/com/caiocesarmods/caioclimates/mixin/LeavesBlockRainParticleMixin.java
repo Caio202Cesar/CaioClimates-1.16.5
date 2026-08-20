@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtHandler;
 import com.caiocesarmods.caioclimates.Climate.Winter.SnowfallHandler;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.util.math.BlockPos;
@@ -31,6 +32,10 @@ public abstract class LeavesBlockRainParticleMixin {
 
         if (SnowfallHandler.shouldSnow(biome, pos, world)) {
             return false;
+        }
+
+        if (DroughtHandler.shouldRain(biome, world)) {
+            return true;
         }
 
         return world.isRainingAt(pos);
