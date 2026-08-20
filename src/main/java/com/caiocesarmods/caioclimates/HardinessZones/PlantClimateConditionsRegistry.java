@@ -42,12 +42,13 @@ public class PlantClimateConditionsRegistry {
                 4, 12, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
 
         // Caio Cesar's Biomes saplings
+        /*
         register(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),
                 4, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
         register(new ResourceLocation("caiocesarbiomes", "agathis_sapling"),
                 8, 12, SummerHeat.MILD, SummerHeat.VERY_HOT, Biome.RainType.NONE);
         register(new ResourceLocation("caiocesarbiomes", "almond_sapling"),
-                5, 10, SummerHeat.WARM, SummerHeat.SCORCHING, Biome.RainType.RAIN);
+                5, 10, SummerHeat.WARM, SummerHeat.SCORCHING, Biome.RainType.RAIN);*/
 
     }
 
