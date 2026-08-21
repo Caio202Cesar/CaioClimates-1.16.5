@@ -1,8 +1,11 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
-import net.minecraft.block.Block;
+import com.caiocesarmods.caioclimates.HardinessZones.SaplingHardiness;
+import com.caiocesarmods.caioclimates.Seasons.Season;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +35,13 @@ public abstract class SaplingBlockMixin {
             Random random,
             CallbackInfo ci
     ) {
+
         ResourceLocation sapling = state.getBlock().getRegistryName();
+        String currentSeason = Season.getSeason(world.getDayTime());
+
+        int zone = HardinessZones.getZone(world, pos);
+        int minZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(sapling);
+        boolean tooColdWinter = zone < minZone;
 
         if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
@@ -40,6 +49,11 @@ public abstract class SaplingBlockMixin {
 
         if (!PlantClimateConditionsRegistry.isSuitable(sapling, world, pos)) {
             ci.cancel();
+        }
+
+        //Sapling kill by frost
+        if ("WINTER".equals(currentSeason) && tooColdWinter && random.nextInt(3) == 0) {
+            world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
         }
     }
 
