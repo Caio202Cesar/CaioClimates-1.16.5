@@ -35,7 +35,9 @@ public abstract class LeavesBlockRainParticleMixin {
         }
 
         if (DroughtHandler.shouldRain(biome, world)) {
-            return true;
+            if (world.isRaining()) {
+                return true;
+            }
         }
 
         return world.isRainingAt(pos);

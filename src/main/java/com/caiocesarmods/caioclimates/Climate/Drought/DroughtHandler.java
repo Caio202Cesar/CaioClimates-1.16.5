@@ -2,6 +2,7 @@ package com.caiocesarmods.caioclimates.Climate.Drought;
 
 import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 

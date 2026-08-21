@@ -6,20 +6,20 @@ public enum DroughtPattern {
 
     /*
     //Am Koopen
-    TROPICAL_FOREST_DROUGHT(
+    TROPICAL_RAINFOREST_DROUGHT(
             // SPRING
-            0.95F,  // EARLY_SPRING
-            0.87F,  // MID_SPRING
+            1.00F,  // EARLY_SPRING
+            0.97F,  // MID_SPRING
             0.75F,  // LATE_SPRING
 
             // SUMMER
-            0.02F,  // EARLY_SUMMER
-            0.01F,  // MID_SUMMER
-            0.02F,  // LATE_SUMMER
+            0.32F,  // EARLY_SUMMER
+            0.21F,  // MID_SUMMER
+            0.42F,  // LATE_SUMMER
 
             // FALL
-            0.65F,  // EARLY_FALL
-            0.85F,  // MID_FALL
+            0.85F,  // EARLY_FALL
+            1.00F,  // MID_FALL
             1.00F,  // LATE_FALL
 
             // WINTER
