@@ -4,8 +4,7 @@ import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 
 public enum DroughtPattern {
 
-    /*
-    //Am Koopen
+    //Similar to Koopen's Am climate
     TROPICAL_RAINFOREST_DROUGHT(
             // SPRING
             1.00F,  // EARLY_SPRING
@@ -13,13 +12,13 @@ public enum DroughtPattern {
             0.75F,  // LATE_SPRING
 
             // SUMMER
-            0.32F,  // EARLY_SUMMER
-            0.21F,  // MID_SUMMER
-            0.42F,  // LATE_SUMMER
+            0.10F,  // EARLY_SUMMER
+            0.05F,  // MID_SUMMER
+            0.15F,  // LATE_SUMMER
 
             // FALL
             0.85F,  // EARLY_FALL
-            1.00F,  // MID_FALL
+            0.99F,  // MID_FALL
             1.00F,  // LATE_FALL
 
             // WINTER
@@ -27,16 +26,12 @@ public enum DroughtPattern {
             1.00F,  // MID_WINTER
             1.00F   // LATE_WINTER
     ),
-    /*
-     * Mediterranean / tropical wet-dry climate.
-     *
-     * Dry summer, progressively wetter fall,
-     * wet winter, then progressively drying spring.
-     */
+
+    //Mediterranean/tropical wet-dry climate
     DRY_SUMMER(
             // SPRING
-            0.65F,  // EARLY_SPRING
-            0.27F,  // MID_SPRING
+            0.75F,  // EARLY_SPRING
+            0.20F,  // MID_SPRING
             0.05F,  // LATE_SPRING
 
             // SUMMER
@@ -45,21 +40,17 @@ public enum DroughtPattern {
             0.02F,  // LATE_SUMMER
 
             // FALL
-            0.20F,  // EARLY_FALL
-            0.75F,  // MID_FALL
+            0.27F,  // EARLY_FALL
+            0.85F,  // MID_FALL
             0.90F,  // LATE_FALL
 
             // WINTER
-            0.92F,  // EARLY_WINTER
+            1.00F,  // EARLY_WINTER
             1.00F,  // MID_WINTER
-            0.81F   // LATE_WINTER
+            1.00F   // LATE_WINTER
     ),
 
-    /*
-     * Semi-arid climate.
-     *
-     * Rain is possible, but considerably less frequent.
-     */
+    //Semi-arid climate
     SEMI_ARID(
             // SPRING
             0.3F,
@@ -82,11 +73,7 @@ public enum DroughtPattern {
             0.25F
     ),
 
-    /*
-     * Arid climate.
-     *
-     * Rain is extremely rare throughout the year.
-     */
+    //Arid climate.
     ARID(
             // SPRING
             0.01F,

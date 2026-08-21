@@ -172,6 +172,7 @@ public class ClimateSetup {
 
         ClimateDomainRegistry.register("caiocesarbiomes:japanese_maple_grove", ClimateDomain.HEMIBOREAL_CONTINENTAL);
 
+        //The Valdivian Decidous Forest biome has a rainforest drought climate.
         ClimateDomainRegistry.register("caiocesarbiomes:pewen_coniferous_grove", ClimateDomain.HUMID_SUBTROPICAL_OCEANIC_MONTANE);
         ClimateDomainRegistry.register("caiocesarbiomes:valdivian_temperate_rainforest", ClimateDomain.HUMID_SUBTROPICAL_OCEANIC);
         ClimateDomainRegistry.register("caiocesarbiomes:valdivian_colun_beach", ClimateDomain.HUMID_SUBTROPICAL_OCEANIC);
@@ -195,8 +196,8 @@ public class ClimateSetup {
         /// Brazillian Biomes
         ClimateDomainRegistry.register("brbiomesmod:amazon_rainforest", ClimateDomain.TROPICAL_FOREST);
         ClimateDomainRegistry.register("brbiomesmod:amazon_varzea_forest", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("brbiomesmod:amazon_rainforest_edge", ClimateDomain.TROPICAL_SAVANNA);
         ClimateDomainRegistry.register("brbiomesmod:black_amazon_river", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("brbiomesmod:amazon_rainforest_edge", ClimateDomain.TROPICAL_SAVANNA);
 
         ClimateDomainRegistry.register("brbiomesmod:araucaria_plateau", ClimateDomain.HUMID_SUBTROPICAL_HIGHLAND);
 
