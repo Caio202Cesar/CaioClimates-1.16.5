@@ -3,6 +3,7 @@ package com.caiocesarmods.caioclimates.HardinessZones.PlantProtection;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.block.VineBlock;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
@@ -33,6 +34,32 @@ public class PlantShelteringHandler {
     /// (radius 2 → 5x5 small green house)
     /// (radius 3 → 7x7 medium green house)
     /// (radius 4 → 9x9 large green house)
+
+    //1x1 glass protection (ideal for plants and vines)
+    private boolean isUnderGlass1x1(ServerWorld world, BlockPos pos) {
+
+        BlockPos.Mutable checkPos = new BlockPos.Mutable(pos.getX(), pos.getY() + 1, pos.getZ());
+
+        while (checkPos.getY() < world.getHeight()) {
+
+            BlockState stateAbove = world.getBlockState(checkPos);
+
+            if (stateAbove.isAir() || stateAbove.getBlock() instanceof VineBlock) {
+                checkPos.move(Direction.UP);
+                continue;
+            }
+
+            // If this block is glass → protected
+            if (stateAbove.getMaterial() == Material.GLASS) {
+                return true;
+            }
+
+            // Any other solid block blocks protection
+            return false;
+        }
+
+        return false;
+    }
 
     //2x2 glass protection
     private boolean isUnderGlass5x5(ServerWorld world, BlockPos pos) {
