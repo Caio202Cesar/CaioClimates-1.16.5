@@ -65,6 +65,9 @@ public class PlantClimateConditionsRegistry {
 
         register(new ResourceLocation("caiocesarbiomes", "avocado_sapling"),
                 8, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+
+        register(new ResourceLocation("caiocesarbiomes", "bald_cypress_sapling"),
+                4, 11, 5, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
