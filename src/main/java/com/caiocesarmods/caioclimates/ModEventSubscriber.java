@@ -293,5 +293,37 @@ public class ModEventSubscriber {
                         0.4f));
             }
         }
+
+        if (event.getCategory() == Biome.Category.BEACH) {
+
+            ResourceLocation id = event.getName();
+            if (id == null) return;
+
+            String path = id.getPath();
+            String namespace = id.getNamespace();
+
+            // skip mod biomes
+            if (namespace.equals("caiocesarbiomes")) return;
+            if (namespace.equals("brbiomesmod")) return;
+
+            if (path.contains("snowy")) {
+                System.out.println("[DEBUG] Overriding temperature for Snowy Taiga: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.NONE,
+                        0.17f,
+                        Biome.TemperatureModifier.NONE,
+                        0.4f));
+            }
+
+            else {// If reached, apply override
+                System.out.println("[DEBUG] Overriding temperature for Beach: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.RAIN,
+                        0.74f,                          // hardiness zone 7
+                        Biome.TemperatureModifier.NONE,
+                        0.8f
+                ));
+            }
+        }
     }
 }
