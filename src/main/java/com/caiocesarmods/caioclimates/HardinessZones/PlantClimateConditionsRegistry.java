@@ -30,41 +30,41 @@ public class PlantClimateConditionsRegistry {
 
         // Vanilla saplings
         register(new ResourceLocation("minecraft", "oak_sapling"),
-                4, 10, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+                3, 10, 5, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
         register(new ResourceLocation("minecraft", "spruce_sapling"),
                 1, 7, 1, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
         register(new ResourceLocation("minecraft", "birch_sapling"),
-                2, 8, 2, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
+                2, 8, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
         register(new ResourceLocation("minecraft", "jungle_sapling"),
                 11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE); //Max zone 11 because of cacao
         register(new ResourceLocation("minecraft", "acacia_sapling"),
                 9, 12, 10, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
         register(new ResourceLocation("minecraft", "dark_oak_sapling"),
-                4, 9, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                3, 9, 5, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
         register(new ResourceLocation("minecraft", "bamboo_sapling"),
-                4, 12, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, null);
+                4, 12, 7, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, null);
 
         // Caio Cesar's Biomes saplings
         register(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),
                 9, 12, 10, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
 
         register(new ResourceLocation("caiocesarbiomes", "agathis_sapling"),
-                8, 12, SummerHeat.MILD, SummerHeat.VERY_HOT, Biome.RainType.NONE);
+                8, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
         register(new ResourceLocation("caiocesarbiomes", "aleppo_pine_sapling"),
-                8, 10, SummerHeat.HOT, SummerHeat.SCORCHING, Biome.RainType.RAIN);
+                8, 10, 8, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
 
         register(new ResourceLocation("caiocesarbiomes", "almond_sapling"),
-                5, 10, SummerHeat.WARM, SummerHeat.SCORCHING, Biome.RainType.RAIN);
+                5, 10, 8, SummerHeat.WARM, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, Biome.RainType.RAIN);
 
         register(new ResourceLocation("caiocesarbiomes", "apple_sapling"),
-                2, 10, SummerHeat.COOLER, SummerHeat.SCORCHING, null);
+                2, 10, 7, SummerHeat.COOLER, SummerHeat.SCORCHING, SummerHeat.HOT, null);
 
         register(new ResourceLocation("caiocesarbiomes", "aspen_sapling"),
-                2, 7, SummerHeat.COOLER, SummerHeat.WARM, null);
+                2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
 
         register(new ResourceLocation("caiocesarbiomes", "avocado_sapling"),
-                8, 12, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
+                8, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
