@@ -60,17 +60,21 @@ public class HardinessZoneScannerItem extends Item {
                     if (id != null) {
                         int minWinterZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(id);
                         int maxWinterZone = PlantClimateConditionsRegistry.getMaxWinterHardinessForPlant(id);
+                        int minSaplingWinterHardiness = PlantClimateConditionsRegistry.getMinWinterHardinessForSapling(id);
 
-                        SummerHeat maxSummerTemperature = PlantClimateConditionsRegistry.getMaxSummerHeatForPlant(id);
                         SummerHeat minSummerTemperature = PlantClimateConditionsRegistry.getMinSummerHeatForPlant(id);
+                        SummerHeat maxSummerTemperature = PlantClimateConditionsRegistry.getMaxSummerHeatForPlant(id);
+                        SummerHeat maxSaplingSummerHeat = PlantClimateConditionsRegistry.getMaxSummerHeatForSapling(id);
 
                         Biome.RainType unsuitableBaseRainType = PlantClimateConditionsRegistry.getWrongRainTypeForPlant(id);
 
                         player.sendMessage(
                                 new StringTextComponent("§aMinimum Winter Zone: §e" + minWinterZone +
                                         "\n§aMaximum Winter Zone: §e" + maxWinterZone +
+                                        "\n§aMinimum Winter Hardiness for Sapling: §e" + minSaplingWinterHardiness +
                                         "\n§aMinimum Summer Temperature: §e" + minSummerTemperature +
                                         "\n§aMaximum Summer Temperature: §e" + maxSummerTemperature +
+                                        "\n§aMaximum Summer Heat for Sapling: §e" + maxSaplingSummerHeat +
                                         "\n§aUnsuitable Biome Rain Type: §e" + unsuitableBaseRainType),
                                 player.getUniqueID()
                         );

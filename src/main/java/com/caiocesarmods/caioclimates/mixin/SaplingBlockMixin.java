@@ -1,5 +1,7 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
 import com.caiocesarmods.caioclimates.HardinessZones.SaplingHardiness;
@@ -33,15 +35,21 @@ public abstract class SaplingBlockMixin {
             ServerWorld world,
             BlockPos pos,
             Random random,
-            CallbackInfo ci
-    ) {
+            CallbackInfo ci) {
 
         ResourceLocation sapling = state.getBlock().getRegistryName();
         String currentSeason = Season.getSeason(world.getDayTime());
 
         int zone = HardinessZones.getZone(world, pos);
         int minZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(sapling);
+        int minZoneSafeForSapling = PlantClimateConditionsRegistry.getMinWinterHardinessForSapling(sapling);
+
+        SummerHeat summerHeat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
+        SummerHeat maxHeatForSapling = PlantClimateConditionsRegistry.getMaxSummerHeatForSapling(sapling);
+
         boolean tooColdWinter = zone < minZone;
+        boolean tooColdWinterForUnshelteredSapling = zone < minZoneSafeForSapling;
+        boolean tooHotSummerForUnshelteredSapling = summerHeat.ordinal() > maxHeatForSapling.ordinal();
 
         if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
             return;
@@ -52,7 +60,12 @@ public abstract class SaplingBlockMixin {
         }
 
         //Sapling kill by frost
-        if ("WINTER".equals(currentSeason) && tooColdWinter && random.nextInt(3) == 0) {
+        if ("WINTER".equals(currentSeason) && tooColdWinter && tooColdWinterForUnshelteredSapling && random.nextInt(10) == 0) {
+            world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
+        }
+
+        //Sapling kill by heat
+        if ("SUMMER".equals(currentSeason) && tooHotSummerForUnshelteredSapling && random.nextInt(10) == 0) {
             world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
         }
     }

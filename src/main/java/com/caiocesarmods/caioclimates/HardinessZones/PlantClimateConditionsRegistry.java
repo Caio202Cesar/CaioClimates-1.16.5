@@ -40,13 +40,13 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("minecraft", "acacia_sapling"),
                 9, 12, 10, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
         register(new ResourceLocation("minecraft", "dark_oak_sapling"),
-                4, 9, SummerHeat.MILD, SummerHeat.VERY_HOT, Biome.RainType.NONE);
+                4, 9, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
         register(new ResourceLocation("minecraft", "bamboo_sapling"),
-                4, 12, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
+                4, 12, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
 
         // Caio Cesar's Biomes saplings
         register(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),
-                4, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, null);
+                9, 12, 10, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
 
         register(new ResourceLocation("caiocesarbiomes", "agathis_sapling"),
                 8, 12, SummerHeat.MILD, SummerHeat.VERY_HOT, Biome.RainType.NONE);
@@ -77,6 +77,11 @@ public class PlantClimateConditionsRegistry {
         return range.getMaxZone();
     }
 
+    public static int getMinWinterHardinessForSapling(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getMinSaplingWinterHardiness();
+    }
+
     public static SummerHeat getMinSummerHeatForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
         return range.getMinSummerHeat();
@@ -85,6 +90,11 @@ public class PlantClimateConditionsRegistry {
     public static SummerHeat getMaxSummerHeatForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
         return range.getMaxSummerHeat();
+    }
+
+    public static SummerHeat getMaxSummerHeatForSapling(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getMaxSaplingSummerHardiness();
     }
 
     public static Biome.RainType getWrongRainTypeForPlant(ResourceLocation sapling) {

@@ -1,8 +1,13 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
+import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
+import com.caiocesarmods.caioclimates.Seasons.Season;
 import net.minecraft.block.BambooSaplingBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -29,9 +34,21 @@ public class BambooSaplingBlockMixin {
             ServerWorld world,
             BlockPos pos,
             Random random,
-            CallbackInfo ci
-    ) {
+            CallbackInfo ci) {
+
         ResourceLocation bambooSapling = state.getBlock().getRegistryName();
+        String currentSeason = Season.getSeason(world.getDayTime());
+
+        int zone = HardinessZones.getZone(world, pos);
+        int minZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(bambooSapling);
+        int minZoneSafeForSapling = PlantClimateConditionsRegistry.getMinWinterHardinessForSapling(bambooSapling);
+
+        SummerHeat summerHeat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
+        SummerHeat maxHeatForSapling = PlantClimateConditionsRegistry.getMaxSummerHeatForSapling(bambooSapling);
+
+        boolean tooColdWinter = zone < minZone;
+        boolean tooColdWinterForSapling = zone < minZoneSafeForSapling;
+        boolean tooHotSummerForUnshelteredSapling = summerHeat.ordinal() > maxHeatForSapling.ordinal();
 
         if (!PlantClimateConditionsRegistry.isRegistered(bambooSapling)) {
             return;
@@ -39,6 +56,16 @@ public class BambooSaplingBlockMixin {
 
         if (!PlantClimateConditionsRegistry.isSuitable(bambooSapling, world, pos)) {
             ci.cancel();
+        }
+
+        //Bamboo shoot kill by frost
+        if ("WINTER".equals(currentSeason) && tooColdWinter && tooColdWinterForSapling && random.nextInt(13) == 0) {
+            world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
+        }
+
+        //Bamboo shoot kill by heat
+        if ("SUMMER".equals(currentSeason) && tooHotSummerForUnshelteredSapling && random.nextInt(10) == 0) {
+            world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
         }
     }
 
