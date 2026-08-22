@@ -315,7 +315,7 @@ public class ModEventSubscriber {
                         0.4f));
             }
 
-            else {// If reached, apply override
+            else {// Beach for forest biomes
                 System.out.println("[DEBUG] Overriding temperature for Beach: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.RAIN,
