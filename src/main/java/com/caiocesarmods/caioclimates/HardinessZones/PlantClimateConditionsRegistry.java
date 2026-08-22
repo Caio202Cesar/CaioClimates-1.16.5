@@ -42,7 +42,7 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("minecraft", "dark_oak_sapling"),
                 4, 9, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
         register(new ResourceLocation("minecraft", "bamboo_sapling"),
-                4, 12, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+                4, 12, 4, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, null);
 
         // Caio Cesar's Biomes saplings
         register(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),

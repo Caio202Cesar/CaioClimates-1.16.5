@@ -3,11 +3,9 @@ package com.caiocesarmods.caioclimates.block;
 import com.caiocesarmods.caioclimates.CaioClimates;
 import com.caiocesarmods.caioclimates.block.SeasonalLeaves.*;
 import com.caiocesarmods.caioclimates.item.ModItems;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -57,6 +55,11 @@ public class ModBlocks {
             () -> new AcaciaBranches(AbstractBlock.Properties.create(Material.LEAVES)
                     .hardnessAndResistance(0.2F).tickRandomly().notSolid().sound(SoundType.PLANT)
                     .harvestTool(ToolType.HOE), Blocks.ACACIA_LEAVES));
+
+    //Dead bamboo
+    public static final RegistryObject<Block> DEAD_BAMBOO_SHOOT = registerBlock("dead_bamboo_shoot",
+            () -> new DeadBushBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS, MaterialColor.WOOD)
+                    .doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.PLANT)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

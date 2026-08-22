@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "caioclimates:block/dead_bamboo_shoot",
+    "particle": "caioclimates:block/dead_bamboo_shoot"
+  }
+}

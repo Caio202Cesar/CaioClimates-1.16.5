@@ -5,6 +5,7 @@ import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
 import com.caiocesarmods.caioclimates.Seasons.Season;
+import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.BambooSaplingBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -60,12 +61,12 @@ public class BambooSaplingBlockMixin {
 
         //Bamboo shoot kill by frost
         if ("WINTER".equals(currentSeason) && tooColdWinter && tooColdWinterForSapling && random.nextInt(13) == 0) {
-            world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
+            world.setBlockState(pos, ModBlocks.DEAD_BAMBOO_SHOOT.get().getDefaultState());
         }
 
         //Bamboo shoot kill by heat
         if ("SUMMER".equals(currentSeason) && tooHotSummerForUnshelteredSapling && random.nextInt(10) == 0) {
-            world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
+            world.setBlockState(pos, ModBlocks.DEAD_BAMBOO_SHOOT.get().getDefaultState());
         }
     }
 
