@@ -9,5 +9,6 @@
 
   "item.caioclimates.gardener_helper": "Gardener Helper",
 
-  "tooltip.caioclimates.hardiness_scanner": "Press shift and right-click a sapling or vine with me to see a plant's climatic conditions."
+  "tooltip.caioclimates.hardiness_scanner": "Press shift and right-click a sapling or vine with me to see a plant's climatic conditions. Climate conditions for plants may change."
+
 }
