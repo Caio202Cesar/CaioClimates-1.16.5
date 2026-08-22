@@ -10,7 +10,6 @@ import net.minecraft.world.biome.Biome;
 import java.util.HashMap;
 import java.util.Map;
 
-//I'm not able to pitch up general java knowledge and turn it on complex things.
 public class PlantClimateConditionsRegistry {
     private static final Map<ResourceLocation, SaplingHardiness> RANGES = new HashMap<>();
 
