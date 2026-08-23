@@ -189,7 +189,7 @@ public class ClimateSetup {
 
         ClimateDomainRegistry.register("caiocesarbiomes:tropical_desert", ClimateDomain.TROPICAL_DESERT);
 
-        ClimateDomainRegistry.register("caiocesarbiomes:temperate_rainforest", ClimateDomain.TEMPERATE_COOL_MEDITERRANEAN);
+        ClimateDomainRegistry.register("caiocesarbiomes:temperate_rainforest", ClimateDomain.TEMPERATE_OCEANIC_MEDITERRANEAN);
 
         ClimateDomainRegistry.register("caiocesarbiomes:volcanic_site", ClimateDomain.NONE);
 

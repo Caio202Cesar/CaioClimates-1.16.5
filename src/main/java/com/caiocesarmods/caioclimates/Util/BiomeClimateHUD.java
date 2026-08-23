@@ -45,7 +45,7 @@ public class BiomeClimateHUD {
         int zone = HardinessZones.getZone(world, pos);
 
         int lineHeight = 10;
-        int margin = 40;
+        int margin = 60;
 
         int screenHeight = mc.getMainWindow().getScaledHeight();
 

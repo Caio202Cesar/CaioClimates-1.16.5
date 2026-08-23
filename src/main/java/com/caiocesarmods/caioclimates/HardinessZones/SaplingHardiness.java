@@ -49,6 +49,9 @@ public class SaplingHardiness {
         return maxSaplingSummerHardiness;
     }
 
+    //Add also sapling death for inadequate moisture/dryness of biome. There is no sheltering or protection for that.
+    //Sapling can only survive based on proximity with water (another parameter, similar to the Weeping Willow one)
+
     public SummerHeat getMinSummerHeat() {return minSummerHeat;}
 
     public SummerHeat getMaxSummerHeat() {
