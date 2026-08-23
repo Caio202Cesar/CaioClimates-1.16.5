@@ -4,7 +4,9 @@ import com.caiocesarmods.caioclimates.Climate.ClimateDomain;
 import com.caiocesarmods.caioclimates.Climate.ClimateDomainRegistry;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
+import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
 import com.caiocesarmods.caioclimates.Seasons.Season;
+import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.util.math.BlockPos;
@@ -27,8 +29,8 @@ public class BiomeClimateHUD {
         BlockPos pos = player.getPosition();
         Biome biome = world.getBiome(pos);
 
-
         String season = Season.getSeason(dayTime);
+        String subSeason = String.valueOf(SeasonalPhase.getPhase(dayTime)); // if you create this
         ClimateDomain climate = ClimateDomainRegistry.get(world, pos);
 
         SummerHeat summerHeat = SummerHeat.fromTemperature(
@@ -39,6 +41,8 @@ public class BiomeClimateHUD {
 
         float baseTemp = biome.getTemperature(pos);
         float downfall = biome.getDownfall();
+
+        int zone = HardinessZones.getZone(world, pos);
 
         int lineHeight = 10;
         int margin = 40;
@@ -54,6 +58,9 @@ public class BiomeClimateHUD {
         drawText(mc, event, String.format("Biome Base Temperature: %.2f", baseTemp), 10, y);
         y += lineHeight;
 
+        drawText(mc, event, "Hardiness Zone: " + zone, 10, y);
+        y += lineHeight;
+
         drawText(mc, event, String.format("Downfall: %.2f", downfall), 10, y);
         y += lineHeight;
 
@@ -61,6 +68,9 @@ public class BiomeClimateHUD {
         y += lineHeight;
 
         drawText(mc, event, "Global Season: " + season, 10, y);
+        y += lineHeight;
+
+        drawText(mc, event, "Phase: " + subSeason, 10, y);
         y += lineHeight;
 
         drawText(mc, event, "Biome Climate: " + climate, 10, y);
