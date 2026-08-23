@@ -147,15 +147,6 @@ public class ModEventSubscriber {
                 return;
             }
 
-            if (path.contains("dark")) {
-                System.out.println("[DEBUG] Overriding temperature for Dark Forest: " + id);
-                event.setClimate(new Biome.Climate(
-                        Biome.RainType.RAIN,
-                        0.79f,                          // hardiness zone 8
-                        Biome.TemperatureModifier.NONE,
-                        0.8f));
-            }
-
             else {// If reached, apply override
                 System.out.println("[DEBUG] Overriding temperature for: " + id);
                 event.setClimate(new Biome.Climate(
@@ -269,6 +260,16 @@ public class ModEventSubscriber {
                         -0.5f,
                         Biome.TemperatureModifier.NONE,
                         0.0f));
+            }
+
+            else {// River for forest biomes
+                System.out.println("[DEBUG] Overriding temperature for Forest River: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.RAIN,
+                        0.74f,                          // hardiness zone 7
+                        Biome.TemperatureModifier.NONE,
+                        0.8f
+                ));
             }
         }
 
