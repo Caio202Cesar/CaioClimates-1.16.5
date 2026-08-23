@@ -33,7 +33,7 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("minecraft", "spruce_sapling"),
                 1, 7, 1, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
         register(new ResourceLocation("minecraft", "birch_sapling"),
-                2, 8, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
+                2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
         register(new ResourceLocation("minecraft", "jungle_sapling"),
                 11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE); //Max zone 11 because of cacao
         register(new ResourceLocation("minecraft", "acacia_sapling"),
@@ -70,6 +70,19 @@ public class PlantClimateConditionsRegistry {
 
         register(new ResourceLocation("caiocesarbiomes", "banana_sapling"),
                 9, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, Biome.RainType.NONE);
+
+        register(new ResourceLocation("caiocesarbiomes", "baobab_sapling"),
+                10, 12, 11, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, Biome.RainType.RAIN);
+
+        register(new ResourceLocation("caiocesarbiomes", "bismarck_palm_sapling"),
+                9, 12, 10, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING, null);
+
+        register(new ResourceLocation("caiocesarbiomes", "black_poplar_sapling"),
+                2, 10, 4, SummerHeat.COOLER, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
+
+        //Needs allowed DroughtPattern
+        register(new ResourceLocation("caiocesarbiomes", "blackwood_acacia_sapling"),
+                8, 10, 9, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.HOT, null);
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
