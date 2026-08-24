@@ -29,7 +29,7 @@ public class AbstractFireBlockMixin {
                     double d3 = (double)pos.getX() + rand.nextDouble() * (double)0.1F;
                     double d8 = (double)pos.getY() + rand.nextDouble();
                     double d13 = (double)pos.getZ() + rand.nextDouble();
-                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d3, d8, d13, 0.0D, 0.07D, 0.0D);
+                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d3, d8, d13, 0.0D, 0.10D, 0.0D);
                 }
             }
 
@@ -38,7 +38,7 @@ public class AbstractFireBlockMixin {
                     double d4 = (double)(pos.getX() + 1) - rand.nextDouble() * (double)0.1F;
                     double d9 = (double)pos.getY() + rand.nextDouble();
                     double d14 = (double)pos.getZ() + rand.nextDouble();
-                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d4, d9, d14, 0.0D, 0.07D, 0.0D);
+                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d4, d9, d14, 0.0D, 0.10D, 0.0D);
                 }
             }
 
@@ -47,7 +47,7 @@ public class AbstractFireBlockMixin {
                     double d5 = (double)pos.getX() + rand.nextDouble();
                     double d10 = (double)pos.getY() + rand.nextDouble();
                     double d15 = (double)pos.getZ() + rand.nextDouble() * (double)0.1F;
-                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d5, d10, d15, 0.0D, 0.07D, 0.0D);
+                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d5, d10, d15, 0.0D, 0.10D, 0.0D);
                 }
             }
 
@@ -56,7 +56,7 @@ public class AbstractFireBlockMixin {
                     double d6 = (double)pos.getX() + rand.nextDouble();
                     double d11 = (double)pos.getY() + rand.nextDouble();
                     double d16 = (double)(pos.getZ() + 1) - rand.nextDouble() * (double)0.1F;
-                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d6, d11, d16, 0.0D, 0.07D, 0.0D);
+                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d6, d11, d16, 0.0D, 0.10D, 0.0D);
                 }
             }
 
@@ -65,7 +65,7 @@ public class AbstractFireBlockMixin {
                     double d7 = (double)pos.getX() + rand.nextDouble();
                     double d12 = (double)(pos.getY() + 1) - rand.nextDouble() * (double)0.1F;
                     double d17 = (double)pos.getZ() + rand.nextDouble();
-                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d7, d12, d17, 0.0D, 0.07D, 0.0D);
+                    worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d7, d12, d17, 0.0D, 0.10D, 0.0D);
                 }
             }
         } else {
@@ -73,7 +73,7 @@ public class AbstractFireBlockMixin {
                 double d0 = (double)pos.getX() + rand.nextDouble();
                 double d1 = (double)pos.getY() + rand.nextDouble() * 0.5D + 0.5D;
                 double d2 = (double)pos.getZ() + rand.nextDouble();
-                worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d0, d1, d2, 0.0D, 0.07D, 0.0D);
+                worldIn.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, d0, d1, d2, 0.0D, 0.10D, 0.0D);
             }
         }
     }
