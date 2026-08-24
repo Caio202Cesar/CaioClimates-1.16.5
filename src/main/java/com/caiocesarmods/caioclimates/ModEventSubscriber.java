@@ -69,36 +69,40 @@ public class ModEventSubscriber {
             ));
         }
 
+        ///Jungle
         if (event.getCategory() == Biome.Category.JUNGLE) {
 
             ResourceLocation id = event.getName();
             if (id == null) return;
 
+            String path = id.getPath();
             String namespace = id.getNamespace();
 
-            // ⛔ Skip all biomes from caiocesarbiomes
-            if (namespace.equals("caiocesarbiomes")) {
-                System.out.println("[DEBUG] Skipping biomes from caiocesarbiomes: " + id);
-                return;
+            // skip mod biomes
+            if (namespace.equals("caiocesarbiomes")) return;
+            if (namespace.equals("brbiomesmod")) return;
+
+            if (path.contains("edge")) {
+                System.out.println("[DEBUG] Overriding temperature and humidity for Jungle Edge: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.NONE,
+                        1.2f,
+                        Biome.TemperatureModifier.NONE,
+                        0.7f));
             }
 
-            // 🛑 Skip all biomes from brbiomesmod
-            if (namespace.equals("brbiomesmod")) {
-                System.out.println("[DEBUG] Skipping biomes from brbiomesmod: " + id);
-                return;
+            else {// If reached, apply override
+                System.out.println("[DEBUG] Overriding temperature for: " + id);
+                event.setClimate(new Biome.Climate(
+                        Biome.RainType.RAIN,          // rainType
+                        1.2f,                         // new temperature
+                        Biome.TemperatureModifier.NONE,
+                        1.0f                          // downfall
+                ));
             }
-
-            // ✔ Only vanilla (or other-mod) mesa biomes reach this point
-            System.out.println("[DEBUG] Overriding temperature for: " + id);
-
-            event.setClimate(new Biome.Climate(
-                    Biome.RainType.RAIN,          // rain
-                    1.2f,                         // new temperature
-                    Biome.TemperatureModifier.NONE,
-                    0.9f                          // downfall
-            ));
         }
 
+        /// Swamp
         if (event.getCategory() == Biome.Category.SWAMP) {
 
             ResourceLocation id = event.getName();

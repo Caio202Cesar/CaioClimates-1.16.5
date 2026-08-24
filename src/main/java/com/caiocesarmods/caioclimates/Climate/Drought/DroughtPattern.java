@@ -4,6 +4,7 @@ import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 
 public enum DroughtPattern {
 
+    /*
     //Similar to Koopen's Am climate
     TROPICAL_RAINFOREST_DROUGHT(
             // SPRING
@@ -25,7 +26,7 @@ public enum DroughtPattern {
             1.00F,  // EARLY_WINTER
             1.00F,  // MID_WINTER
             1.00F   // LATE_WINTER
-    ),
+    ),*/
 
     //Mediterranean/tropical wet-dry climate
     DRY_SUMMER(

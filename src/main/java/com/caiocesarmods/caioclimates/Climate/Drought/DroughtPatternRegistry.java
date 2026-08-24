@@ -42,11 +42,6 @@ public class DroughtPatternRegistry {
         register("minecraft:shattered_savanna", DroughtPattern.DRY_SUMMER);
         register("minecraft:shattered_savanna_plateau", DroughtPattern.DRY_SUMMER);
 
-        register("minecraft:jungle", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("minecraft:jungle_hills", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("minecraft:modified_jungle", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("minecraft:bamboo_jungle", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("minecraft:bamboo_jungle_hills", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
         register("minecraft:jungle_edge", DroughtPattern.DRY_SUMMER);
         register("minecraft:modified_jungle_edge", DroughtPattern.DRY_SUMMER);
 
@@ -65,14 +60,6 @@ public class DroughtPatternRegistry {
 
         register("caiocesarbiomes:coastal_subtropical_desert", DroughtPattern.ARID);
         register("caiocesarbiomes:coastal_subtropical_desert_lomas", DroughtPattern.ARID);
-
-        register("caiocesarbiomes:tropical_pine_island", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("caiocesarbiomes:tropical_island", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("caiocesarbiomes:monsoon_ficus_tropical_forest", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("caiocesarbiomes:tropical_bamboo_marsh", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("caiocesarbiomes:tropical_bamboo_marsh_river", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("caiocesarbiomes:tropical_bamboo_beach", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("caiocesarbiomes:tropical_beach", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
 
         register("caiocesarbiomes:cork_oak_savanna", DroughtPattern.DRY_SUMMER);
         register("caiocesarbiomes:cork_oak_beach", DroughtPattern.DRY_SUMMER);
@@ -111,14 +98,7 @@ public class DroughtPatternRegistry {
 
         register("caiocesarbiomes:temperate_rainforest", DroughtPattern.DRY_SUMMER);
 
-        register("brbiomesmod:amazon_rainforest", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("brbiomesmod:amazon_varzea_forest", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("brbiomesmod:black_amazon_river", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
         register("brbiomesmod:amazon_rainforest_edge", DroughtPattern.DRY_SUMMER);
-
-        register("brbiomesmod:atlantic_forest", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("brbiomesmod:atlantic_forest_beach", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
-        register("brbiomesmod:atlantic_forest_river", DroughtPattern.TROPICAL_RAINFOREST_DROUGHT);
 
         register("brbiomesmod:caatinga_shrubland", DroughtPattern.SEMI_ARID);
         register("brbiomesmod:cerrado", DroughtPattern.DRY_SUMMER);

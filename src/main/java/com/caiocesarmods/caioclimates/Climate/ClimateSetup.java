@@ -59,17 +59,17 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("minecraft:snowy_beach", ClimateDomain.SNOWY);
         ClimateDomainRegistry.register("minecraft:ice_spikes", ClimateDomain.ICE_CAP);
 
-        ClimateDomainRegistry.register("minecraft:mushroom_fields", ClimateDomain.TROPICAL_MARITIME);
-        ClimateDomainRegistry.register("minecraft:mushroom_fields_shore", ClimateDomain.TROPICAL_MARITIME);
+        ClimateDomainRegistry.register("minecraft:mushroom_fields", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("minecraft:mushroom_fields_shore", ClimateDomain.TROPICAL_FOREST);
 
         ClimateDomainRegistry.register("minecraft:beach", ClimateDomain.TEMPERATE_OCEANIC);
         ClimateDomainRegistry.register("minecraft:stone_beach", ClimateDomain.SUBARTIC);
 
         ClimateDomainRegistry.register("minecraft:jungle", ClimateDomain.TROPICAL_FOREST);
         ClimateDomainRegistry.register("minecraft:jungle_hills", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("minecraft:jungle_edge", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("minecraft:jungle_edge", ClimateDomain.TROPICAL_SAVANNA);
         ClimateDomainRegistry.register("minecraft:modified_jungle", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("minecraft:modified_jungle_edge", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("minecraft:modified_jungle_edge", ClimateDomain.TROPICAL_SAVANNA);
         ClimateDomainRegistry.register("minecraft:bamboo_jungle", ClimateDomain.TROPICAL_FOREST);
         ClimateDomainRegistry.register("minecraft:bamboo_jungle_hills", ClimateDomain.TROPICAL_FOREST);
 
