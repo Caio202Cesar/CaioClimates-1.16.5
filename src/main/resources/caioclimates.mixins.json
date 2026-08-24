@@ -15,8 +15,8 @@
     "DefaultBiomeFeaturesMixin",
     "SaplingBlockMixin",
     "BoneMealItemMixin",
-    "BambooSaplingBlockMixin"
-
+    "BambooSaplingBlockMixin",
+    "AbstractFireBlockMixin"
   ],
   "client": [],
   "server": [],

@@ -8,7 +8,6 @@ import com.caiocesarmods.caioclimates.Seasons.Season;
 import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.BambooSaplingBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
