@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
+    "minecraft:acacia_leaves",
+    "minecraft:birch_leaves",
+    "caioclimates:birch_fall_leaves"
+  ],
+  "optional": [
+
 
   ]
 }

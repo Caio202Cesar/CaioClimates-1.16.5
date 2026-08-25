@@ -1,6 +1,13 @@
 {
   "replace": false,
   "values": [
+    "minecraft:oak_leaves",
+    "minecraft:dark_oak_leaves",
+    "caioclimates:oak_fall_leaves",
+    "caioclimates:dark_oak_fall_leaves"
+  ],
+  "optional": [
+
 
   ]
 }
