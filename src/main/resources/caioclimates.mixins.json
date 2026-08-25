@@ -16,7 +16,8 @@
     "SaplingBlockMixin",
     "BoneMealItemMixin",
     "BambooSaplingBlockMixin",
-    "AbstractFireBlockMixin"
+    "AbstractFireBlockMixin",
+    "FireBlockMixin"
   ],
   "client": [],
   "server": [],
