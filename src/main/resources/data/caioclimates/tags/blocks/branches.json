@@ -4,8 +4,14 @@
     "caioclimates:acacia_branches",
     "caioclimates:birch_branches",
     "caioclimates:dark_oak_branches",
-    "caioclimates:oak_branches",
+    "caioclimates:oak_branches"
+    ],
+    "optional": [
     "caiocesarbiomes:hazelnut_branches",
-    "caiocesarbiomes:black_poplar_branches"
+    "caiocesarbiomes:black_poplar_branches",
+    "caiocesarbiomes:rowan_branches",
+    "caiocesarbiomes:rowan_fruiting_branches",
+    "caiocesarbiomes:cherry_plum_branches"
+
   ]
 }

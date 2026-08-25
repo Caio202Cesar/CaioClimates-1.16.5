@@ -50,5 +50,12 @@ public class FireBlockMixin {
             );
             ci.cancel();
         }
+
+        if (blockstate.isIn(BlockTags.LEAVES)) {
+            if (random.nextFloat() < 0.8F) {
+                // Don't destroy this tick.
+                ci.cancel();
+            }
+        }
     }
 }
