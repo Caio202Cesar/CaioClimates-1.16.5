@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "caioclimates:acacia_branches",
+    "caioclimates:birch_branches",
+    "caioclimates:dark_oak_branches",
+    "caioclimates:oak_branches"
+  ]
+}

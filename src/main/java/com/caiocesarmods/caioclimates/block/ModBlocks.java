@@ -1,6 +1,7 @@
 package com.caiocesarmods.caioclimates.block;
 
 import com.caiocesarmods.caioclimates.CaioClimates;
+import com.caiocesarmods.caioclimates.block.BurntBlocks.CharredBranches;
 import com.caiocesarmods.caioclimates.block.BurntBlocks.CharredLog;
 import com.caiocesarmods.caioclimates.block.SeasonalLeaves.*;
 import com.caiocesarmods.caioclimates.item.ModItems;
@@ -65,6 +66,8 @@ public class ModBlocks {
     //Burnt Blocks
     public static final RegistryObject<Block> CHARRED_LOG = registerBlock("charred_log",
             CharredLog::new);
+    public static final RegistryObject<Block> CHARRED_BRANCHES = registerBlock("charred_branches",
+            CharredBranches::new);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
