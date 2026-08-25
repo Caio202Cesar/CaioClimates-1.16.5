@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+
+  ],
+  "optional": [
+    "caiocesarbiomes:oleander_dark_pink_leaves",
+    "caiocesarbiomes:oleander_pink_leaves",
+    "caiocesarbiomes:oleander_red_leaves",
+    "caiocesarbiomes:oleander_white_leaves",
+    "caiocesarbiomes:oleander_dark_pink_dieback_leaves",
+    "caiocesarbiomes:oleander_pink_dieback_leaves",
+    "caiocesarbiomes:oleander_red_dieback_leaves",
+    "caiocesarbiomes:oleander_white_dieback_leaves"
+  ]
+}
+
+
+

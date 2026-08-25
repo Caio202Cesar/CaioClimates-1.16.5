@@ -4,7 +4,8 @@
     "minecraft:spruce_leaves"
   ],
   "optional": [
-
+    "caiocesarbiomes:italian_cypress_leaves",
+    "caiocesarbiomes:stone_pine_leaves",
 
   ]
 }

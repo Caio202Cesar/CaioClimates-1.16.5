@@ -6,7 +6,31 @@
     "caioclimates:birch_fall_leaves"
   ],
   "optional": [
-
+    "caiocesarbiomes:acerola_leaves",
+    "caiocesarbiomes:acerola_flowering_leaves",
+    "caiocesarbiomes:acerola_fruiting_leaves",
+    "caiocesarbiomes:mesquite_leaves",
+    "caiocesarbiomes:pomegranate_leaves",
+    "caiocesarbiomes:pomegranate_fall_leaves",
+    "caiocesarbiomes:pomegranate_flowering_leaves",
+    "caiocesarbiomes:pomegranate_fruiting_leaves",
+    "caiocesarbiomes:pomegranate_fall_fruiting_leaves",
+    "caiocesarbiomes:cork_oak_leaves",
+    "caiocesarbiomes:olive_leaves",
+    "caiocesarbiomes:olive_fruiting_leaves",
+    "caiocesarbiomes:crape_myrtle_red_leaves",
+    "caiocesarbiomes:crape_myrtle_red_fall_leaves",
+    "caiocesarbiomes:crape_myrtle_red_spring_leaves",
+    "caiocesarbiomes:crape_myrtle_white_leaves",
+    "caiocesarbiomes:crape_myrtle_white_fall_leaves",
+    "caiocesarbiomes:crape_myrtle_white_spring_leaves",
+    "caiocesarbiomes:crape_myrtle_purple_leaves",
+    "caiocesarbiomes:crape_myrtle_purple_fall_leaves",
+    "caiocesarbiomes:crape_myrtle_purple_spring_leaves",
+    "caiocesarbiomes:crape_myrtle_pink_leaves",
+    "caiocesarbiomes:crape_myrtle_pink_fall_leaves",
+    "caiocesarbiomes:crape_myrtle_pink_spring_leaves",
+    "caiocesarbiomes:southern_wax_myrtle_leaves",
 
   ]
 }

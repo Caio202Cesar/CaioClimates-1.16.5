@@ -7,7 +7,33 @@
     "caioclimates:dark_oak_fall_leaves"
   ],
   "optional": [
-
-
+    "caiocesarbiomes:avocado_leaves",
+    "caiocesarbiomes:avocado_flowering_leaves",
+    "caiocesarbiomes:avocado_fruiting_leaves",
+    "caiocesarbiomes:coast_cottonwood_leaves",
+    "caiocesarbiomes:elderberry_leaves",
+    "caiocesarbiomes:elderberry_flowering_leaves",
+    "caiocesarbiomes:elderberry_fruiting_leaves",
+    "caiocesarbiomes:elderberry_fall_fruiting_leaves",
+    "caiocesarbiomes:elderberry_fall_leaves",
+    "caiocesarbiomes:fig_leaves",
+    "caiocesarbiomes:fig_fruiting_leaves",
+    "caiocesarbiomes:fig_fall_leaves",
+    "caiocesarbiomes:fig_white_leaves",
+    "caiocesarbiomes:fig_white_fruiting_leaves",
+    "caiocesarbiomes:fig_white_fall_leaves",
+    "caiocesarbiomes:ocotea_leaves",
+    "caiocesarbiomes:southern_magnolia_leaves",
+    "caiocesarbiomes:tropical_almond_leaves",
+    "caiocesarbiomes:tropical_almond_fall_leaves",
+    "caiocesarbiomes:tropical_almond_new_leaves",
+    "caiocesarbiomes:holm_oak_leaves",
+    "caiocesarbiomes:indian_coral_leaves",
+    "caiocesarbiomes:loquat_leaves",
+    "caiocesarbiomes:loquat_flowering_leaves",
+    "caiocesarbiomes:loquat_fruiting_leaves",
+    "caiocesarbiomes:strawberry_tree_leaves",
+    "caiocesarbiomes:strawberry_tree_fruiting_leaves",
+    "caiocesarbiomes:strawberry_tree_flowering_leaves"
   ]
 }
