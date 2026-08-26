@@ -30,130 +30,43 @@
       "caiocesarbiomes:starfruit_branches",
       "caiocesarbiomes:starfruit_winter_leaves",
       "caiocesarbiomes:starfruit_winter_fruiting_leaves",
-
-
-
-
-
-
-      "caiocesarbiomes:red_kapok_leaves",
-      "caiocesarbiomes:red_kapok_fruiting_leaves",
-      "caiocesarbiomes:mulberry_leaves",
-      "caiocesarbiomes:mulberry_fruiting_leaves",
-      "caiocesarbiomes:mulberry_fall_leaves",
-      "caiocesarbiomes:starfruit_leaves",
-      "caiocesarbiomes:starfruit_flowering_leaves",
-      "caiocesarbiomes:starfruit_fruiting_leaves",
-      "caiocesarbiomes:camellia_leaves",
-      "caiocesarbiomes:tea_leaves",
-      "caiocesarbiomes:orange_leaves",
-      "caiocesarbiomes:orange_flowering_leaves",
-      "caiocesarbiomes:orange_fruiting_leaves",
-      "caiocesarbiomes:mandarin_leaves",
-      "caiocesarbiomes:mandarin_flowering_leaves",
-      "caiocesarbiomes:mandarin_fruiting_leaves",
-      "caiocesarbiomes:lemon_leaves",
-      "caiocesarbiomes:lemon_flowering_leaves",
-      "caiocesarbiomes:lemon_fruiting_leaves",
-      "caiocesarbiomes:citron_leaves",
-      "caiocesarbiomes:citron_flowering_leaves",
-      "caiocesarbiomes:citron_fruiting_leaves",
-      "caiocesarbiomes:buddha_hand_leaves",
-      "caiocesarbiomes:buddha_hand_flowering_leaves",
-      "caiocesarbiomes:buddha_hand_fruiting_leaves",
-      "caiocesarbiomes:tahiti_lime_leaves",
-      "caiocesarbiomes:tahiti_lime_flowering_leaves",
-      "caiocesarbiomes:tahiti_lime_fruiting_leaves",
-      "caiocesarbiomes:cherry_plum_leaves",
-      "caiocesarbiomes:cherry_plum_flowering_leaves",
-      "caiocesarbiomes:cherry_plum_fruiting_leaves",
-      "caiocesarbiomes:cherry_plum_fall_leaves",
-
-      "caiocesarbiomes:tamarind_leaves",
-      "caiocesarbiomes:tamarind_fruiting_leaves",
-      "caiocesarbiomes:royal_poinciana_leaves",
-      "caiocesarbiomes:pohutukawa_leaves",
-      "caiocesarbiomes:pohutukawa_flowering_leaves",
-      "caiocesarbiomes:pohutukawa_sparse_flowering_leaves",
-      "caiocesarbiomes:black_poplar_leaves",
-      "caiocesarbiomes:black_poplar_fall_leaves",
-
-      "caiocesarbiomes:eucalyptus_leaves",
-
       "caiocesarbiomes:cherry_plum_branches",
       "caiocesarbiomes:black_poplar_branches",
-
-      "caiocesarbiomes:casuarina_leaves",
-
-
-
-      "caiocesarbiomes:southern_beech_leaves",
-      "caiocesarbiomes:southern_beech_fall_leaves",
       "caiocesarbiomes:southern_beech_branches",
-      "caiocesarbiomes:cook_pine_leaves",
-      "caiocesarbiomes:norfolk_pine_leaves",
-      "caiocesarbiomes:monkey_puzzle_leaves",
-      "caiocesarbiomes:bunya_pine_leaves",
-      "caiocesarbiomes:weeping_fig_leaves",
-      "caiocesarbiomes:indian_laurel_leaves",
-      "caiocesarbiomes:grapefruit_leaves",
-      "caiocesarbiomes:grapefruit_flowering_leaves",
-      "caiocesarbiomes:grapefruit_fruiting_leaves",
-      "caiocesarbiomes:holly_leaves",
-      "caiocesarbiomes:yew_leaves",
-      "caiocesarbiomes:yew_fruiting_leaves",
-      "caiocesarbiomes:western_hemlock_leaves",
-      "caiocesarbiomes:cooper_beech_leaves",
-      "caiocesarbiomes:cooper_beech_fall_leaves",
       "caiocesarbiomes:cooper_beech_branches",
-      "caiocesarbiomes:live_oak_leaves",
-      "caiocesarbiomes:dragon_blood_leaves",
-      "caiocesarbiomes:red_oak_leaves",
-      "caiocesarbiomes:red_oak_fall_leaves",
       "caiocesarbiomes:red_oak_branches",
-      "caiocesarbiomes:japanese_pine_leaves",
-      "caiocesarbiomes:socotra_cucumber_leaves",
-      "caiocesarbiomes:socotra_cucumber_leaves_vine",
-      "caiocesarbiomes:ficus_roots_plant",
+      "caiocesarbiomes:sweet_chestnut_branches",
+      "caiocesarbiomes:plane_branches",
+      "caiocesarbiomes:pistachio_branches",
+      "caiocesarbiomes:pecan_branches",
+
+
+
+      "caiocesarbiomes:monkey_puzzle_leaves",
+
+      "caiocesarbiomes:dragon_blood_leaves",
+
+
+
+
+
+
       "caiocesarbiomes:sabal_leaves",
+
+
       "caiocesarbiomes:date_leaves",
-      "caiocesarbiomes:date_bunch",
       "caiocesarbiomes:canary_date_leaves",
       "caiocesarbiomes:coconut_leaves",
-      "caiocesarbiomes:coconut_bunch",
-      "caiocesarbiomes:sweet_chestnut_leaves",
-      "caiocesarbiomes:sweet_chestnut_fruiting_leaves",
-      "caiocesarbiomes:sweet_chestnut_fall_leaves",
-      "caiocesarbiomes:sweet_chestnut_branches",
-      "caiocesarbiomes:plane_leaves",
-      "caiocesarbiomes:plane_fall_leaves",
-      "caiocesarbiomes:plane_branches",
-      "caiocesarbiomes:carob_leaves",
-      "caiocesarbiomes:carob_fruiting_leaves",
-      "caiocesarbiomes:pinyon_leaves",
-      "caiocesarbiomes:ponderosa_pine_leaves",
-      "caiocesarbiomes:juniper_leaves",
-      "caiocesarbiomes:douglas_fir_leaves",
-      "caiocesarbiomes:pistachio_leaves",
-      "caiocesarbiomes:pistachio_fruiting_leaves",
-      "caiocesarbiomes:pistachio_branches",
-      "caiocesarbiomes:pecan_leaves",
-      "caiocesarbiomes:pecan_fruiting_leaves",
-      "caiocesarbiomes:pecan_fall_leaves",
-      "caiocesarbiomes:pecan_branches",
-      "caiocesarbiomes:mango_leaves",
-      "caiocesarbiomes:mango_flowering_leaves",
-      "caiocesarbiomes:mango_fruiting_leaves",
+
+
       "caiocesarbiomes:canary_pine_leaves",
       "caiocesarbiomes:chinese_red_pine_leaves",
-      "caiocesarbiomes:walnut_leaves",
-      "caiocesarbiomes:walnut_fruiting_leaves",
-      "caiocesarbiomes:walnut_fall_leaves",
+
       "caiocesarbiomes:walnut_branches",
-      "caiocesarbiomes:sycamore_fig_leaves",
-      "caiocesarbiomes:sycamore_fig_fruiting_leaves",
       "caiocesarbiomes:sycamore_fig_branches",
       "caiocesarbiomes:sycamore_fig_fruiting_branches",
+
+
       "caiocesarbiomes:rowan_leaves",
       "caiocesarbiomes:rowan_flowering_leaves",
       "caiocesarbiomes:rowan_fruiting_leaves",

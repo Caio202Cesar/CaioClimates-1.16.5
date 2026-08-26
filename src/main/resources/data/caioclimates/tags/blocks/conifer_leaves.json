@@ -6,6 +6,17 @@
   "optional": [
     "caiocesarbiomes:italian_cypress_leaves",
     "caiocesarbiomes:stone_pine_leaves",
-
+    "caiocesarbiomes:casuarina_leaves",
+    "caiocesarbiomes:cook_pine_leaves",
+    "caiocesarbiomes:norfolk_pine_leaves",
+    "caiocesarbiomes:bunya_pine_leaves",
+    "caiocesarbiomes:yew_leaves",
+    "caiocesarbiomes:yew_fruiting_leaves",
+    "caiocesarbiomes:western_hemlock_leaves",
+    "caiocesarbiomes:japanese_pine_leaves",
+    "caiocesarbiomes:pinyon_leaves",
+    "caiocesarbiomes:ponderosa_pine_leaves",
+    "caiocesarbiomes:juniper_leaves",
+    "caiocesarbiomes:douglas_fir_leaves"
   ]
 }

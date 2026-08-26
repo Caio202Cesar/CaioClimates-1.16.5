@@ -51,11 +51,21 @@ public class FireBlockMixin {
             ci.cancel();
         }
 
+        if (blockstate.isIn(ModBlockTags.BROAD_LEAVES_LARGE)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_LARGE_BROAD_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        /*
         if (blockstate.isIn(BlockTags.LEAVES)) {
             if (random.nextFloat() < 0.8F) {
                 // Don't destroy this tick.
                 ci.cancel();
             }
-        }
+        }*/
     }
 }
