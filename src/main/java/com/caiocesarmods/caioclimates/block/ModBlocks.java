@@ -68,15 +68,21 @@ public class ModBlocks {
             CharredLog::new);
     public static final RegistryObject<Block> CHARRED_BRANCHES = registerBlock("charred_branches",
             CharredBranches::new);
+    public static final RegistryObject<Block> JAPANESE_MAPLE_CHARRED_BRANCHES = registerBlock("charred_japanese_maple_branches",
+            CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_LARGE_BROAD_LEAVES = registerBlock("scorched_large_broad_leaves",
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_SMALL_BROAD_LEAVES = registerBlock("scorched_small_broad_leaves",
+            CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_JAPANESE_MAPLE_LEAVES = registerBlock("scorched_japanese_maple_leaves",
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_CONIFER_LEAVES = registerBlock("scorched_conifer_leaves",
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_LARGE_PALM_FROND = registerBlock("scorched_large_palm_frond",
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_SHORT_PALM_FROND = registerBlock("scorched_short_palm_frond",
+            CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_MONKEY_PUZZLE_LEAVES = registerBlock("scorched_monkey_puzzle_leaves",
             CharredBranches::new);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

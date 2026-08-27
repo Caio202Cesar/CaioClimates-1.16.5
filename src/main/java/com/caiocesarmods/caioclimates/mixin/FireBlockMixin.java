@@ -60,6 +60,33 @@ public class FireBlockMixin {
             ci.cancel();
         }
 
+        if (blockstate.isIn(ModBlockTags.JAPANESE_MAPLE_BRANCHES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.JAPANESE_MAPLE_CHARRED_BRANCHES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.JAPANESE_MAPLE_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_JAPANESE_MAPLE_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.MONKEY_PUZZLE_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_MONKEY_PUZZLE_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
         if (blockstate.isIn(ModBlockTags.BROAD_LEAVES_LARGE)) {
             worldIn.setBlockState(
                     pos,

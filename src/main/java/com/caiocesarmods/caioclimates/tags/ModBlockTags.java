@@ -26,4 +26,16 @@ public final class ModBlockTags {
 
     public static final ITag.INamedTag<Block> CAN_BURN_TO_BRANCHES =
             BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "can_burn_to_branches")));
+
+    public static final ITag.INamedTag<Block> JAPANESE_MAPLE_LEAVES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "japanese_maple_leaves")));
+
+    public static final ITag.INamedTag<Block> JAPANESE_MAPLE_BRANCHES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "japanese_maple_branches")));
+
+    public static final ITag.INamedTag<Block> MONKEY_PUZZLE_LEAVES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "monkey_puzzle_leaves")));
+
+    public static final ITag.INamedTag<Block> OLEANDER_LEAVES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "oleander_leaves")));
 }
