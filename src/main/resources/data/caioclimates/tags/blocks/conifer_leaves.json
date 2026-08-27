@@ -35,6 +35,9 @@
     "caiocesarbiomes:agathis_leaves",
     "caiocesarbiomes:maritime_pine_leaves",
     "caiocesarbiomes:brutia_pine_leaves",
-    "caiocesarbiomes:hoop_pine_leaves"
+    "caiocesarbiomes:hoop_pine_leaves",
+    "brbiomesmod:parana_pine_leaves",
+    "brbiomesmod:parana_pine_fruiting_leaves",
+    "brbiomesmod:podocarpus_lambertii_leaves"
   ]
 }

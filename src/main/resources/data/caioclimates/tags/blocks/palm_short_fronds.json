@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "caiocesarbiomes:sabal_leaves",
-    "caiocesarbiomes:bismarck_palm_leaves"
+    "caiocesarbiomes:bismarck_palm_leaves",
+    "brbiomesmod:carnauba_leaves",
+    "brbiomesmod:buriti_leaves"
   ]
 }
