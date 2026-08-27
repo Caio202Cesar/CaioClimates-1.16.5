@@ -42,6 +42,15 @@ public class FireBlockMixin {
             ci.cancel();
         }
 
+        if (blockstate.isIn(ModBlockTags.CAN_BURN_TO_BRANCHES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.CHARRED_BRANCHES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
         if (blockstate.isIn(ModBlockTags.BRANCHES)) {
             worldIn.setBlockState(
                     pos,
@@ -55,6 +64,42 @@ public class FireBlockMixin {
             worldIn.setBlockState(
                     pos,
                     ModBlocks.SCORCHED_LARGE_BROAD_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.BROAD_LEAVES_SHORT)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_SMALL_BROAD_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.CONIFER_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_CONIFER_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.PALM_LONG_FRONDS)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_LARGE_PALM_FROND.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.PALM_SHORT_FRONDS)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_SHORT_PALM_FROND.get().getDefaultState(),
                     3
             );
             ci.cancel();

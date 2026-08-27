@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "caioclimates:block/scorched_palm_frond2",
+    "particle": "caioclimates:block/scorched_palm_frond2"
+  }
+}

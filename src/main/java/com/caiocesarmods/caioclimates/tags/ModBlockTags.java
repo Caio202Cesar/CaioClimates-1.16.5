@@ -23,4 +23,7 @@ public final class ModBlockTags {
 
     public static final ITag.INamedTag<Block> PALM_SHORT_FRONDS =
             BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "palm_short_fronds")));
+
+    public static final ITag.INamedTag<Block> CAN_BURN_TO_BRANCHES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "can_burn_to_branches")));
 }
