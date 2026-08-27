@@ -1,7 +1,6 @@
 {
   "variants":{
-    "":[
-      {"model": "caioclimates:block/scorched_long_broad_leaves"}
-    ]
+    "": {
+        "model": "caioclimates:block/scorched_long_broad_leaves"}
   }
 }

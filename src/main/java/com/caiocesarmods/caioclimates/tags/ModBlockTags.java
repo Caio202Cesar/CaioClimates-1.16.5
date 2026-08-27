@@ -13,7 +13,7 @@ public final class ModBlockTags {
             BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "broad_leaves_large")));
 
     public static final ITag.INamedTag<Block> BROAD_LEAVES_SHORT =
-            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "broad_leaves_large")));
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "broad_leaves_short")));
 
     public static final ITag.INamedTag<Block> CONIFER_LEAVES =
             BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "conifer_leaves")));
