@@ -80,16 +80,12 @@
       "caiocesarbiomes:socotra_desert_rose_leaves",
       "caiocesarbiomes:baobab_branches",
       "caiocesarbiomes:lenga_branches",
-
+      "caiocesarbiomes:apple_blossom",
+      "caiocesarbiomes:apple_branches",
 
       "caiocesarbiomes:monkey_puzzle_leaves",
 
-
       "caiocesarbiomes:dragon_blood_leaves",
-
-
-
-
 
       "caiocesarbiomes:plumeria_white_leaves",
       "caiocesarbiomes:plumeria_red_leaves",
@@ -103,29 +99,9 @@
       "caiocesarbiomes:yellow_oleander_leaves",
       "caiocesarbiomes:orange_oleander_leaves",
       "caiocesarbiomes:weeping_willow_leaves",
-      "caiocesarbiomes:weeping_willow_fall_leaves",
+      "caiocesarbiomes:weeping_willow_fall_leaves"
 
 
 
-
-
-
-
-
-
-      "caiocesarbiomes:champak_leaves",
-      "caiocesarbiomes:ring_cupped_oak_leaves",
-      "caiocesarbiomes:hoop_pine_leaves",
-      "caiocesarbiomes:blackwood_acacia_leaves",
-      "caiocesarbiomes:coast_live_oak_leaves",
-      "caiocesarbiomes:sand_laurel_oak_leaves",
-      "caiocesarbiomes:lilly_pilly_leaves",
-      "caiocesarbiomes:lilly_pilly_flowering_leaves",
-      "caiocesarbiomes:lilly_pilly_fruiting_leaves",
-      "caiocesarbiomes:apple_leaves",
-      "caiocesarbiomes:apple_blossom",
-      "caiocesarbiomes:apple_fruiting_leaves",
-      "caiocesarbiomes:apple_fall_leaves",
-      "caiocesarbiomes:apple_branches"
   ]
 }

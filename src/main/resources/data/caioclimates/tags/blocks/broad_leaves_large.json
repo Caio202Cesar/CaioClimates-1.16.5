@@ -148,6 +148,11 @@
     "caiocesarbiomes:machillus_flowering_leaves2",
     "caiocesarbiomes:laurel_oak_leaves",
     "caiocesarbiomes:laurel_oak_fall_leaves",
-    "caiocesarbiomes:laurel_oak_branches"
+    "caiocesarbiomes:laurel_oak_branches",
+    "caiocesarbiomes:champak_leaves",
+    "caiocesarbiomes:ring_cupped_oak_leaves",
+    "caiocesarbiomes:apple_leaves",
+    "caiocesarbiomes:apple_fruiting_leaves",
+    "caiocesarbiomes:apple_fall_leaves"
   ]
 }
