@@ -83,6 +83,14 @@ public class PlantClimateConditionsRegistry {
         //Needs allowed DroughtPattern
         register(new ResourceLocation("caiocesarbiomes", "blackwood_acacia_sapling"),
                 8, 10, 9, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.HOT, null);
+
+
+        register(new ResourceLocation("caiocesarbiomes", "cinnamon_sapling"),
+                10, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+
+
+        register(new ResourceLocation("caiocesarbiomes", "durian_sapling"),
+                11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
