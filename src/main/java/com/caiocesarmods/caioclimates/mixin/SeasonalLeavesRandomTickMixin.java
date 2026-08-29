@@ -111,7 +111,7 @@ public abstract class SeasonalLeavesRandomTickMixin {
 
             if (random.nextInt(30) == 0) {
 
-                int dropCount = (int) (0 + Math.random());
+                int dropCount = random.nextInt(2);
 
                 ItemStack itemStack = new ItemStack(ModItems.DARK_OAK_ACORN.get(), dropCount);
                 ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, itemStack);
@@ -173,7 +173,7 @@ public abstract class SeasonalLeavesRandomTickMixin {
 
             if (random.nextInt(30) == 0) {
 
-                int dropCount = (int) (0 + Math.random());
+                int dropCount = random.nextInt(2);
 
                 ItemStack itemStack = new ItemStack(ModItems.OAK_ACORN.get(), dropCount);
                 ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, itemStack);

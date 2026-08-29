@@ -158,7 +158,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "caioclimates:acorn"
+          "name": "caioclimates:oak_acorn"
         }
       ],
       "conditions": [
