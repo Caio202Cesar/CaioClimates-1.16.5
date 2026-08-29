@@ -2,9 +2,12 @@ package com.caiocesarmods.caioclimates.mixin;
 
 import com.caiocesarmods.caioclimates.block.ModBlocks;
 import com.caiocesarmods.caioclimates.Seasons.Season;
+import com.caiocesarmods.caioclimates.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
@@ -107,6 +110,14 @@ public abstract class SeasonalLeavesRandomTickMixin {
         if (season.equals("FALL")) {
 
             if (random.nextInt(30) == 0) {
+
+                int dropCount = (int) (0 + Math.random());
+
+                ItemStack itemStack = new ItemStack(ModItems.DARK_OAK_ACORN.get(), dropCount);
+                ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, itemStack);
+
+                world.addEntity(itemEntity);
+
                 world.setBlockState(
                         pos,
                         ModBlocks.DARK_OAK_FALL_LEAVES.get().getDefaultState(),
@@ -161,6 +172,14 @@ public abstract class SeasonalLeavesRandomTickMixin {
         if (season.equals("FALL")) {
 
             if (random.nextInt(30) == 0) {
+
+                int dropCount = (int) (0 + Math.random());
+
+                ItemStack itemStack = new ItemStack(ModItems.OAK_ACORN.get(), dropCount);
+                ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, itemStack);
+
+                world.addEntity(itemEntity);
+
                 world.setBlockState(
                         pos,
                         ModBlocks.OAK_FALL_LEAVES.get().getDefaultState(),

@@ -15,6 +15,12 @@ public class ModItems {
     public static final RegistryObject<Item> GARDENER_HELPER = ITEMS.register("gardener_helper",
             () -> new HardinessZoneScannerItem(new Item.Properties().group(ItemGroup.TOOLS)));
 
+    public static final RegistryObject<Item> OAK_ACORN = ITEMS.register("oak_acorn",
+            () -> new HardinessZoneScannerItem(new Item.Properties().group(ItemGroup.FOOD)));
+
+    public static final RegistryObject<Item> DARK_OAK_ACORN = ITEMS.register("dark_oak_acorn",
+            () -> new HardinessZoneScannerItem(new Item.Properties().group(ItemGroup.FOOD)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
