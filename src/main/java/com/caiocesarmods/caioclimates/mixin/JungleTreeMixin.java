@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.eventbus.api.Cancelable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,7 +19,8 @@ import java.util.Random;
 public class JungleTreeMixin {
     @Inject(
             method = "growBigTree",
-            at = @At("HEAD")
+            at = @At("HEAD"),
+            cancellable = true
     )
 
     private void cancelGrowthFromSapling(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos,
@@ -29,7 +31,7 @@ public class JungleTreeMixin {
 
         if (biome.getPrecipitation() == Biome.RainType.NONE) {
             if ((Object)this instanceof JungleTree) {
-                return;
+                cir.cancel();
             }
         }
     }
