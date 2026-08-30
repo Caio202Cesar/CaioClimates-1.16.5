@@ -27,6 +27,9 @@ public class ModItems {
     public static final RegistryObject<Item> ARABIC_GUM = ITEMS.register("arabic_gum",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
+    public static final RegistryObject<Item> SPRUCE_CONE = ITEMS.register("spruce_cone",
+            () -> new Item(new Item.Properties().group(ItemGroup.FOOD)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
