@@ -35,7 +35,7 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("minecraft", "birch_sapling"),
                 2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
         register(new ResourceLocation("minecraft", "jungle_sapling"),
-                11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE); //Max zone 11 because of cacao
+                11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT, null); //Max zone 11 because of cacao
         register(new ResourceLocation("minecraft", "acacia_sapling"),
                 9, 12, 10, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
         register(new ResourceLocation("minecraft", "dark_oak_sapling"),
