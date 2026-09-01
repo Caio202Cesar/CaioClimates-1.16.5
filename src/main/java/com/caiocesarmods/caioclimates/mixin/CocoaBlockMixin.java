@@ -19,15 +19,10 @@ public class CocoaBlockMixin {
             at = @At("HEAD")
     )
 
-    private void destroyFruitBlockInUnsuitableClimate(
-            BlockState state,
-            ServerWorld world,
-            BlockPos pos,
-            Random random,
-            CallbackInfo ci) {
+    private void destroyFruitBlockInUnsuitableClimate(BlockState state, ServerWorld world,
+            BlockPos pos, Random random, CallbackInfo ci) {
 
         Biome biome = world.getBiome(pos);
-
         Biome.RainType rainType = biome.getPrecipitation();
 
         float temp = biome.getTemperature(pos);
@@ -36,7 +31,7 @@ public class CocoaBlockMixin {
         boolean isTropical = temp >= minTemp;
         boolean isWet = rainType.equals(Biome.RainType.RAIN);
 
-        if (!isTropical && !isWet) {
+        if (!isTropical || !isWet) {
             world.destroyBlock(pos, false);
         }
     }
