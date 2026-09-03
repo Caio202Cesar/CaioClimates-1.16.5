@@ -1,7 +1,13 @@
 package com.caiocesarmods.caioclimates.HardinessZones;
 
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPattern;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import net.minecraft.world.biome.Biome;
+
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SaplingHardiness {
     private final int minZone;
@@ -14,13 +20,16 @@ public class SaplingHardiness {
 
     private final Biome.RainType restrictedRainType;
 
+    private final Set<DroughtPattern> restrictedDroughtPatterns;
+
     public SaplingHardiness(int minZone,
                             int maxZone,
                             int minSaplingWinterHardiness,
                             SummerHeat minSummerHeat,
                             SummerHeat maxSummerHeat,
                             SummerHeat maxSaplingSummerHardiness,
-                            Biome.RainType restrictedRainType) {
+                            Biome.RainType restrictedRainType,
+                            DroughtPattern[] restrictedDroughtPatterns) {
 
         this.minZone = minZone;
         this.maxZone = maxZone;
@@ -29,6 +38,15 @@ public class SaplingHardiness {
         this.maxSummerHeat = maxSummerHeat;
         this.maxSaplingSummerHardiness = maxSaplingSummerHardiness;
         this.restrictedRainType = restrictedRainType;
+        this.restrictedDroughtPatterns = EnumSet.noneOf(DroughtPattern.class);
+
+        if (restrictedDroughtPatterns != null) {
+            Collections.addAll(this.restrictedDroughtPatterns, restrictedDroughtPatterns);
+        }
+    }
+
+    public Set<DroughtPattern> getRestrictedDroughtPatterns() {
+        return restrictedDroughtPatterns;
     }
 
     public boolean isSuitable(int zone) {

@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates.item;
 
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPattern;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
 import net.minecraft.block.Block;
@@ -23,6 +24,7 @@ import net.minecraft.world.biome.Biome;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Set;
 
 public class HardinessZoneScannerItem extends Item {
     public HardinessZoneScannerItem(Properties props) {
@@ -68,6 +70,8 @@ public class HardinessZoneScannerItem extends Item {
 
                         Biome.RainType unsuitableBaseRainType = PlantClimateConditionsRegistry.getWrongRainTypeForPlant(id);
 
+                        Set<DroughtPattern> unsuitableDroughtPatterns = PlantClimateConditionsRegistry.getRestrictedDroughtPatternForPlant(id);
+
                         player.sendMessage(
                                 new StringTextComponent("§aMinimum Winter Zone: §e" + minWinterZone +
                                         "\n§aMaximum Winter Zone: §e" + maxWinterZone +
@@ -75,7 +79,8 @@ public class HardinessZoneScannerItem extends Item {
                                         "\n§aMinimum Summer Temperature: §e" + minSummerTemperature +
                                         "\n§aMaximum Summer Temperature: §e" + maxSummerTemperature +
                                         "\n§aMaximum Summer Heat for Sapling: §e" + maxSaplingSummerHeat +
-                                        "\n§aUnsuitable Biome Rain Type: §e" + unsuitableBaseRainType),
+                                        "\n§aUnsuitable Biome Rain Type: §e" + unsuitableBaseRainType +
+                                        "\n§aUnsuitable Biome Drought Patterns: §e" + unsuitableDroughtPatterns),
                                 player.getUniqueID()
                         );
 

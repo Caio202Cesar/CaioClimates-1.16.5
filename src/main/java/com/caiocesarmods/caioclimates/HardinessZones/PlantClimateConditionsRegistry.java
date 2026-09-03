@@ -1,5 +1,7 @@
 package com.caiocesarmods.caioclimates.HardinessZones;
 
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPattern;
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import net.minecraft.util.ResourceLocation;
@@ -9,6 +11,7 @@ import net.minecraft.world.biome.Biome;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class PlantClimateConditionsRegistry {
     private static final Map<ResourceLocation, SaplingHardiness> RANGES = new HashMap<>();
@@ -20,9 +23,10 @@ public class PlantClimateConditionsRegistry {
                                 SummerHeat minSummerHeat,
                                 SummerHeat maxSummerHeat,
                                 SummerHeat maxSaplingSummerHardiness,
-                                Biome.RainType restrictedRainType) {
+                                Biome.RainType restrictedRainType,
+                                DroughtPattern... restrictedDroughtPatterns) {
         RANGES.put(sapling, new SaplingHardiness(minZone, maxZone, minSaplingWinterHardiness, minSummerHeat, maxSummerHeat,
-                maxSaplingSummerHardiness, restrictedRainType));
+                maxSaplingSummerHardiness, restrictedRainType, restrictedDroughtPatterns));
     }
 
     static {
@@ -82,7 +86,9 @@ public class PlantClimateConditionsRegistry {
 
         //Needs allowed DroughtPattern
         register(new ResourceLocation("caiocesarbiomes", "blackwood_acacia_sapling"),
-                8, 10, 9, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.HOT, null);
+                8, 10, 9, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.HOT,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+
 
 
         register(new ResourceLocation("caiocesarbiomes", "cinnamon_sapling"),
@@ -128,6 +134,11 @@ public class PlantClimateConditionsRegistry {
         return range.getRestrictedRainType();
     }
 
+    public static Set<DroughtPattern> getRestrictedDroughtPatternForPlant(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getRestrictedDroughtPatterns();
+    }
+
     public static boolean isRegistered(ResourceLocation sapling) {
         return RANGES.containsKey(sapling);
     }
@@ -156,9 +167,16 @@ public class PlantClimateConditionsRegistry {
 
         ///RainType
         Biome.RainType rainType = biome.getPrecipitation();
-
         if (range.getRestrictedRainType() != null
                 && rainType == range.getRestrictedRainType()) {
+            return false;
+        }
+
+        DroughtPattern restrictedDroughtPatterns = DroughtPatternRegistry.get(biome);
+        Set<DroughtPattern> restrictedPatterns = range.getRestrictedDroughtPatterns();
+
+        if (restrictedDroughtPatterns != null
+                && restrictedPatterns.contains(restrictedDroughtPatterns)) {
             return false;
         }
 
@@ -202,6 +220,9 @@ public class PlantClimateConditionsRegistry {
         /// RainType
         Biome.RainType rainType = biome.getPrecipitation();
 
+        DroughtPattern restrictedDroughtPatterns = DroughtPatternRegistry.get(biome);
+        Set<DroughtPattern> restrictedPatterns = range.getRestrictedDroughtPatterns();
+
         if (range.getRestrictedRainType() == rainType) {
 
             if (rainType == Biome.RainType.NONE) {
@@ -211,6 +232,11 @@ public class PlantClimateConditionsRegistry {
             if (rainType == Biome.RainType.RAIN) {
                 return "This biome is too wet for this sapling.";
             }
+        }
+
+        if (range.getRestrictedDroughtPatterns() != null
+                && range.getRestrictedDroughtPatterns() == restrictedDroughtPatterns()) {
+
         }
 
         return null;
