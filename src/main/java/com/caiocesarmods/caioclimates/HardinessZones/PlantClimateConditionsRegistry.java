@@ -232,11 +232,11 @@ public class PlantClimateConditionsRegistry {
             if (rainType == Biome.RainType.RAIN) {
                 return "This biome is too wet for this sapling.";
             }
-        }
 
-        if (range.getRestrictedDroughtPatterns() != null
-                && range.getRestrictedDroughtPatterns() == restrictedDroughtPatterns()) {
-
+            if (restrictedDroughtPatterns != null && restrictedPatterns != null
+                    && restrictedPatterns.contains(restrictedDroughtPatterns)) {
+                return "This biome is too dry for this sapling.";
+            }
         }
 
         return null;
