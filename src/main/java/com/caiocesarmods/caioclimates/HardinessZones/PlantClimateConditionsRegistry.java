@@ -233,10 +233,11 @@ public class PlantClimateConditionsRegistry {
                 return "This biome is too wet for this sapling.";
             }
 
-            if (restrictedDroughtPatterns != null && restrictedPatterns != null
-                    && restrictedPatterns.contains(restrictedDroughtPatterns)) {
-                return "This biome is too dry for this sapling.";
-            }
+        }
+
+        if (restrictedDroughtPatterns != null && restrictedPatterns != null
+                && restrictedPatterns.contains(restrictedDroughtPatterns)) {
+            return "This biome is too dry for this sapling.";
         }
 
         return null;
