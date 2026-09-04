@@ -97,6 +97,11 @@ public class PlantClimateConditionsRegistry {
 
         register(new ResourceLocation("caiocesarbiomes", "durian_sapling"),
                 11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+
+
+        ///Brazillian Biomes
+        register(new ResourceLocation("brbiomesmod", "acai_sapling"),
+                11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {

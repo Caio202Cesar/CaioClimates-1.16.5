@@ -120,7 +120,7 @@ public class SummerTemperatureSetup {
 
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "tropical_pine_island"), 0.95F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "tropical_island"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "monsoon_ficus_tropical_forest"), 0.95F);
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "ficus_jungle"), 0.95F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "tropical_bamboo_marsh"), 0.95F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "tropical_bamboo_marsh_river"), 0.95F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "tropical_bamboo_beach"), 0.95F);

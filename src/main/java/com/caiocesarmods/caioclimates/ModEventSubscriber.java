@@ -26,6 +26,7 @@ public class ModEventSubscriber {
     @SubscribeEvent
     public static void onBiomeLoad(BiomeLoadingEvent event) {
 
+        /// Plains
         if (event.getCategory() == Biome.Category.PLAINS) {
 
             ResourceLocation id = event.getName();
@@ -56,7 +57,7 @@ public class ModEventSubscriber {
             ));
         }
 
-
+        /// Mesa
         if (event.getCategory() == Biome.Category.MESA) {
 
             System.out.println("[DEBUG] Overriding Badlands temperature!");
@@ -86,7 +87,7 @@ public class ModEventSubscriber {
                 System.out.println("[DEBUG] Overriding temperature and humidity for Jungle Edge: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.NONE,
-                        1.2f,
+                        1.0f,
                         Biome.TemperatureModifier.NONE,
                         0.7f));
             }
@@ -95,7 +96,7 @@ public class ModEventSubscriber {
                 System.out.println("[DEBUG] Overriding temperature for: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.RAIN,          // rainType
-                        1.2f,                         // new temperature
+                        1.0f,                         // new temperature
                         Biome.TemperatureModifier.NONE,
                         1.0f                          // downfall
                 ));
@@ -204,14 +205,14 @@ public class ModEventSubscriber {
             if (namespace.equals("caiocesarbiomes")) return;
             if (namespace.equals("brbiomesmod")) return;
 
-            if (path.contains("plateau")) {
-                System.out.println("[DEBUG] Overriding temperature for Savanna: " + id);
-                event.setClimate(new Biome.Climate(
-                        Biome.RainType.NONE,
-                        1.2f,
-                        Biome.TemperatureModifier.NONE,
-                        0.35f));
-            }
+            System.out.println("[DEBUG] Overriding temperature for Savanna: " + id);
+
+            event.setClimate(new Biome.Climate(
+                    Biome.RainType.NONE,
+                    1.0f,
+                    Biome.TemperatureModifier.NONE,
+                    0.35f));
+
         }
 
         if (event.getCategory() == Biome.Category.ICY) {
@@ -348,7 +349,7 @@ public class ModEventSubscriber {
                 System.out.println("[DEBUG] Overriding temperature for Warm Oceans: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.RAIN,
-                        0.95f,
+                        0.97f,
                         Biome.TemperatureModifier.NONE,
                         0.5f));
             }
@@ -357,7 +358,7 @@ public class ModEventSubscriber {
                 System.out.println("[DEBUG] Overriding temperature for Lukewarm Oceans: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.RAIN,
-                        0.87f,
+                        0.9f,
                         Biome.TemperatureModifier.NONE,
                         0.5f));
             }
@@ -366,7 +367,7 @@ public class ModEventSubscriber {
                 System.out.println("[DEBUG] Overriding temperature for Cold Oceans: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.RAIN,
-                        0.65f,
+                        0.75f,
                         Biome.TemperatureModifier.NONE,
                         0.5f));
             }
@@ -380,11 +381,11 @@ public class ModEventSubscriber {
                         0.5f));
             }
 
-            else {// Beach for forest biomes
+            else {
                 System.out.println("[DEBUG] Overriding temperature for Ocean: " + id);
                 event.setClimate(new Biome.Climate(
                         Biome.RainType.RAIN,
-                        0.78f,
+                        0.84f,
                         Biome.TemperatureModifier.NONE,
                         0.8f
                 ));

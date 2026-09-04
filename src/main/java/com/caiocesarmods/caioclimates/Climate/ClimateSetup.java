@@ -127,7 +127,7 @@ public class ClimateSetup {
 
         ClimateDomainRegistry.register("caiocesarbiomes:tropical_pine_island", ClimateDomain.TROPICAL_FOREST);
         ClimateDomainRegistry.register("caiocesarbiomes:tropical_island", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("caiocesarbiomes:monsoon_ficus_tropical_forest", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:ficus_jungle", ClimateDomain.TROPICAL_FOREST);
         ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_marsh", ClimateDomain.TROPICAL_FOREST);
         ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_marsh_river", ClimateDomain.TROPICAL_FOREST);
         ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_beach", ClimateDomain.TROPICAL_FOREST);
