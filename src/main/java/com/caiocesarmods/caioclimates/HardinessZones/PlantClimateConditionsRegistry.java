@@ -35,10 +35,10 @@ public class PlantClimateConditionsRegistry {
 
         // Vanilla saplings
         register(new ResourceLocation("minecraft", "oak_sapling"),
-                3, 10, 5, 0, 1, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+                3, 10, 5, 0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
 
         register(new ResourceLocation("minecraft", "spruce_sapling"),
-                1, 7, 1, 0, 1, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
+                1, 7, 1, 0F, 0.84F, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
 
         register(new ResourceLocation("minecraft", "birch_sapling"),
                 2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM, Biome.RainType.NONE);
