@@ -20,12 +20,14 @@ public class PlantClimateConditionsRegistry {
                                 int minZone,
                                 int maxZone,
                                 int minSaplingWinterHardiness,
+                                float minDownfall,
+                                float maxDownfall,
                                 SummerHeat minSummerHeat,
                                 SummerHeat maxSummerHeat,
                                 SummerHeat maxSaplingSummerHardiness,
                                 Biome.RainType restrictedRainType,
                                 DroughtPattern... restrictedDroughtPatterns) {
-        RANGES.put(sapling, new SaplingHardiness(minZone, maxZone, minSaplingWinterHardiness, minSummerHeat, maxSummerHeat,
+        RANGES.put(sapling, new SaplingHardiness(minZone, maxZone, minSaplingWinterHardiness, minDownfall, maxDownfall, minSummerHeat, maxSummerHeat,
                 maxSaplingSummerHardiness, restrictedRainType, restrictedDroughtPatterns));
     }
 
@@ -33,10 +35,10 @@ public class PlantClimateConditionsRegistry {
 
         // Vanilla saplings
         register(new ResourceLocation("minecraft", "oak_sapling"),
-                3, 10, 5, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+                3, 10, 5, 0, 1, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
 
         register(new ResourceLocation("minecraft", "spruce_sapling"),
-                1, 7, 1, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
+                1, 7, 1, 0, 1, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
 
         register(new ResourceLocation("minecraft", "birch_sapling"),
                 2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM, Biome.RainType.NONE);
@@ -135,6 +137,16 @@ public class PlantClimateConditionsRegistry {
         return range.getMinSaplingWinterHardiness();
     }
 
+    public static float getMinDownfallForPlant(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getMinDownfall();
+    }
+
+    public static float getMaxDownfallForPlant(ResourceLocation sapling) {
+        SaplingHardiness range = RANGES.get(sapling);
+        return range.getMaxDownfall();
+    }
+
     public static SummerHeat getMinSummerHeatForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
         return range.getMinSummerHeat();
@@ -201,6 +213,13 @@ public class PlantClimateConditionsRegistry {
             return false;
         }
 
+        /// Downfall
+        float suitableDownfall = biome.getDownfall();
+
+        if (!range.isDownfallSuitable(suitableDownfall)) {
+            return false;
+        }
+
         return true;
     }
 
@@ -258,6 +277,17 @@ public class PlantClimateConditionsRegistry {
 
         if (restrictedDroughtPatterns != null && restrictedPatterns != null
                 && restrictedPatterns.contains(restrictedDroughtPatterns)) {
+            return "This biome is too dry for this sapling.";
+        }
+
+        /// Downfall
+        float biomeDownfall = biome.getDownfall();
+
+        if (biomeDownfall > range.getMaxDownfall()) {
+            return "This biome is too wet for this sapling.";
+        }
+
+        if (biomeDownfall < range.getMinDownfall()) {
             return "This biome is too dry for this sapling.";
         }
 

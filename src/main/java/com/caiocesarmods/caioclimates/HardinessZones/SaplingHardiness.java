@@ -14,17 +14,23 @@ public class SaplingHardiness {
     private final int maxZone;
     private final int minSaplingWinterHardiness;
 
+    private final float minDownfall;
+    private final float maxDownfall;
+
     private final SummerHeat minSummerHeat;
     private final SummerHeat maxSummerHeat;
     private final SummerHeat maxSaplingSummerHardiness;
 
     private final Biome.RainType restrictedRainType;
+    //private final Biome.RainType restrictedRainTypeForSapling;
 
     private final Set<DroughtPattern> restrictedDroughtPatterns;
 
     public SaplingHardiness(int minZone,
                             int maxZone,
                             int minSaplingWinterHardiness,
+                            float minDownfall,
+                            float maxDownfall,
                             SummerHeat minSummerHeat,
                             SummerHeat maxSummerHeat,
                             SummerHeat maxSaplingSummerHardiness,
@@ -34,6 +40,8 @@ public class SaplingHardiness {
         this.minZone = minZone;
         this.maxZone = maxZone;
         this.minSaplingWinterHardiness = minSaplingWinterHardiness;
+        this.minDownfall = minDownfall;
+        this.maxDownfall = maxDownfall;
         this.minSummerHeat = minSummerHeat;
         this.maxSummerHeat = maxSummerHeat;
         this.maxSaplingSummerHardiness = maxSaplingSummerHardiness;
@@ -60,6 +68,18 @@ public class SaplingHardiness {
     //Gives the sheltering need for sapling during winter
     public int getMinSaplingWinterHardiness() {
         return minSaplingWinterHardiness;
+    }
+
+    public boolean isDownfallSuitable(float downfall) {
+        return downfall >= minDownfall && downfall <= maxDownfall;
+    }
+
+    public float getMinDownfall() {
+        return minDownfall;
+    }
+
+    public float getMaxDownfall() {
+        return maxDownfall;
     }
 
     //Gives the sheltering need for sapling during summer

@@ -64,6 +64,9 @@ public class HardinessZoneScannerItem extends Item {
                         int maxWinterZone = PlantClimateConditionsRegistry.getMaxWinterHardinessForPlant(id);
                         int minSaplingWinterHardiness = PlantClimateConditionsRegistry.getMinWinterHardinessForSapling(id);
 
+                        float minDownfall = PlantClimateConditionsRegistry.getMinDownfallForPlant(id);
+                        float maxDownfall = PlantClimateConditionsRegistry.getMaxDownfallForPlant(id);
+
                         SummerHeat minSummerTemperature = PlantClimateConditionsRegistry.getMinSummerHeatForPlant(id);
                         SummerHeat maxSummerTemperature = PlantClimateConditionsRegistry.getMaxSummerHeatForPlant(id);
                         SummerHeat maxSaplingSummerHeat = PlantClimateConditionsRegistry.getMaxSummerHeatForSapling(id);
@@ -76,6 +79,8 @@ public class HardinessZoneScannerItem extends Item {
                                 new StringTextComponent("§aMinimum Winter Zone: §e" + minWinterZone +
                                         "\n§aMaximum Winter Zone: §e" + maxWinterZone +
                                         "\n§aMinimum Winter Hardiness for Sapling: §e" + minSaplingWinterHardiness +
+                                        "\n§aMinimum Downfall: §e" + minDownfall +
+                                        "\n§aMaximum Downfall: §e" + maxDownfall +
                                         "\n§aMinimum Summer Temperature: §e" + minSummerTemperature +
                                         "\n§aMaximum Summer Temperature: §e" + maxSummerTemperature +
                                         "\n§aMaximum Summer Heat for Sapling: §e" + maxSaplingSummerHeat +
