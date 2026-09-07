@@ -41,10 +41,10 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("minecraft", "birch_sapling"),
                 2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM, Biome.RainType.NONE);
 
+        //Max zone 11 because of cacao
         register(new ResourceLocation("minecraft", "jungle_sapling"),
                 11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
-        //Max zone 11 because of cacao
 
         register(new ResourceLocation("minecraft", "acacia_sapling"),
                 9, 12, 10, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
@@ -76,7 +76,8 @@ public class PlantClimateConditionsRegistry {
                 2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
 
         register(new ResourceLocation("caiocesarbiomes", "avocado_sapling"),
-                8, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+                8, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
         register(new ResourceLocation("caiocesarbiomes", "bald_cypress_sapling"),
                 4, 11, 5, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
@@ -93,7 +94,6 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("caiocesarbiomes", "black_poplar_sapling"),
                 2, 10, 4, SummerHeat.COOLER, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
 
-        //Needs allowed DroughtPattern
         register(new ResourceLocation("caiocesarbiomes", "blackwood_acacia_sapling"),
                 8, 10, 9, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
@@ -107,6 +107,7 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("caiocesarbiomes", "durian_sapling"),
                 11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
+        //Soursop, Mangosteen, Rambutan is a ultratropical (zone 11 to above)
 
         ///Brazillian Biomes
         register(new ResourceLocation("brbiomesmod", "acai_sapling"),
@@ -114,7 +115,8 @@ public class PlantClimateConditionsRegistry {
 
 
         register(new ResourceLocation("brbiomesmod", "babassu_sapling"),
-                11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+                11, 12, 11, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
     }
 
