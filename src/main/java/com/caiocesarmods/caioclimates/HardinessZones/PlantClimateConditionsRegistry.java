@@ -34,18 +34,27 @@ public class PlantClimateConditionsRegistry {
         // Vanilla saplings
         register(new ResourceLocation("minecraft", "oak_sapling"),
                 3, 10, 5, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+
         register(new ResourceLocation("minecraft", "spruce_sapling"),
                 1, 7, 1, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
+
         register(new ResourceLocation("minecraft", "birch_sapling"),
-                2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
+                2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM, Biome.RainType.NONE);
+
         register(new ResourceLocation("minecraft", "jungle_sapling"),
-                11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT, null); //Max zone 11 because of cacao
+                11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+        //Max zone 11 because of cacao
+
         register(new ResourceLocation("minecraft", "acacia_sapling"),
                 9, 12, 10, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
+
         register(new ResourceLocation("minecraft", "dark_oak_sapling"),
                 3, 9, 5, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+
         register(new ResourceLocation("minecraft", "bamboo_sapling"),
                 4, 12, 7, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, null);
+
 
         // Caio Cesar's Biomes saplings
         register(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),
@@ -102,6 +111,11 @@ public class PlantClimateConditionsRegistry {
         ///Brazillian Biomes
         register(new ResourceLocation("brbiomesmod", "acai_sapling"),
                 11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+
+
+        register(new ResourceLocation("brbiomesmod", "babassu_sapling"),
+                11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, null);
+
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
