@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "caioclimates:block/bamboo_leaves",
+    "particle": "caioclimates:block/bamboo_leaves"
+  }
+}

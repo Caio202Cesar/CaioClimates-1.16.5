@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "caioclimates:block/bamboo_tree_sapling",
+    "particle": "caioclimates:block/bamboo_tree_sapling"
+  }
+}
