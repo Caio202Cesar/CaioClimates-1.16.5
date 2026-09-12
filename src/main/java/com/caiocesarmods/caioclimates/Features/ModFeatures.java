@@ -45,9 +45,10 @@ public class ModFeatures {
 
     public static final ConfiguredFeature<?, ?> BAMBOO_VEGETATION_NO_OAK = register("bamboo_vegetation_no_oak",
             Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(BAMBOO_LIGHT.withChance(0.3F),
-                            BAMBOO_TREE.withChance(0.75F), JUNGLE_TREE_NO_CACAO.withChance(0.003F), JUNGLE_TREE_NO_VINE.withChance(0.0032F)), TALL_BAMBOO_TREE))
+                            BAMBOO_TREE.withChance(0.75F), TALL_BAMBOO_TREE.withChance(0.21F), JUNGLE_TREE_NO_CACAO.withChance(0.003F),
+                            JUNGLE_TREE_NO_VINE.withChance(0.0032F)), MEGA_JUNGLE_TREE))
                     .withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA
-                            .configure(new AtSurfaceWithExtraConfig(60, 0.1F, 1))));
+                            .configure(new AtSurfaceWithExtraConfig(50, 0.5F, 5))));
 
 
     static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String p_243968_0_, ConfiguredFeature<FC, ?> p_243968_1_) {
