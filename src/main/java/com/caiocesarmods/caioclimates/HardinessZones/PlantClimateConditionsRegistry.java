@@ -120,6 +120,9 @@ public class PlantClimateConditionsRegistry {
                 11, 12, 11, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
+        register(new ResourceLocation("brbiomesmod", "parana_pine_sapling"),
+                8, 10, 9, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
