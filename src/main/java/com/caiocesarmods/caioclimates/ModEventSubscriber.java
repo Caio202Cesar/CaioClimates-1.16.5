@@ -1,14 +1,21 @@
 package com.caiocesarmods.caioclimates;
 
+import com.caiocesarmods.caioclimates.Features.ModFeatures;
 import com.caiocesarmods.caioclimates.Seasons.SetSeasonCommand;
 import com.caiocesarmods.caioclimates.Util.BiomeClimateHUD;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Features;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.List;
+import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = CaioClimates.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEventSubscriber {
