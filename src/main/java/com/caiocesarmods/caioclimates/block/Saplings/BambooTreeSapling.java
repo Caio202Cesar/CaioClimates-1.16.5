@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates.block.Saplings;
 
+import com.caiocesarmods.caioclimates.Features.TreeFeatures;
 import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -46,9 +47,9 @@ public class BambooTreeSapling  extends SaplingBlock {
         @Override
         protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random random, boolean p_225546_2_) {
             if (random.nextInt(10) == 0) {
-                return TreeFeatures.AGATHIS_TREE1;
+                return TreeFeatures.TALL_BAMBOO_TREE;
             } else {
-                return TreeFeatures.AGATHIS_TREE2;
+                return TreeFeatures.BAMBOO_TREE;
             }
         }
     }

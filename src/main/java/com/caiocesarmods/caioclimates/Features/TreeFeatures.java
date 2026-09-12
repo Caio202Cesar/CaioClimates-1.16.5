@@ -13,6 +13,7 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.BushFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.SpruceFoliagePlacer;
+import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 import net.minecraft.world.gen.treedecorator.CocoaTreeDecorator;
 import net.minecraft.world.gen.treedecorator.LeaveVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
@@ -45,13 +46,15 @@ public class TreeFeatures {
                     new SimpleBlockStateProvider(States.BAMBOO_LEAVES),
                     new SpruceFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(4), FeatureSpread.create(6)),
                     new StraightTrunkPlacer(10, 3, 0),
-                    new TwoLayerFeature(1, 0, 1))).build()));
+                    new TwoLayerFeature(1, 0, 1)))
+                    .setDecorators(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(States.PODZOL)))).build()));
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> TALL_BAMBOO_TREE = register("tall_bamboo_tree",
             Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.BAMBOO_LOG),
                     new SimpleBlockStateProvider(States.BAMBOO_LEAVES),
                     new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(1), 2),
                     new StraightTrunkPlacer(16, 5, 2),
-                    new TwoLayerFeature(1, 0, 1))).build()));
+                    new TwoLayerFeature(1, 0, 1)))
+                    .setDecorators(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(States.PODZOL)))).build()));
 
     public static final class States {
         protected static final BlockState ACACIA_LOG = Blocks.ACACIA_LOG.getDefaultState();
@@ -62,6 +65,9 @@ public class TreeFeatures {
 
         protected static final BlockState BAMBOO_LOG = Blocks.BAMBOO.getDefaultState();
         protected static final BlockState BAMBOO_LEAVES = ModBlocks.BAMBOO_LEAVES.get().getDefaultState();
+
+        protected static final BlockState PODZOL = Blocks.PODZOL.getDefaultState();
+
     }
 
 

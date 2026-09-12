@@ -6,9 +6,9 @@ import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
 
-import static com.caiocesarmods.caioclimates.Features.TreeFeatures.ACACIA_SHRUB;
-import static com.caiocesarmods.caioclimates.Features.TreeFeatures.JUNGLE_TREE_NO_CACAO;
+import static com.caiocesarmods.caioclimates.Features.TreeFeatures.*;
 import static net.minecraft.world.gen.feature.Features.*;
 
 public class ModFeatures {
@@ -44,10 +44,11 @@ public class ModFeatures {
                             .configure(new AtSurfaceWithExtraConfig(0, 0.1F, 1))));
 
     public static final ConfiguredFeature<?, ?> BAMBOO_VEGETATION_NO_OAK = register("bamboo_vegetation_no_oak",
-            Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(BAMBOO.withChance(0.6F),
-                            JUNGLE_TREE.withChance(0.36F), JUNGLE_TREE_NO_VINE.withChance(0.22F)), MEGA_JUNGLE_TREE))
+            Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(BAMBOO_LIGHT.withChance(0.3F),
+                            BAMBOO_TREE.withChance(0.55F), TALL_BAMBOO_TREE.withChance(0.73F),
+                            JUNGLE_TREE_NO_CACAO.withChance(0.03F), JUNGLE_TREE_NO_VINE.withChance(0.032F)), MEGA_JUNGLE_TREE))
                     .withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA
-                            .configure(new AtSurfaceWithExtraConfig(30, 0.1F, 1))));
+                            .configure(new AtSurfaceWithExtraConfig(60, 0.1F, 1))));
 
 
     static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String p_243968_0_, ConfiguredFeature<FC, ?> p_243968_1_) {
