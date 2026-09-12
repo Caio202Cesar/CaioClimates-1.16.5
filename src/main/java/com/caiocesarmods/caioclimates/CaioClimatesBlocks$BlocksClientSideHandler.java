@@ -1,5 +1,6 @@
 package com.caiocesarmods.caioclimates;
 
+import com.caiocesarmods.caioclimates.block.Saplings.BambooTreeSapling;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,6 +16,6 @@ public class CaioClimatesBlocks$BlocksClientSideHandler {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
-        //Seasonal tulip
+        BambooTreeSapling.registerRenderLayer();
     }
 }

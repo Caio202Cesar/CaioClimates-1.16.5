@@ -3,6 +3,7 @@ package com.caiocesarmods.caioclimates.block;
 import com.caiocesarmods.caioclimates.CaioClimates;
 import com.caiocesarmods.caioclimates.block.BurntBlocks.CharredBranches;
 import com.caiocesarmods.caioclimates.block.BurntBlocks.CharredLog;
+import com.caiocesarmods.caioclimates.block.Saplings.BambooTreeSapling;
 import com.caiocesarmods.caioclimates.block.SeasonalLeaves.*;
 import com.caiocesarmods.caioclimates.item.ModItems;
 import net.minecraft.block.*;
@@ -58,10 +59,18 @@ public class ModBlocks {
                     .hardnessAndResistance(0.2F).tickRandomly().notSolid().sound(SoundType.PLANT)
                     .harvestTool(ToolType.HOE), Blocks.ACACIA_LEAVES));
 
+
+    public static final RegistryObject<Block> BAMBOO_LEAVES = registerBlock("bamboo_leaves",
+            ModBlocks::createLeavesBlock);
+    public static final RegistryObject<Block> BAMBOO_TREE_SAPLING = registerBlock("bamboo_tree_sapling",
+            BambooTreeSapling::new);
+
+
     //Dead bamboo
     public static final RegistryObject<Block> DEAD_BAMBOO_SHOOT = registerBlock("dead_bamboo_shoot",
             () -> new DeadBushBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS, MaterialColor.WOOD)
                     .doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.PLANT)));
+
 
     //Burnt Blocks
     public static final RegistryObject<Block> CHARRED_LOG = registerBlock("charred_log",
@@ -84,6 +93,11 @@ public class ModBlocks {
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_MONKEY_PUZZLE_LEAVES = registerBlock("scorched_monkey_puzzle_leaves",
             CharredBranches::new);
+
+    private static LeavesBlock createLeavesBlock() {
+        return new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
+                .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE));
+    }
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -8,18 +8,19 @@ import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.Placement;
 
 import static com.caiocesarmods.caioclimates.Features.TreeFeatures.ACACIA_SHRUB;
+import static com.caiocesarmods.caioclimates.Features.TreeFeatures.JUNGLE_TREE_NO_CACAO;
 import static net.minecraft.world.gen.feature.Features.*;
 
 public class ModFeatures {
 
     public static final ConfiguredFeature<?, ?> TREES_JUNGLE_NO_OAK = register("trees_jungle_no_oak",
             Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(MEGA_JUNGLE_TREE.withChance(0.33333334F),
-                    JUNGLE_TREE_NO_VINE.withChance(0.5F)), JUNGLE_TREE)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.
+                    JUNGLE_TREE_NO_VINE.withChance(0.5F)), JUNGLE_TREE_NO_CACAO)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.
                             configure(new AtSurfaceWithExtraConfig(50, 0.1F, 1))));
 
     public static final ConfiguredFeature<?, ?> TREES_JUNGLE_EDGE_NO_OAK = register("trees_jungle_edge_no_oak",
             Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(JUNGLE_TREE_NO_VINE.withChance(0.1F)),
-                            JUNGLE_TREE)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
+                            JUNGLE_TREE_NO_CACAO)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
                     .withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(2, 0.1F, 1))));
 
     public static final ConfiguredFeature<?, ?> TREES_SHATTERED_SAVANNA_NO_OAK = register("trees_shattered_savanna_no_oak",
