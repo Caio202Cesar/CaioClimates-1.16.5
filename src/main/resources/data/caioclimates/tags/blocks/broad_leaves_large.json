@@ -5,7 +5,8 @@
     "minecraft:dark_oak_leaves",
     "minecraft:jungle_leaves",
     "caioclimates:oak_fall_leaves",
-    "caioclimates:dark_oak_fall_leaves"
+    "caioclimates:dark_oak_fall_leaves",
+    "caioclimates:bamboo_leaves"
   ],
   "optional": [
     "caiocesarbiomes:avocado_leaves",

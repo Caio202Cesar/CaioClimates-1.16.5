@@ -41,87 +41,88 @@ public class PlantClimateConditionsRegistry {
                 1, 7, 1, 0F, 0.84F, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.HOT, null);
 
         register(new ResourceLocation("minecraft", "birch_sapling"),
-                2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM, Biome.RainType.NONE);
+                2, 7, 3,0F, 1F, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM, Biome.RainType.NONE);
 
         //Max zone 11 because of cacao
         register(new ResourceLocation("minecraft", "jungle_sapling"),
-                11, 12, 11, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                11, 12, 11,0F, 1F, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
         register(new ResourceLocation("minecraft", "acacia_sapling"),
-                9, 12, 10, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
+                9, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
 
         register(new ResourceLocation("minecraft", "dark_oak_sapling"),
-                3, 9, 5, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                3, 9, 5,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
         register(new ResourceLocation("minecraft", "bamboo_sapling"),
-                4, 12, 7, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, null);
+                4, 12, 7,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, null);
 
 
         // Caio Cesar's Biomes saplings
         register(new ResourceLocation("caiocesarbiomes", "acerola_sapling"),
-                9, 12, 10, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
+                9, 12, 10,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
 
         register(new ResourceLocation("caiocesarbiomes", "agathis_sapling"),
-                8, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                8, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
         register(new ResourceLocation("caiocesarbiomes", "aleppo_pine_sapling"),
-                8, 10, 8, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
+                8, 10, 8,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING, Biome.RainType.RAIN);
 
         register(new ResourceLocation("caiocesarbiomes", "almond_sapling"),
-                5, 10, 8, SummerHeat.WARM, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, Biome.RainType.RAIN);
+                5, 10, 8,0F, 1F, SummerHeat.WARM, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, Biome.RainType.RAIN);
 
         register(new ResourceLocation("caiocesarbiomes", "apple_sapling"),
-                2, 10, 7, SummerHeat.COOLER, SummerHeat.SCORCHING, SummerHeat.HOT, null);
+                2, 10, 7,0F, 1F, SummerHeat.COOLER, SummerHeat.SCORCHING, SummerHeat.HOT, null);
 
         register(new ResourceLocation("caiocesarbiomes", "aspen_sapling"),
-                2, 7, 3, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
+                2, 7, 3,0F, 1F, SummerHeat.COOLER, SummerHeat.WARM, SummerHeat.WARM,null);
 
         register(new ResourceLocation("caiocesarbiomes", "avocado_sapling"),
-                8, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                8, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
         register(new ResourceLocation("caiocesarbiomes", "bald_cypress_sapling"),
-                4, 11, 5, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
+                4, 11, 5,0F, 1F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
 
         register(new ResourceLocation("caiocesarbiomes", "banana_sapling"),
-                9, 12, 10, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, Biome.RainType.NONE);
+                9, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, Biome.RainType.NONE);
 
         register(new ResourceLocation("caiocesarbiomes", "baobab_sapling"),
-                10, 12, 11, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, Biome.RainType.RAIN);
+                10, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, Biome.RainType.RAIN);
 
         register(new ResourceLocation("caiocesarbiomes", "bismarck_palm_sapling"),
-                9, 12, 10, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING, null);
+                9, 12, 10,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING, null);
 
         register(new ResourceLocation("caiocesarbiomes", "black_poplar_sapling"),
-                2, 10, 4, SummerHeat.COOLER, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
+                2, 10, 4,0F, 1F, SummerHeat.COOLER, SummerHeat.SCORCHING, SummerHeat.VERY_HOT, null);
 
         register(new ResourceLocation("caiocesarbiomes", "blackwood_acacia_sapling"),
-                8, 10, 9, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.HOT,
+                8, 10, 9,0F, 1F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
 
 
         register(new ResourceLocation("caiocesarbiomes", "cinnamon_sapling"),
-                10, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                10, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
 
         register(new ResourceLocation("caiocesarbiomes", "durian_sapling"),
-                11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
         //Soursop, Mangosteen, Rambutan is a ultratropical (zone 11 to above)
 
         ///Brazillian Biomes
         register(new ResourceLocation("brbiomesmod", "acai_sapling"),
-                11, 12, 11, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
 
         register(new ResourceLocation("brbiomesmod", "babassu_sapling"),
-                11, 12, 11, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING,
+                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
         register(new ResourceLocation("brbiomesmod", "parana_pine_sapling"),
-                8, 10, 9, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+                8, 10, 9, 0F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
     }
 
