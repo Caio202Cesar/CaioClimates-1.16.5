@@ -16,7 +16,7 @@ public class ModFeatures {
     public static final ConfiguredFeature<?, ?> TREES_JUNGLE_NO_OAK = register("trees_jungle_no_oak",
             Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(MEGA_JUNGLE_TREE.withChance(0.33333334F),
                     JUNGLE_TREE_NO_VINE.withChance(0.5F)), JUNGLE_TREE_NO_CACAO)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.
-                            configure(new AtSurfaceWithExtraConfig(50, 0.1F, 1))));
+                            configure(new AtSurfaceWithExtraConfig(16, 0.0F, 0))));
 
     public static final ConfiguredFeature<?, ?> TREES_JUNGLE_EDGE_NO_OAK = register("trees_jungle_edge_no_oak",
             Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(JUNGLE_TREE_NO_VINE.withChance(0.1F)),

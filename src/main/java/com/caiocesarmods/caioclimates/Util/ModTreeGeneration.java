@@ -21,10 +21,8 @@ public class ModTreeGeneration {
 
         /// Jungle
         if (key.equals(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, Biomes.JUNGLE.getLocation()))
-                || (key.equals(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, Biomes.BAMBOO_JUNGLE.getLocation()))
                 || (key.equals(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, Biomes.MODIFIED_JUNGLE.getLocation())))
                 || (key.equals(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, Biomes.JUNGLE_HILLS.getLocation()))))
-                || (key.equals(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, Biomes.BAMBOO_JUNGLE_HILLS.getLocation()))))
         {
 
             List<Supplier<ConfiguredFeature<?, ?>>> base =
@@ -33,7 +31,7 @@ public class ModTreeGeneration {
             base.add(() -> ModFeatures.TREES_JUNGLE_NO_OAK
                     .withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
                     .withPlacement(Placement.COUNT_EXTRA.configure(
-                            new AtSurfaceWithExtraConfig(50, 0.1F, 1))));
+                            new AtSurfaceWithExtraConfig(16, 0.0F, 0))));
         }
 
         /// Bamboo Jungle
