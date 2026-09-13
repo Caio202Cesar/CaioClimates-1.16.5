@@ -29,7 +29,7 @@ public class FireBlockMixin {
     private void changeFlammableBlockTick(World worldIn, BlockPos pos, int chance, Random random, int age, Direction face, CallbackInfo ci) {
         BlockState blockstate = worldIn.getBlockState(pos);
 
-        if (blockstate.isIn(BlockTags.LOGS)) {
+        if (blockstate.isIn(BlockTags.LOGS_THAT_BURN)) {
             BlockState charredLog = ModBlocks.CHARRED_LOG.get().getDefaultState();
 
             if (blockstate.hasProperty(RotatedPillarBlock.AXIS)) {
