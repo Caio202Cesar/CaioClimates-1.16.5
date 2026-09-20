@@ -59,19 +59,19 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("minecraft:snowy_beach", ClimateDomain.SNOWY);
         ClimateDomainRegistry.register("minecraft:ice_spikes", ClimateDomain.ICE_CAP);
 
-        ClimateDomainRegistry.register("minecraft:mushroom_fields", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("minecraft:mushroom_fields_shore", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("minecraft:mushroom_fields", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("minecraft:mushroom_fields_shore", ClimateDomain.TROPICAL_RAINFOREST);
 
         ClimateDomainRegistry.register("minecraft:beach", ClimateDomain.TEMPERATE_OCEANIC);
         ClimateDomainRegistry.register("minecraft:stone_beach", ClimateDomain.SUBARTIC);
 
-        ClimateDomainRegistry.register("minecraft:jungle", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("minecraft:jungle_hills", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("minecraft:jungle", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("minecraft:jungle_hills", ClimateDomain.TROPICAL_RAINFOREST);
         ClimateDomainRegistry.register("minecraft:jungle_edge", ClimateDomain.TROPICAL_SAVANNA);
-        ClimateDomainRegistry.register("minecraft:modified_jungle", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("minecraft:modified_jungle", ClimateDomain.TROPICAL_RAINFOREST);
         ClimateDomainRegistry.register("minecraft:modified_jungle_edge", ClimateDomain.TROPICAL_SAVANNA);
-        ClimateDomainRegistry.register("minecraft:bamboo_jungle", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("minecraft:bamboo_jungle_hills", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("minecraft:bamboo_jungle", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("minecraft:bamboo_jungle_hills", ClimateDomain.TROPICAL_RAINFOREST);
 
         ClimateDomainRegistry.register("minecraft:birch_forest", ClimateDomain.HEMIBOREAL_CONTINENTAL);
         ClimateDomainRegistry.register("minecraft:birch_forest_hills", ClimateDomain.HEMIBOREAL_CONTINENTAL);
@@ -125,13 +125,13 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("caiocesarbiomes:coastal_subtropical_desert", ClimateDomain.FOGGY_MILD_TROPICAL_DESERT);
         ClimateDomainRegistry.register("caiocesarbiomes:coastal_subtropical_desert_lomas", ClimateDomain.FOGGY_MILD_TROPICAL_DESERT);
 
-        ClimateDomainRegistry.register("caiocesarbiomes:tropical_pine_island", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("caiocesarbiomes:tropical_island", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("caiocesarbiomes:ficus_jungle", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_marsh", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_marsh_river", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_beach", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("caiocesarbiomes:tropical_beach", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:tropical_pine_island", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:tropical_island", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:ficus_jungle", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_marsh", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_marsh_river", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:tropical_bamboo_beach", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("caiocesarbiomes:tropical_beach", ClimateDomain.TROPICAL_RAINFOREST);
 
         ClimateDomainRegistry.register("caiocesarbiomes:dry_tropical_beach", ClimateDomain.TROPICAL_SAVANNA);
 
@@ -194,17 +194,17 @@ public class ClimateSetup {
         ClimateDomainRegistry.register("caiocesarbiomes:volcanic_site", ClimateDomain.NONE);
 
         /// Brazillian Biomes
-        ClimateDomainRegistry.register("brbiomesmod:amazon_rainforest", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("brbiomesmod:amazon_varzea_forest", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("brbiomesmod:black_amazon_river", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("brbiomesmod:amazon_rainforest", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("brbiomesmod:amazon_varzea_forest", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("brbiomesmod:black_amazon_river", ClimateDomain.TROPICAL_RAINFOREST);
         ClimateDomainRegistry.register("brbiomesmod:amazon_rainforest_edge", ClimateDomain.TROPICAL_SAVANNA);
 
         ClimateDomainRegistry.register("brbiomesmod:araucaria_plateau", ClimateDomain.HUMID_SUBTROPICAL_HIGHLAND);
 
-        ClimateDomainRegistry.register("brbiomesmod:atlantic_forest", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("brbiomesmod:atlantic_forest", ClimateDomain.TROPICAL_RAINFOREST);
         ClimateDomainRegistry.register("brbiomesmod:atlantic_forest_hills", ClimateDomain.TROPICAL_MONTANE);
-        ClimateDomainRegistry.register("brbiomesmod:atlantic_forest_beach", ClimateDomain.TROPICAL_FOREST);
-        ClimateDomainRegistry.register("brbiomesmod:atlantic_forest_river", ClimateDomain.TROPICAL_FOREST);
+        ClimateDomainRegistry.register("brbiomesmod:atlantic_forest_beach", ClimateDomain.TROPICAL_RAINFOREST);
+        ClimateDomainRegistry.register("brbiomesmod:atlantic_forest_river", ClimateDomain.TROPICAL_RAINFOREST);
 
         ClimateDomainRegistry.register("brbiomesmod:caatinga_shrubland", ClimateDomain.TROPICAL_SEMIARID);
 
