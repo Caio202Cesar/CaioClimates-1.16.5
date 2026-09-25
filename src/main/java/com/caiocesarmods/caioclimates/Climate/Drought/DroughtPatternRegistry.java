@@ -98,8 +98,9 @@ public class DroughtPatternRegistry {
 
         register("caiocesarbiomes:temperate_rainforest", DroughtPattern.DRY_SUMMER);
 
-        register("brbiomesmod:amazon_rainforest_edge", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:montane_laurel_grove", DroughtPattern.DRY_SUMMER);
 
+        register("brbiomesmod:amazon_rainforest_edge", DroughtPattern.DRY_SUMMER);
         register("brbiomesmod:caatinga_shrubland", DroughtPattern.SEMI_ARID);
         register("brbiomesmod:cerrado", DroughtPattern.DRY_SUMMER);
         register("brbiomesmod:dunas_restinga", DroughtPattern.DRY_SUMMER);

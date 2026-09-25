@@ -98,16 +98,21 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("minecraft", "modified_badlands_plateau"), 0.9F);
 
         /// Caio César's Naturalistic Voyage
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "bamboo_subtropical_laurel_jungle"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "montane_laurel_grove"), 0.89F);
+        //Hot laurel forest
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_laurel_forest"), 0.89F);
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "hot_laurel_forest_beach"), 0.89F);
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "hot_laurel_forest_river"), 0.89F);
+        //Subtropical Evergreen Oak Forest
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_evergreen_oak_forest"), 0.95F);
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_evergreen_oak_forest_beach"), 0.95F);
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_evergreen_oak_forest_river"), 0.95F);
+        //Subtropical Laurel Jungle
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "bamboo_subtropical_laurel_jungle"), 0.95F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_laurel_jungle"), 0.89F);
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "laurel_forest_river"), 0.89F);
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "humid_subtropical_beach"), 0.89F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_extreme_hills"), 0.89F);
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_seasonal_forest"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_lucidophyll_oak_forest_beach"), 0.95F);
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "subtropical_lucidophyll_oak_forest_river"), 0.95F);
+        //Macaronesian Biomes
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "montane_laurel_grove"), 0.89F);
+        //Humid Subtropical Pine Forest
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "humid_subtropical_pine_forest"), 0.95F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "humid_subtropical_pine_river"), 0.95F);
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "humid_subtropical_pine_beach"), 0.95F);
