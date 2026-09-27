@@ -14,6 +14,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+//Add also ways to amenize these effects
 @Mod.EventBusSubscriber(modid = CaioClimates.MOD_ID)
 public class PlayerEffectEvents {
     @SubscribeEvent
