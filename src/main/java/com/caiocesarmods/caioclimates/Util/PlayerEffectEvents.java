@@ -31,10 +31,12 @@ public class PlayerEffectEvents {
         String phase = SeasonalPhase.getPhase(world.getDayTime());
 
         SummerHeat heat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
+        long time = world.getDayTime() % 24000L;
+        boolean hottestPartOfDay = time >= 7000 && time <= 11000;
 
-        //case for hot summer biomes
+        //case for HOT summer biomes
         if (heat == SummerHeat.HOT) {
-            if (season.equals("SUMMER")) {
+            if (season.equals("SUMMER") && hottestPartOfDay) {
                 player.addPotionEffect(new EffectInstance(
                         ModEffects.HOT.get(),
                         220,   // duration in ticks
@@ -42,23 +44,5 @@ public class PlayerEffectEvents {
                 ));
             }
         }
-
-        /*
-        if (season.equals("SUMMER")) {
-
-
-            if (heat == SummerHeat.HOT) {
-                // Give Hot I
-            } else if (heat == SummerHeat.VERY_HOT) {
-                // Give Hot II
-            } else if (heat == SummerHeat.SCORCHING) {
-                // Give Hot III
-            } else {
-                // Remove Hot
-            }
-
-        } else {
-            // Remove Hot
-        }*/
     }
 }

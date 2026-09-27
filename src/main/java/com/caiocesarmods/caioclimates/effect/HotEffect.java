@@ -14,7 +14,7 @@ public class HotEffect extends Effect {
     @Override
     public void performEffect(LivingEntity entity, int amplifier) {
         if (!(entity instanceof PlayerEntity)) {
-            return;
+
         }
     }
 
