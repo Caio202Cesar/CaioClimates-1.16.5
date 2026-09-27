@@ -32,7 +32,7 @@ public class PlayerEffectEvents {
 
         SummerHeat heat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
         long time = world.getDayTime() % 24000L;
-        boolean hottestPartOfDay = time >= 7000 && time <= 11000;
+        boolean hottestPartOfDay = time >= 5000 && time <= 11000;
 
         ///case for HOT summer biomes
         if (heat == SummerHeat.HOT) {
@@ -40,7 +40,7 @@ public class PlayerEffectEvents {
                 player.addPotionEffect(new EffectInstance(
                         ModEffects.HOT.get(),
                         220,   // duration in ticks
-                        0      // amplifier (Hot I)
+                        1      // amplifier (Hot II)
                 ));
             }
         }
