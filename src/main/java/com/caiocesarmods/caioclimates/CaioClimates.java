@@ -7,6 +7,7 @@ import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureData;
 import com.caiocesarmods.caioclimates.Climate.Moisture.MoistureStorage;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerTemperatureSetup;
 import com.caiocesarmods.caioclimates.block.ModBlocks;
+import com.caiocesarmods.caioclimates.effect.ModEffects;
 import com.caiocesarmods.caioclimates.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,6 +42,8 @@ public class CaioClimates {
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+
+        ModEffects.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::enqueueIMC);

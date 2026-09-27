@@ -16,8 +16,6 @@ public class HotEffect extends Effect {
         if (!(entity instanceof PlayerEntity)) {
             return;
         }
-
-        PlayerEntity player = (PlayerEntity) entity;
     }
 
     @Override

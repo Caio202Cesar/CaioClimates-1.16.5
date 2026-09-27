@@ -3,7 +3,6 @@ package com.caiocesarmods.caioclimates.item;
 import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPattern;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.VineBlock;
