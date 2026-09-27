@@ -34,7 +34,7 @@ public class PlayerEffectEvents {
         long time = world.getDayTime() % 24000L;
         boolean hottestPartOfDay = time >= 7000 && time <= 11000;
 
-        //case for HOT summer biomes
+        ///case for HOT summer biomes
         if (heat == SummerHeat.HOT) {
             if (season.equals("SUMMER") && hottestPartOfDay) {
                 player.addPotionEffect(new EffectInstance(
