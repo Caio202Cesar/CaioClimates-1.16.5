@@ -5,7 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 
-//Heat-caused discomfort
+//Heat-caused discomfort = this is applied in following situations: summers with temperature hot to above, moderate heat sources
 public class HotEffect extends Effect {
     protected HotEffect(EffectType typeIn, int liquidColorIn) {
         super(EffectType.NEUTRAL, 0xF3CB21);
