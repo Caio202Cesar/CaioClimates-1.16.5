@@ -24,7 +24,7 @@ public class HotEffect extends Effect {
 
             if (!world.isRemote) {
                 ((ServerWorld) world).spawnParticle(
-                        ParticleTypes.DRIPPING_WATER,
+                        ParticleTypes.FALLING_WATER,
                         entity.getPosX(),
                         entity.getPosY() + 1.6,
                         entity.getPosZ(),
