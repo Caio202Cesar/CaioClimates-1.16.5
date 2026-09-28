@@ -1,6 +1,7 @@
 package com.caiocesarmods.caioclimates.effect;
 
 import com.caiocesarmods.caioclimates.CaioClimates;
+import com.caiocesarmods.caioclimates.effect.ClimateEffects.HotEffect;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 import net.minecraftforge.eventbus.api.IEventBus;

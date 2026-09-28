@@ -120,12 +120,20 @@ public class PlantClimateConditionsRegistry {
                 11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
+
+        register(new ResourceLocation("brbiomesmod", "bracatinga_sapling"),
+                8, 10, 9, 0.7F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
+                Biome.RainType.NONE);
+
+
         register(new ResourceLocation("brbiomesmod", "parana_pine_sapling"),
                 8, 10, 9, 0F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
 
-        register(new ResourceLocation("brbiomesmod", "bracatinga_sapling"),
-                8, 10, 9, 7F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
+
+
+        register(new ResourceLocation("brbiomesmod", "kapok_sapling"),
+                10, 12, 11, 7F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
                 Biome.RainType.NONE);
 
     }

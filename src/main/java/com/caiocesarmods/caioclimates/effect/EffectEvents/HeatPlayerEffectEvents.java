@@ -1,10 +1,11 @@
-package com.caiocesarmods.caioclimates.effect;
+package com.caiocesarmods.caioclimates.effect.EffectEvents;
 
 import com.caiocesarmods.caioclimates.CaioClimates;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import com.caiocesarmods.caioclimates.Seasons.Season;
 import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
+import com.caiocesarmods.caioclimates.effect.ModEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.math.BlockPos;
@@ -38,7 +39,7 @@ public class HeatPlayerEffectEvents {
         long time = world.getDayTime() % 24000L;
         boolean hottestPartOfDay = time >= 5000 && time <= 11000;
 
-        /// BORDERLINE TROPICAL BIOMES (temp >0.9F and <0.95F)
+        /// BORDERLINE TROPICAL BIOMES (temp > 0.9F and < 0.95F)
 
         /// TEMPERATE BIOMES
         if (temp <= 0.89F) {

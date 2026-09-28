@@ -1,4 +1,4 @@
-package com.caiocesarmods.caioclimates.effect;
+package com.caiocesarmods.caioclimates.effect.ClimateEffects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
