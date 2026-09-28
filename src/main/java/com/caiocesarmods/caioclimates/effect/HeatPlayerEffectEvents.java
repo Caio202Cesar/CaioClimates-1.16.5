@@ -38,6 +38,8 @@ public class HeatPlayerEffectEvents {
         long time = world.getDayTime() % 24000L;
         boolean hottestPartOfDay = time >= 5000 && time <= 11000;
 
+        /// BORDERLINE TROPICAL BIOMES (temp >0.9F and <0.95F)
+
         /// TEMPERATE BIOMES
         if (temp <= 0.89F) {
 
