@@ -103,11 +103,11 @@ public class PlantClimateConditionsRegistry {
 
 
         register(new ResourceLocation("caiocesarbiomes", "cinnamon_sapling"),
-                10, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                10, 12, 11,8F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
 
         register(new ResourceLocation("caiocesarbiomes", "durian_sapling"),
-                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
+                11, 12, 11,F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT, Biome.RainType.NONE);
 
         //Soursop, Mangosteen, Rambutan is a ultratropical (zone 11 to above)
 
