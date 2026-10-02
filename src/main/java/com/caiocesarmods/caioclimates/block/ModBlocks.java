@@ -83,6 +83,8 @@ public class ModBlocks {
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_SMALL_BROAD_LEAVES = registerBlock("scorched_small_broad_leaves",
             CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_SMALL_LEAVES = registerBlock("scorched_small_leaves",
+            CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_JAPANESE_MAPLE_LEAVES = registerBlock("scorched_japanese_maple_leaves",
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_CONIFER_LEAVES = registerBlock("scorched_conifer_leaves",

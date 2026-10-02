@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 
 //Add also ways to amenize these effects
 @Mod.EventBusSubscriber(modid = CaioClimates.MOD_ID)
-public class HeatPlayerEffectEvents {
+public class SeasonalTemperaturePlayerEffectEvents {
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         PlayerEntity player = event.player;
