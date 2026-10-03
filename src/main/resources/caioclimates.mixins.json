@@ -19,7 +19,8 @@
     "AbstractFireBlockMixin",
     "FireBlockMixin",
     "CocoaBlockMixin",
-    "JungleTreeMixin"
+    "JungleTreeMixin",
+    "SweetBerryBushBlockMixin"
   ],
   "client": [],
   "server": [],
