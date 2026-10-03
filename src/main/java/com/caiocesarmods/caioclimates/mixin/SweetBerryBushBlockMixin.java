@@ -2,9 +2,11 @@ package com.caiocesarmods.caioclimates.mixin;
 
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
+import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -27,7 +29,7 @@ public class SweetBerryBushBlockMixin {
 
     private void turnIntoDeadBushInUnsuitableClimate(BlockState state, ServerWorld world,
                                                       BlockPos pos, Random random, CallbackInfo ci) {
-
+        /*
         Biome biome = world.getBiome(pos);
         Biome.RainType rainType = biome.getPrecipitation();
 
@@ -40,7 +42,18 @@ public class SweetBerryBushBlockMixin {
 
         if (!isColdEnough || !suitableSummerTemps) {
             world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
+        }*/
+
+        ResourceLocation berryBush = state.getBlock().getRegistryName();
+
+        if (!PlantClimateConditionsRegistry.isRegistered(berryBush)) {
+            return;
         }
+
+        if (!PlantClimateConditionsRegistry.isSuitable(berryBush, world, pos)) {
+            world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
+        }
+
     }
 
     @Unique

@@ -4,7 +4,6 @@ import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
 import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
-import com.caiocesarmods.caioclimates.HardinessZones.SaplingHardiness;
 import com.caiocesarmods.caioclimates.Seasons.Season;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
