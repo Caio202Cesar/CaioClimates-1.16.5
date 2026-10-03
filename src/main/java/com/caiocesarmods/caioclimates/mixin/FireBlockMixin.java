@@ -132,6 +132,15 @@ public class FireBlockMixin {
             ci.cancel();
         }
 
+        if (blockstate.isIn(ModBlockTags.SMALL_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_SMALL_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
         /*
         if (blockstate.isIn(BlockTags.LEAVES)) {
             if (random.nextFloat() < 0.8F) {

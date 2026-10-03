@@ -38,4 +38,7 @@ public final class ModBlockTags {
 
     public static final ITag.INamedTag<Block> OLEANDER_LEAVES =
             BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "oleander_leaves")));
+
+    public static final ITag.INamedTag<Block> SMALL_LEAVES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "small_leaves")));
 }
