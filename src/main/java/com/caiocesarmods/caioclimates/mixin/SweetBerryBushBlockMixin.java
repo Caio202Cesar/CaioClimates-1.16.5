@@ -1,13 +1,16 @@
 package com.caiocesarmods.caioclimates.mixin;
 
-import com.caiocesarmods.caioclimates.block.ModBlocks;
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
+import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -33,9 +36,17 @@ public class SweetBerryBushBlockMixin {
         float minTemp = 0.0f;
 
         boolean isColdEnough = temp >= minTemp && temp <= maxTemp;
+        boolean suitableSummerTemps = caioClimates_1_16_5$isSummerHot(world, pos);
 
-        if (!isColdEnough) {
+        if (!isColdEnough || !suitableSummerTemps) {
             world.setBlockState(pos, Blocks.DEAD_BUSH.getDefaultState());
         }
+    }
+
+    @Unique
+    private static boolean caioClimates_1_16_5$isSummerHot(World world, BlockPos pos) {
+        SummerHeat heat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
+        return heat == SummerHeat.WARM || heat == SummerHeat.HOT ||
+                heat == SummerHeat.VERY_HOT || heat == SummerHeat.SCORCHING || heat == SummerHeat.UNBEARABLE;
     }
 }
