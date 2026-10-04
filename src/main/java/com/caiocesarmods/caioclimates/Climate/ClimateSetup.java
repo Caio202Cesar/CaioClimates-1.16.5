@@ -165,7 +165,8 @@ public class ClimateSetup {
 
         ClimateDomainRegistry.register("caiocesarbiomes:ginkgo_forest", ClimateDomain.TEMPERATE_CONTINENTAL);
 
-        ClimateDomainRegistry.register("caiocesarbiomes:hemiboreal_forest", ClimateDomain.HEMIBOREAL_CONTINENTAL);
+        ClimateDomainRegistry.register("caiocesarbiomes:mixed_continental_forest", ClimateDomain.TEMPERATE_CONTINENTAL);
+
         ClimateDomainRegistry.register("caiocesarbiomes:hemiboreal_steppe", ClimateDomain.HEMIBOREAL_CONTINENTAL_SEMIARID);
 
         ClimateDomainRegistry.register("caiocesarbiomes:inactive_volcanic_site", ClimateDomain.NONE);

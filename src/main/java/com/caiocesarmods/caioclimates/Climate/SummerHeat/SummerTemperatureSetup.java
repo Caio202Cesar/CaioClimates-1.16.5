@@ -161,8 +161,7 @@ public class SummerTemperatureSetup {
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "tussock_tundra_beach"), 0.29F);
 
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "ginkgo_forest"), 0.89F);
-        //Hot continental forest has a summer temperature of 0.89
-        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "hemiboreal_forest"), 0.75F);
+        SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "mixed_continental_forest"), 0.89F);
         //Medicine hat (Steepes based on central asia would have a 0.99F, but a hemiboreal one has milder temperatures)
         SummerTemperatureRegistry.register(new ResourceLocation("caiocesarbiomes", "hemiboreal_steppe"), 0.75F);
 
