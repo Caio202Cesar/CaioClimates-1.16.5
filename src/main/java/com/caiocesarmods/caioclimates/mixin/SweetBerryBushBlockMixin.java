@@ -26,7 +26,6 @@ public class SweetBerryBushBlockMixin {
             method = "randomTick",
             at = @At("HEAD")
     )
-
     private void turnIntoDeadBushInUnsuitableClimate(BlockState state, ServerWorld world,
                                                       BlockPos pos, Random random, CallbackInfo ci) {
         /*

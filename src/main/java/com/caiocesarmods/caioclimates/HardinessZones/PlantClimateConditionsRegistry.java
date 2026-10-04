@@ -57,8 +57,8 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("minecraft", "bamboo_sapling"),
                 4, 12, 7,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT, null);
 
-        register(new ResourceLocation("minecraft", "sweet_berries"),
-                0, 6, 0,0F, 1F, SummerHeat.ICY, SummerHeat.MILD, SummerHeat.MILD, null);
+        //It turns into dead bush if climate conditions are unsuitable
+        //register(new ResourceLocation("minecraft", "sweet_berries"), 0, 6, 0,0F, 1F, SummerHeat.ICY, SummerHeat.MILD, SummerHeat.MILD, null);
 
 
         // Caio Cesar's Biomes saplings
