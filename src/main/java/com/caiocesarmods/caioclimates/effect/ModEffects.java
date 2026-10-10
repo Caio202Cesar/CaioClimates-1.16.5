@@ -3,6 +3,8 @@ package com.caiocesarmods.caioclimates.effect;
 import com.caiocesarmods.caioclimates.CaioClimates;
 import com.caiocesarmods.caioclimates.effect.ClimateEffects.ColdEffect;
 import com.caiocesarmods.caioclimates.effect.ClimateEffects.HotEffect;
+import com.caiocesarmods.caioclimates.effect.ClimateEffects.HyperthermiaEffect;
+import com.caiocesarmods.caioclimates.effect.ClimateEffects.HypothermiaEffect;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,7 +20,13 @@ public class ModEffects {
             () -> new HotEffect(EffectType.NEUTRAL, 0xF3CB21));
 
     public static final RegistryObject<Effect> COLD = EFFECTS.register("cold_effect",
-            () -> new ColdEffect(EffectType.HARMFUL, 0x8E8ECC));
+            () -> new ColdEffect(EffectType.NEUTRAL, 0x8E8ECC));
+
+    public static final RegistryObject<Effect> HYPERTHERMIA = EFFECTS.register("hyperthermia_effect",
+            () -> new HyperthermiaEffect(EffectType.HARMFUL, 0xE0380A));
+
+    public static final RegistryObject<Effect> HYPOTHERMIA = EFFECTS.register("hypothermia_effect",
+            () -> new HypothermiaEffect(EffectType.HARMFUL, 0x475766));
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);
