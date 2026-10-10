@@ -39,7 +39,114 @@ public class SeasonalTemperaturePlayerEffectEvents {
         long time = world.getDayTime() % 24000L;
         boolean hottestPartOfDay = time >= 5000 && time <= 11000;
 
+        /// EQUATORIAL BIOMES (temp > 0.95F)
+        if (temp >= 0.95F) {
+            if (heat == SummerHeat.VERY_HOT) {
+                if (season.equals("SPRING")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+                if (season.equals("SUMMER")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            420,   // duration in ticks
+                            2      // amplifier (Hot III)
+                    ));
+                }
+                if (season.equals("FALL")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+                if (season.equals("WINTER") && hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            180,   // duration in ticks
+                            0      // amplifier (Hot I)
+                    ));
+                }
+            }
+
+            if (heat == SummerHeat.HOT) {
+                if (season.equals("SPRING")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            120,   // duration in ticks
+                            0      // amplifier (Hot I)
+                    ));
+                }
+                if (season.equals("SUMMER")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+                if (season.equals("FALL")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            120,   // duration in ticks
+                            0      // amplifier (Hot I)
+                    ));
+                }
+            }
+        }
+
         /// BORDERLINE TROPICAL BIOMES (temp > 0.9F and < 0.95F)
+        if (temp >= 0.95F) {
+            if (heat == SummerHeat.VERY_HOT) {
+                if (season.equals("SPRING")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+                if (season.equals("SUMMER")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            220,   // duration in ticks
+                            2      // amplifier (Hot III)
+                    ));
+                }
+                if (season.equals("FALL")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            120,   // duration in ticks
+                            0      // amplifier (Hot I)
+                    ));
+                }
+                if (season.equals("WINTER")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            80,   // duration in ticks
+                            0      // amplifier (Cold I)
+                    ));
+                }
+            }
+
+            if (heat == SummerHeat.HOT) {
+                if (season.equals("SUMMER")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+                if (season.equals("WINTER")) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            85,   // duration in ticks
+                            0      // amplifier (Cold I)
+                    ));
+                }
+            }
+        }
 
         /// TEMPERATE BIOMES
         if (temp <= 0.89F) {

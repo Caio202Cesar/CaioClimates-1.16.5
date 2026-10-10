@@ -1,6 +1,7 @@
 package com.caiocesarmods.caioclimates.effect;
 
 import com.caiocesarmods.caioclimates.CaioClimates;
+import com.caiocesarmods.caioclimates.effect.ClimateEffects.ColdEffect;
 import com.caiocesarmods.caioclimates.effect.ClimateEffects.HotEffect;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
@@ -15,6 +16,9 @@ public class ModEffects {
 
     public static final RegistryObject<Effect> HOT = EFFECTS.register("hot_effect",
             () -> new HotEffect(EffectType.NEUTRAL, 0xF3CB21));
+
+    public static final RegistryObject<Effect> COLD = EFFECTS.register("cold_effect",
+            () -> new ColdEffect(EffectType.HARMFUL, 0x8E8ECC));
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

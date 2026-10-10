@@ -1,7 +1,6 @@
 package com.caiocesarmods.caioclimates.block.SeasonalLeaves;
 
 import com.caiocesarmods.caioclimates.Seasons.Season;
-import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;

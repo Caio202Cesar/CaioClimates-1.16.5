@@ -7,4 +7,6 @@ public class HypothermiaEffect extends Effect {
     protected HypothermiaEffect(EffectType typeIn, int liquidColorIn) {
         super(EffectType.HARMFUL, 0xE0380A);
     }
+
+    //Wither effect
 }
