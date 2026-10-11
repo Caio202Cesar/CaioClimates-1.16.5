@@ -1,83 +1,67 @@
 package com.caiocesarmods.caioclimates.Seasons;
 
-import com.caiocesarmods.caioclimates.Seasons.Season;
-import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import net.minecraft.world.server.ServerWorld;
 
-public enum FruitSeason {
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.Set;
 
+public enum FruitSeason {
+    //Caio Cesar's Naturalistic Voyage
     APPLE(
             Season.SPRING, SeasonalPhase.LATE_SPRING,
-            Season.SUMMER, SeasonalPhase.MID_SUMMER,
-            Season.FALL, SeasonalPhase.EARLY_FALL
-    );
+            Season.FALL,
+            SeasonalPhase.MID_SUMMER, SeasonalPhase.LATE_SUMMER);
 
-    private final Season fruitGrowSeason;
+
+    private final Season fruitGrowSeason; //This season is where the fruit appears on the tree.
     private final SeasonalPhase fruitGrowPhase;
-    private final Season fruitRipeSeason;
-    private final SeasonalPhase fruitRipePhase;
     private final Season harvestSeason;
-    private final SeasonalPhase harvestPhase;
+
+    private final Set<SeasonalPhase> fruitRipePhases;
 
     FruitSeason(Season fruitGrowSeason, SeasonalPhase fruitGrowPhase,
-                Season fruitRipeSeason, SeasonalPhase fruitRipePhase,
-                Season harvestSeason, SeasonalPhase harvestPhase) {
+                Season harvestSeason,
+                SeasonalPhase... fruitRipePhases) {
+
         this.fruitGrowSeason = fruitGrowSeason;
         this.fruitGrowPhase = fruitGrowPhase;
-        this.fruitRipeSeason = fruitRipeSeason;
-        this.fruitRipePhase = fruitRipePhase;
         this.harvestSeason = harvestSeason;
-        this.harvestPhase = harvestPhase;
+
+        this.fruitRipePhases = EnumSet.noneOf(SeasonalPhase.class);
+        Collections.addAll(this.fruitRipePhases, fruitRipePhases);
     }
 
-    public Season getFruitGrowSeason() {
-        return fruitGrowSeason;
+    public Set<SeasonalPhase> getFruitRipePhases() {
+        return fruitRipePhases;
     }
 
-    public SeasonalPhase getFruitGrowPhase() {
-        return fruitGrowPhase;
-    }
-
-    public Season getFruitRipeSeason() {
-        return fruitRipeSeason;
-    }
-
-    public SeasonalPhase getFruitRipePhase() {
-        return fruitRipePhase;
-    }
-
-    public Season getHarvestSeason() {
-        return harvestSeason;
-    }
-
-    public SeasonalPhase getHarvestPhase() {
-        return harvestPhase;
-    }
-
-    //Fruit ripening season = here, all the fruit reaches maturity.
+    ///Fruit ripening season = here, all the fruit reaches maturity.
     public boolean isFruitRipeSeason(ServerWorld world) {
 
-        Season currentSeason = Season.valueOf(Season.getSeason(world.getDayTime()));
         SeasonalPhase currentPhase = SeasonalPhase.valueOf(SeasonalPhase.getPhase(world.getDayTime()));
 
-        return currentSeason == fruitRipeSeason && currentPhase == fruitRipePhase;
+        return fruitRipePhases.contains(currentPhase);
     }
 
-    //Season where the fruit drop from the tree (or the fruiting block random ticks to another, like to autumn or winter ones)
+
+    ///Season where the fruit drop from the tree (or the fruiting block random ticks to another, like to autumn or winter ones)
     public boolean isHarvestSeason(ServerWorld world) {
 
         Season currentSeason = Season.valueOf(Season.getSeason(world.getDayTime()));
-        SeasonalPhase currentPhase = SeasonalPhase.valueOf(SeasonalPhase.getPhase(world.getDayTime()));
 
-        return currentSeason == harvestSeason && currentPhase == harvestPhase;
+        return currentSeason == harvestSeason;
     }
 
     public boolean canGrow(ServerWorld world) {
 
+        Season currentSeason = Season.valueOf(Season.getSeason(world.getDayTime()));
         SeasonalPhase currentPhase = SeasonalPhase.valueOf(SeasonalPhase.getPhase(world.getDayTime()));
 
-        return currentPhase.ordinal() >= fruitGrowPhase.ordinal()
-                && currentPhase.ordinal() < fruitRipePhase.ordinal();
+        return currentSeason == fruitGrowSeason
+                || currentPhase.ordinal() >= fruitGrowPhase.ordinal()
+                && !fruitRipePhases.contains(currentPhase);
 
     }
 
