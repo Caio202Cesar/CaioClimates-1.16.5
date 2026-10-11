@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
+//Blacklist (do not apply): mulberry, pink peppers
 public enum FruitSeason {
     //Caio Cesar's Naturalistic Voyage
     APPLE(
