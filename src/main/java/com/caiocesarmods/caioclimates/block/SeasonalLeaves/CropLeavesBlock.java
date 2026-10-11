@@ -72,11 +72,23 @@ public class CropLeavesBlock extends LeavesBlock implements IGrowable {
 
         int age = state.get(AGE);
 
-        if (fruitSeason.canGrow(worldIn) && age < getMaxAge()) {
-            float chance = fruitSeason.getGrowthChance(worldIn);
+        if (age < getMaxAge()) {
+            if (fruitSeason.canGrow(worldIn)) {
+                float chance = fruitSeason.getGrowthChance(worldIn);
 
-            if (chance > 0.0F && random.nextInt((int)(20.0F / chance) + 1) == 0) {
-                worldIn.setBlockState(pos, withAge(state, age + 1), 2);
+                if (chance > 0.0F && random.nextInt((int) (20.0F / chance) + 1) == 0) {
+                    worldIn.setBlockState(pos, withAge(state, age + 1), 2);
+                }
+            }
+
+            //If the fruit tree is not on its fruit season, but the fruitinh block is < getMaxAge() --> abort and turn into normal leaves.
+            if (!fruitSeason.canGrow(worldIn)) {
+                int distance = state.get(LeavesBlock.DISTANCE);
+                boolean persistent = state.get(LeavesBlock.PERSISTENT);
+
+                BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
+
+                worldIn.setBlockState(pos, newState, 2);
             }
         }
 
@@ -87,7 +99,7 @@ public class CropLeavesBlock extends LeavesBlock implements IGrowable {
             return;
         }
 
-        else if (fruitSeason.isHarvestSeason(worldIn) && nextStage != null) {
+        else if (fruitSeason.isHarvestSeason(worldIn) && age == getMaxAge() && nextStage != null) {
             int distance = state.get(LeavesBlock.DISTANCE);
             boolean persistent = state.get(LeavesBlock.PERSISTENT);
 
