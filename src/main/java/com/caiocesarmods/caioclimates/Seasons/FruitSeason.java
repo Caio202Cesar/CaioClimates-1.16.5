@@ -2,7 +2,6 @@ package com.caiocesarmods.caioclimates.Seasons;
 
 import net.minecraft.world.server.ServerWorld;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
@@ -14,6 +13,7 @@ public enum FruitSeason {
             Season.FALL,
             SeasonalPhase.MID_SUMMER, SeasonalPhase.LATE_SUMMER);
 
+    //Brazilian Biomes
 
     private final Season fruitGrowSeason; //This season is where the fruit appears on the tree.
     private final SeasonalPhase fruitGrowPhase;
