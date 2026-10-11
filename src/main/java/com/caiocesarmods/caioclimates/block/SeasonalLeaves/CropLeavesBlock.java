@@ -72,7 +72,7 @@ public class CropLeavesBlock extends LeavesBlock implements IGrowable {
 
         int age = state.get(AGE);
 
-        if (age < getMaxAge()) {
+        if (age < getMaxAge() - 1) {
             if (fruitSeason.canGrow(worldIn)) {
                 float chance = fruitSeason.getGrowthChance(worldIn);
 

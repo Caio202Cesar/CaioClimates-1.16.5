@@ -61,7 +61,7 @@ public enum FruitSeason {
 
         return currentSeason == fruitGrowSeason
                 || currentPhase.ordinal() >= fruitGrowPhase.ordinal()
-                && !fruitRipePhases.contains(currentPhase);
+                && !isHarvestSeason(world);
 
     }
 
