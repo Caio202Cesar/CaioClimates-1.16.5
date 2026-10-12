@@ -28,7 +28,7 @@ public enum DroughtPattern {
             1.00F   // LATE_WINTER
     ),*/
 
-    //Mediterranean/tropical wet-dry climate
+    //Mediterranean and summer-dry tropical wet-dry climate (ex.: Dunas Restinga)
     DRY_SUMMER(
             // SPRING
             0.75F,  // EARLY_SPRING
@@ -49,6 +49,28 @@ public enum DroughtPattern {
             1.00F,  // EARLY_WINTER
             1.00F,  // MID_WINTER
             1.00F   // LATE_WINTER
+    ),
+
+    DRY_WINTER(
+            // SPRING
+            0.15F,  // EARLY_SPRING
+            0.37F,  // MID_SPRING
+            0.97F,  // LATE_SPRING
+
+            // SUMMER
+            1.00F,  // EARLY_SUMMER
+            1.00F,  // MID_SUMMER
+            1.00F,  // LATE_SUMMER
+
+            // FALL
+            0.83F,  // EARLY_FALL
+            0.23F,  // MID_FALL
+            0.05F,  // LATE_FALL
+
+            // WINTER
+            0.01F,  // EARLY_WINTER
+            0.00F,  // MID_WINTER
+            0.02F   // LATE_WINTER
     ),
 
     //Semi-arid climate

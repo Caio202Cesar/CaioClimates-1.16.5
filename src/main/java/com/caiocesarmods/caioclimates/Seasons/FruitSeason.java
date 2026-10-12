@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
-//Blacklist (do not apply): mulberry, pink peppers
+//Blacklist (do not apply): mulberry, pink peppers, olive
 //Harvest Season Blacklist (don't drop the fruit in harvest season): persimmon, rowan, pomegranate, hawthorn
 public enum FruitSeason {
     //Caio Cesar's Naturalistic Voyage
