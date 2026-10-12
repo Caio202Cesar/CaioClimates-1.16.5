@@ -106,7 +106,8 @@ public class DroughtPatternRegistry {
         register("brbiomesmod:dunas_restinga", DroughtPattern.DRY_SUMMER);
         register("brbiomesmod:restinga_beach", DroughtPattern.DRY_SUMMER);
         register("brbiomesmod:pantanal",  DroughtPattern.DRY_WINTER);
-        register("brbiomesmod:cocal_forest",  DroughtPattern.DRY_WINTER);
+
+        register("brbiomesmod:cocal_forest",  DroughtPattern.DRY_SPRING);
 
     }
 }

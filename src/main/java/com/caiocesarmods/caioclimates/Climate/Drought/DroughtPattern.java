@@ -54,9 +54,9 @@ public enum DroughtPattern {
     //Savannas
     DRY_WINTER(
             // SPRING
-            0.15F,  // EARLY_SPRING
-            0.37F,  // MID_SPRING
-            0.97F,  // LATE_SPRING
+            0.25F,  // EARLY_SPRING
+            0.97F,  // MID_SPRING
+            1.00F,  // LATE_SPRING
 
             // SUMMER
             1.00F,  // EARLY_SUMMER
@@ -64,14 +64,37 @@ public enum DroughtPattern {
             1.00F,  // LATE_SUMMER
 
             // FALL
-            0.83F,  // EARLY_FALL
-            0.23F,  // MID_FALL
+            0.93F,  // EARLY_FALL
+            0.35F,  // MID_FALL
             0.05F,  // LATE_FALL
 
             // WINTER
             0.01F,  // EARLY_WINTER
             0.00F,  // MID_WINTER
             0.02F   // LATE_WINTER
+    ),
+
+    //Exclusive for Cocal Forest
+    DRY_SPRING(
+            // SPRING
+            0.01F,  // EARLY_SPRING
+            0.00F,  // MID_SPRING
+            0.01F,  // LATE_SPRING
+
+            // SUMMER
+            0.25F,  // EARLY_SUMMER
+            1.00F,  // MID_SUMMER
+            1.00F,  // LATE_SUMMER
+
+            // FALL
+            1.00F,  // EARLY_FALL
+            1.00F,  // MID_FALL
+            1.00F,  // LATE_FALL
+
+            // WINTER
+            0.87F,  // EARLY_WINTER
+            0.35F,  // MID_WINTER
+            0.05F   // LATE_WINTER
     ),
 
     //Semi-arid climate
