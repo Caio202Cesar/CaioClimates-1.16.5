@@ -37,13 +37,13 @@ public class DroughtPatternRegistry {
         register("minecraft:desert_hills", DroughtPattern.ARID);
         register("minecraft:desert_lakes", DroughtPattern.ARID);
 
-        register("minecraft:savanna", DroughtPattern.DRY_SUMMER);
-        register("minecraft:savanna_plateau", DroughtPattern.DRY_SUMMER);
-        register("minecraft:shattered_savanna", DroughtPattern.DRY_SUMMER);
-        register("minecraft:shattered_savanna_plateau", DroughtPattern.DRY_SUMMER);
+        register("minecraft:savanna", DroughtPattern.DRY_WINTER);
+        register("minecraft:savanna_plateau", DroughtPattern.DRY_WINTER);
+        register("minecraft:shattered_savanna", DroughtPattern.DRY_WINTER);
+        register("minecraft:shattered_savanna_plateau", DroughtPattern.DRY_WINTER);
 
-        register("minecraft:jungle_edge", DroughtPattern.DRY_SUMMER);
-        register("minecraft:modified_jungle_edge", DroughtPattern.DRY_SUMMER);
+        register("minecraft:jungle_edge", DroughtPattern.DRY_WINTER);
+        register("minecraft:modified_jungle_edge", DroughtPattern.DRY_WINTER);
 
         register("minecraft:badlands", DroughtPattern.SEMI_ARID);
         register("minecraft:wooded_badlands_plateau", DroughtPattern.DRY_SUMMER);
@@ -78,10 +78,10 @@ public class DroughtPatternRegistry {
 
         register("caiocesarbiomes:stony_mediterranean_shore", DroughtPattern.DRY_SUMMER);
 
-        register("caiocesarbiomes:dry_tropical_beach", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:dry_tropical_beach", DroughtPattern.DRY_WINTER);
 
-        register("caiocesarbiomes:tropical_eucalyptus_dry_forest", DroughtPattern.DRY_SUMMER);
-        register("caiocesarbiomes:eucalyptus_savanna", DroughtPattern.DRY_SUMMER);
+        register("caiocesarbiomes:tropical_eucalyptus_dry_forest", DroughtPattern.DRY_WINTER);
+        register("caiocesarbiomes:eucalyptus_savanna", DroughtPattern.DRY_WINTER);
         register("caiocesarbiomes:eucalyptus_sahel", DroughtPattern.SEMI_ARID);
 
         register("caiocesarbiomes:hemiboreal_steppe", DroughtPattern.SEMI_ARID);
@@ -100,13 +100,13 @@ public class DroughtPatternRegistry {
 
         register("caiocesarbiomes:montane_laurel_grove", DroughtPattern.DRY_SUMMER);
 
-        register("brbiomesmod:amazon_rainforest_edge", DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:amazon_rainforest_edge", DroughtPattern.DRY_WINTER);
         register("brbiomesmod:caatinga_shrubland", DroughtPattern.SEMI_ARID);
-        register("brbiomesmod:cerrado", DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:cerrado", DroughtPattern.DRY_WINTER);
         register("brbiomesmod:dunas_restinga", DroughtPattern.DRY_SUMMER);
         register("brbiomesmod:restinga_beach", DroughtPattern.DRY_SUMMER);
-        register("brbiomesmod:pantanal",  DroughtPattern.DRY_SUMMER);
-        register("brbiomesmod:cocal_forest",  DroughtPattern.DRY_SUMMER);
+        register("brbiomesmod:pantanal",  DroughtPattern.DRY_WINTER);
+        register("brbiomesmod:cocal_forest",  DroughtPattern.DRY_WINTER);
 
     }
 }
