@@ -74,7 +74,7 @@ public enum DroughtPattern {
             0.02F   // LATE_WINTER
     ),
 
-    //Exclusive for Cocal Forest
+    //Exclusive for Cocal Forest (transition from As to Aw)
     DRY_SPRING(
             // SPRING
             0.01F,  // EARLY_SPRING
@@ -83,7 +83,7 @@ public enum DroughtPattern {
 
             // SUMMER
             0.25F,  // EARLY_SUMMER
-            1.00F,  // MID_SUMMER
+            0.93F,  // MID_SUMMER
             1.00F,  // LATE_SUMMER
 
             // FALL
