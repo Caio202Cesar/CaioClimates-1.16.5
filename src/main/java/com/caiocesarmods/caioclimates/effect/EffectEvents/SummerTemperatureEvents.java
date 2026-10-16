@@ -15,9 +15,8 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-//Add also ways to amenize these effects
 @Mod.EventBusSubscriber(modid = CaioClimates.MOD_ID)
-public class SeasonalTemperaturePlayerEffectEvents {
+public class SummerTemperatureEvents {
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         PlayerEntity player = event.player;
@@ -38,6 +37,9 @@ public class SeasonalTemperaturePlayerEffectEvents {
         SummerHeat heat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
         long time = world.getDayTime() % 24000L;
         boolean hottestPartOfDay = time >= 5000 && time <= 11000;
+
+
+
 
         /// EQUATORIAL BIOMES (temp > 0.95F)
         if (temp >= 0.95F) {
