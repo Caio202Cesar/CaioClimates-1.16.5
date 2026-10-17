@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = CaioClimates.MOD_ID)
 public class SummerTemperatureEvents {
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         PlayerEntity player = event.player;
@@ -38,8 +39,50 @@ public class SummerTemperatureEvents {
         long time = world.getDayTime() % 24000L;
         boolean hottestPartOfDay = time >= 5000 && time <= 11000;
 
+        /// ICY
+        if (heat == SummerHeat.ICY) {
+            if (hottestPartOfDay) {
+                player.addPotionEffect(new EffectInstance(
+                    ModEffects.COLD.get(),
+                    320,   // duration in ticks
+                    1      // amplifier (Cold II)
+            ));
+            } else {
+                player.addPotionEffect(new EffectInstance(
+                        ModEffects.COLD.get(),
+                        320,   // duration in ticks
+                        2      // amplifier (Cold III)
+                ));
+            }
+        }
 
+        /// TUNDRA_COLD
+        if (heat == SummerHeat.TUNDRA_COLD) {
+            if (hottestPartOfDay) {
+                player.addPotionEffect(new EffectInstance(
+                        ModEffects.COLD.get(),
+                        320,   // duration in ticks
+                        0      // amplifier (Cold I)
+                ));
+            } else {
+                player.addPotionEffect(new EffectInstance(
+                        ModEffects.COLD.get(),
+                        320,   // duration in ticks
+                        1      // amplifier (Cold II)
+                ));
+            }
+        }
 
+        /// COOLER
+        if (heat == SummerHeat.COOLER) {
+            if (!hottestPartOfDay) {
+                player.addPotionEffect(new EffectInstance(
+                        ModEffects.COLD.get(),
+                        320,   // duration in ticks
+                        0      // amplifier (Cold I)
+                ));
+            }
+        }
 
         /// EQUATORIAL BIOMES (temp > 0.95F)
         if (temp >= 0.95F) {
