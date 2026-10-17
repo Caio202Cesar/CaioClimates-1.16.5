@@ -39,51 +39,135 @@ public class SummerTemperatureEvents {
         long time = world.getDayTime() % 24000L;
         boolean hottestPartOfDay = time >= 5000 && time <= 11000;
 
-        /// ICY
-        if (heat == SummerHeat.ICY) {
-            if (hottestPartOfDay) {
+        if (season.equals("SUMMER")) {
+            /// ICY
+            if (heat == SummerHeat.ICY) {
+                if (hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Cold II)
+                    ));
+                } else {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            320,   // duration in ticks
+                            2      // amplifier (Cold III)
+                    ));
+                }
+            }
+
+            /// TUNDRA_COLD
+            if (heat == SummerHeat.TUNDRA_COLD) {
+                if (hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            320,   // duration in ticks
+                            0      // amplifier (Cold I)
+                    ));
+                } else {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Cold II)
+                    ));
+                }
+            }
+
+            /// COOLER
+            if (heat == SummerHeat.COOLER) {
+                if (!hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            120,   // duration in ticks
+                            0      // amplifier (Cold I)
+                    ));
+                }
+            }
+
+            /// MILD
+            if (heat == SummerHeat.MILD) {
+                if (!hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.COLD.get(),
+                            80,   // duration in ticks
+                            0      // amplifier (Cold I)
+                    ));
+                }
+            }
+
+            /// WARM
+            if (heat == SummerHeat.WARM) {
+                if (hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            180,   // duration in ticks
+                            0      // amplifier (Hot I)
+                    ));
+                }
+            }
+
+            /// HOT
+            if (heat == SummerHeat.HOT) {
+                if (hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            320,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+            }
+
+            /// VERY HOT
+            if (heat == SummerHeat.VERY_HOT) {
+                if (hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            420,   // duration in ticks
+                            2      // amplifier (Hot III)
+                    ));
+                } else {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            210,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+            }
+
+            /// SCHORCHING
+            if (heat == SummerHeat.SCORCHING) {
+                if (hottestPartOfDay) {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            680,   // duration in ticks
+                            2      // amplifier (Hot III)
+                    ));
+                } else {
+                    player.addPotionEffect(new EffectInstance(
+                            ModEffects.HOT.get(),
+                            430,   // duration in ticks
+                            1      // amplifier (Hot II)
+                    ));
+                }
+            }
+
+            /// UNBEARABLE
+            if (heat == SummerHeat.UNBEARABLE) {
                 player.addPotionEffect(new EffectInstance(
-                    ModEffects.COLD.get(),
-                    320,   // duration in ticks
-                    1      // amplifier (Cold II)
-            ));
-            } else {
-                player.addPotionEffect(new EffectInstance(
-                        ModEffects.COLD.get(),
-                        320,   // duration in ticks
-                        2      // amplifier (Cold III)
+                        ModEffects.HOT.get(),
+                        1000,   // duration in ticks
+                        2      // amplifier (Hot III)
                 ));
             }
         }
+    }
+}
 
-        /// TUNDRA_COLD
-        if (heat == SummerHeat.TUNDRA_COLD) {
-            if (hottestPartOfDay) {
-                player.addPotionEffect(new EffectInstance(
-                        ModEffects.COLD.get(),
-                        320,   // duration in ticks
-                        0      // amplifier (Cold I)
-                ));
-            } else {
-                player.addPotionEffect(new EffectInstance(
-                        ModEffects.COLD.get(),
-                        320,   // duration in ticks
-                        1      // amplifier (Cold II)
-                ));
-            }
-        }
 
-        /// COOLER
-        if (heat == SummerHeat.COOLER) {
-            if (!hottestPartOfDay) {
-                player.addPotionEffect(new EffectInstance(
-                        ModEffects.COLD.get(),
-                        320,   // duration in ticks
-                        0      // amplifier (Cold I)
-                ));
-            }
-        }
 
+
+        /*
         /// EQUATORIAL BIOMES (temp > 0.95F)
         if (temp >= 0.95F) {
             if (heat == SummerHeat.VERY_HOT) {
@@ -261,6 +345,6 @@ public class SummerTemperatureEvents {
                 }
             }
         }
-    }
-}
+    }*/
+
 
