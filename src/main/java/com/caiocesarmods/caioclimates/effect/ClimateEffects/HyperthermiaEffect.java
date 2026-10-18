@@ -60,6 +60,11 @@ public class HyperthermiaEffect extends Effect {
 
     @Override
     public boolean isReady(int duration, int amplifier) {
-        return duration % 20 == 0;
+        int interval = 100 >> amplifier;
+
+        // Hyperthermia I: every 5 seconds
+        // Hyperthermia II: every 2.5 seconds
+        // Hyperthermia III: every 1.25 seconds
+        return duration % interval == 0;
     }
 }
