@@ -75,7 +75,7 @@ public class FallTemperatureEvents {
                 }
 
                 //Hot summer biomes
-                if (heat == SummerHeat.HOT) {
+                else if (heat == SummerHeat.HOT) {
                     if (phase.equals("EARLY_FALL")) {
                         if (hottestPartOfDay) {
                             player.addPotionEffect(new EffectInstance(
@@ -108,8 +108,9 @@ public class FallTemperatureEvents {
 
             /// For MARGINAL TROPICAL BIOMES
             if (temp <= 0.94F) {
+                //Very hot summer biomes
                 if (heat == SummerHeat.VERY_HOT) {
-                    if (phase.equals("EARLY_FALL") || phase.equals("MID_FALL")) {
+                    if (phase.equals("EARLY_FALL")) {
                         if (hottestPartOfDay) {
                             player.addPotionEffect(new EffectInstance(
                                     ModEffects.HOT.get(),
@@ -123,7 +124,28 @@ public class FallTemperatureEvents {
                                     1      // amplifier (Hot II)
                             ));
                         }
+                    } else if (phase.equals("MID_FALL")) {
+                        if (hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.HOT.get(),
+                                    150,   // duration in ticks
+                                    1      // amplifier (Hot II)
+                            ));
+                        }
+
                     } else if (phase.equals("LATE_FALL")) {
+                        if (hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.HOT.get(),
+                                    80,   // duration in ticks
+                                    0      // amplifier (Hot I)
+                            ));
+                        }
+                    }
+                }
+                //Hot summer biomes
+                else if (heat == SummerHeat.HOT) {
+                    if (phase.equals("EARLY_FALL")) {
                         if (hottestPartOfDay) {
                             player.addPotionEffect(new EffectInstance(
                                     ModEffects.HOT.get(),
@@ -133,8 +155,53 @@ public class FallTemperatureEvents {
                         } else {
                             player.addPotionEffect(new EffectInstance(
                                     ModEffects.HOT.get(),
-                                    100,   // duration in ticks
+                                    90,   // duration in ticks
                                     0      // amplifier (Hot I)
+                            ));
+                        }
+                    } else if (phase.equals("MID_FALL")) {
+                        if (hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.HOT.get(),
+                                    120,   // duration in ticks
+                                    0      // amplifier (Hot I)
+                            ));
+                        }
+                    } else if (phase.equals("LATE_FALL")) {
+                        if (!hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.COLD.get(),
+                                    80,   // duration in ticks
+                                    0      // amplifier (Cold I)
+                            ));
+                        }
+                    }
+                }
+
+                //Warm summer biomes
+                else if (heat == SummerHeat.WARM) {
+                    if (phase.equals("EARLY_FALL")) {
+                        if (!hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.COLD.get(),
+                                    50,   // duration in ticks
+                                    0      // amplifier (Cold I)
+                            ));
+                        }
+                    } else if (phase.equals("MID_FALL")) {
+                        if (!hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.COLD.get(),
+                                    70,   // duration in ticks
+                                    0      // amplifier (Cold I)
+                            ));
+                        }
+                    } else if (phase.equals("LATE_FALL")) {
+                        if (!hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.COLD.get(),
+                                    100,   // duration in ticks
+                                    0      // amplifier (Cold I)
                             ));
                         }
                     }
