@@ -41,40 +41,6 @@ public class HypothermiaEffect extends Effect {
 
             entity.attackEntityFrom(ModDamageSources.HYPOTHERMIA, 1.0F);
         }
-
-        if (entity.isPotionActive(ModEffects.COLD.get())) {
-
-            EffectInstance cold = entity.getActivePotionEffect(ModEffects.COLD.get());
-
-            assert cold != null;
-            int duration = cold.getDuration();
-
-            if (amplifier == 0 && duration <= 115) {
-                entity.addPotionEffect(new EffectInstance(
-                        ModEffects.HYPOTHERMIA.get(),
-                        200,
-                        0
-                ));
-            }
-
-
-            if (amplifier == 1 && duration <= 80) {
-                entity.addPotionEffect(new EffectInstance(
-                        ModEffects.HYPOTHERMIA.get(),
-                        200,
-                        1
-                ));
-            }
-
-
-            if (amplifier >= 2 && duration <= 50) {
-                entity.addPotionEffect(new EffectInstance(
-                        ModEffects.HYPOTHERMIA.get(),
-                        200,
-                        3
-                ));
-            }
-        }
     }
 
     @Override

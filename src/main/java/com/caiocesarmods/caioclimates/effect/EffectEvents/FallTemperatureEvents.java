@@ -171,7 +171,7 @@ public class FallTemperatureEvents {
                         if (!hottestPartOfDay) {
                             player.addPotionEffect(new EffectInstance(
                                     ModEffects.COLD.get(),
-                                    80,   // duration in ticks
+                                    100,   // duration in ticks
                                     0      // amplifier (Cold I)
                             ));
                         }
