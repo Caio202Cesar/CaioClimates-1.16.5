@@ -41,6 +41,7 @@ public class FallTemperatureEvents {
         if (season.equals("FALL")) {
             ///For EQUATORIAL BIOMES
             if (temp >= 0.95F) {
+                //Very hot summer biomes
                 if (heat == SummerHeat.VERY_HOT) {
                     if (phase.equals("EARLY_FALL") || phase.equals("MID_FALL")) {
                         if (hottestPartOfDay) {
@@ -70,6 +71,37 @@ public class FallTemperatureEvents {
                                     0      // amplifier (Hot I)
                             ));
                         }
+                    }
+                }
+
+                //Hot summer biomes
+                if (heat == SummerHeat.HOT) {
+                    if (phase.equals("EARLY_FALL")) {
+                        if (hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.HOT.get(),
+                                    200,   // duration in ticks
+                                    1      // amplifier (Hot II)
+                            ));
+                        } else {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.HOT.get(),
+                                    110,   // duration in ticks
+                                    0      // amplifier (Hot I)
+                            ));
+                        }
+                    } else if (phase.equals("MID_FALL") && hottestPartOfDay) {
+                            player.addPotionEffect(new EffectInstance(
+                                    ModEffects.HOT.get(),
+                                    180,   // duration in ticks
+                                    0      // amplifier (Hot I)
+                            ));
+                    } else if (phase.equals("LATE_FALL") && hottestPartOfDay) {
+                        player.addPotionEffect(new EffectInstance(
+                                ModEffects.HOT.get(),
+                                100,   // duration in ticks
+                                0      // amplifier (Hot I)
+                        ));
                     }
                 }
             }
