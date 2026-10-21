@@ -21,24 +21,6 @@ public class HypothermiaEffect extends Effect {
 
             World world = entity.world;
 
-            entity.addPotionEffect(new EffectInstance(
-                    Effects.HUNGER,
-                    80,
-                    amplifier
-            ));
-
-            entity.addPotionEffect(new EffectInstance(
-                    Effects.WEAKNESS,
-                    80,
-                    amplifier
-            ));
-
-            entity.addPotionEffect(new EffectInstance(
-                    Effects.MINING_FATIGUE,
-                    80,
-                    amplifier
-            ));
-
             entity.attackEntityFrom(ModDamageSources.HYPOTHERMIA, 1.0F);
         }
     }

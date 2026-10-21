@@ -23,19 +23,13 @@ public class ColdEffect extends Effect {
             World world = entity.world;
 
             entity.addPotionEffect(new EffectInstance(
-                    Effects.HUNGER,
+                    Effects.HASTE,
                     40,
                     amplifier
             ));
 
             entity.addPotionEffect(new EffectInstance(
-                    Effects.WEAKNESS,
-                    40,
-                    amplifier
-            ));
-
-            entity.addPotionEffect(new EffectInstance(
-                    Effects.MINING_FATIGUE,
+                    Effects.SATURATION,
                     40,
                     amplifier
             ));

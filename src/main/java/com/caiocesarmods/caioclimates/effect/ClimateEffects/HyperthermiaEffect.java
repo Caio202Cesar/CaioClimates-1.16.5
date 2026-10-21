@@ -37,20 +37,26 @@ public class HyperthermiaEffect extends Effect {
             }
 
             entity.addPotionEffect(new EffectInstance(
-                    Effects.HUNGER,
-                    80,
+                    Effects.BLINDNESS,
+                    180,
                     amplifier
             ));
 
             entity.addPotionEffect(new EffectInstance(
-                    Effects.WEAKNESS,
-                    80,
+                    Effects.NAUSEA,
+                    180,
                     amplifier
             ));
 
             entity.addPotionEffect(new EffectInstance(
-                    Effects.MINING_FATIGUE,
-                    80,
+                    Effects.SLOWNESS,
+                    180,
+                    amplifier
+            ));
+
+            entity.addPotionEffect(new EffectInstance(
+                    Effects.SLOWNESS,
+                    180,
                     amplifier
             ));
 
