@@ -22,7 +22,7 @@ public class HotEffect extends Effect {
 
             World world = entity.world;
 
-            if (!world.isRemote) {
+            if (!world.isRemote && amplifier >= 1) {
                 ((ServerWorld) world).spawnParticle(
                         ParticleTypes.FALLING_WATER,
                         entity.getPosX(),
@@ -38,7 +38,7 @@ public class HotEffect extends Effect {
 
             entity.addPotionEffect(new EffectInstance(
                     Effects.HUNGER,
-                    40,
+                    23,
                     amplifier
             ));
 
@@ -50,6 +50,12 @@ public class HotEffect extends Effect {
 
             entity.addPotionEffect(new EffectInstance(
                     Effects.MINING_FATIGUE,
+                    40,
+                    amplifier
+            ));
+
+            entity.addPotionEffect(new EffectInstance(
+                    Effects.SLOWNESS,
                     40,
                     amplifier
             ));
