@@ -110,7 +110,7 @@ public class PlantClimateConditionsRegistry {
 
 
         register(new ResourceLocation("caiocesarbiomes", "pohutukawa_sapling"),
-                9, 12, 10,0.7F, 0.85F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                9, 12, 10,0.0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 null);
 
 
