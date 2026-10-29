@@ -109,11 +109,16 @@ public class PlantClimateConditionsRegistry {
                 Biome.RainType.NONE);
 
 
+        register(new ResourceLocation("caiocesarbiomes", "pohutukawa_sapling"),
+                9, 12, 10,0.7F, 0.85F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                null);
+
+
         register(new ResourceLocation("caiocesarbiomes", "durian_sapling"),
                 11, 12, 11,0.7F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 Biome.RainType.NONE);
 
-        //Soursop, Mangosteen, Rambutan is a ultratropical (zone 11 to above)
+        //Soursop, Mangosteen, Rambutan, Genipapo are ultratropical (zone 11 to above)
 
         ///Brazillian Biomes
         register(new ResourceLocation("brbiomesmod", "acai_sapling"),

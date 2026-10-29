@@ -88,6 +88,7 @@ public class SaplingHardiness {
     }
 
     //Add also sapling death for inadequate moisture/dryness of biome. There is no sheltering or protection for that.
+    // Pohutukawa sapling, for example, can's handle dry biomes for too long.
     //Sapling can only survive based on proximity with water (another parameter, similar to the Weeping Willow one)
 
     public SummerHeat getMinSummerHeat() {return minSummerHeat;}
@@ -111,4 +112,11 @@ public class SaplingHardiness {
 
         return true;
     }
+
+    /*
+    public boolean cantGrowInSwampAndRiverbank(Biome biomeType) {
+        if (Biome.Category.SWAMP.getString(biomeType) || Biome.Category.RIVER.equals(biomeType)) {
+            return false;
+        }
+    }*/
 }
