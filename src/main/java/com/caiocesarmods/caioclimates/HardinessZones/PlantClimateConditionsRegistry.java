@@ -105,7 +105,7 @@ public class PlantClimateConditionsRegistry {
                 Biome.RainType.NONE);
 
         register(new ResourceLocation("caiocesarbiomes", "baobab_sapling"),
-                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING,
+                10, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING,
                 SummerHeat.VERY_HOT, Biome.RainType.RAIN);
 
         register(new ResourceLocation("caiocesarbiomes", "bismarck_palm_sapling"),
