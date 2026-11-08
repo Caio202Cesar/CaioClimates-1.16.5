@@ -112,6 +112,10 @@ public class PlantClimateConditionsRegistry {
                 11, 12, 11,0.7F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 Biome.RainType.NONE);
 
+        register(new ResourceLocation("caiocesarbiomes", "lychee_sapling"),
+                9, 12, 10,0.35F, 1F, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                null, DroughtPattern.ARID);
+
         register(new ResourceLocation("caiocesarbiomes", "monkey_puzzle_sapling"),
                 7, 10, 8,0.7F, 1F, SummerHeat.COOLER, SummerHeat.HOT, SummerHeat.WARM,
                 null);
