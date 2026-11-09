@@ -1,5 +1,8 @@
 package com.caiocesarmods.caioclimates.mixin;
 
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPattern;
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
+import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import com.caiocesarmods.caioclimates.block.ModBlocks;
 import com.caiocesarmods.caioclimates.Seasons.Season;
 import com.caiocesarmods.caioclimates.item.ModItems;
@@ -9,6 +12,7 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -229,27 +233,21 @@ public abstract class SeasonalLeavesRandomTickMixin {
             return;
         }
 
-        String season = Season.getSeason(world.getDayTime());
+        Biome biome = world.getBiome(pos);
 
-        if (season.equals("SUMMER")) {
+        DroughtPattern pattern = DroughtPatternRegistry.get(biome);
+        String phase = SeasonalPhase.getPhase(world.getDayTime());
 
-            if (random.nextInt(20) == 0) {
-                world.setBlockState(
-                        pos,
-                        ModBlocks.ACACIA_BRANCHES.get().getDefaultState(),
-                        3
-                );
-            }
+        assert pattern != null;
+        float rainChance = pattern.getRainChance(SeasonalPhase.valueOf(phase));
+        float dryness = 1.0F - rainChance;
 
-        } else if (season.equals("FALL")) {
-
-            if (random.nextInt(2) == 0) {
-                world.setBlockState(
-                        pos,
-                        ModBlocks.ACACIA_BRANCHES.get().getDefaultState(),
-                        3
-                );
-            }
+        if (random.nextFloat() < dryness) {
+            world.setBlockState(
+                    pos,
+                    ModBlocks.ACACIA_BRANCHES.get().getDefaultState(),
+                    3
+            );
         }
     }
 }
