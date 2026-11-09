@@ -246,7 +246,7 @@ public abstract class SeasonalLeavesRandomTickMixin {
         float rainChance = pattern.getRainChance(SeasonalPhase.valueOf(phase));
         float dryness = 1.0F - rainChance;
 
-        if (dryness > 0.45F && random.nextFloat() < dryness) {
+        if (dryness > 0.65F && random.nextFloat() < dryness) {
             world.setBlockState(
                     pos,
                     ModBlocks.ACACIA_BRANCHES.get().getDefaultState(),

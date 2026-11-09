@@ -54,7 +54,7 @@ public enum DroughtPattern {
     //Savannas
     DRY_WINTER(
             // SPRING
-            0.25F,  // EARLY_SPRING
+            0.38F,  // EARLY_SPRING
             0.97F,  // MID_SPRING
             1.00F,  // LATE_SPRING
 
@@ -64,8 +64,8 @@ public enum DroughtPattern {
             1.00F,  // LATE_SUMMER
 
             // FALL
-            0.93F,  // EARLY_FALL
-            0.35F,  // MID_FALL
+            0.83F,  // EARLY_FALL
+            0.25F,  // MID_FALL
             0.05F,  // LATE_FALL
 
             // WINTER

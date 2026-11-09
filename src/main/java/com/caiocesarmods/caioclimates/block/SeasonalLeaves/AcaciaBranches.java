@@ -45,7 +45,7 @@ public class AcaciaBranches extends LeavesBlock implements IForgeShearable {
         String phase = SeasonalPhase.getPhase(worldIn.getDayTime());
         float rainChance = pattern.getRainChance(SeasonalPhase.valueOf(phase));
 
-        if (rainChance > 0.55F && random.nextFloat() < rainChance) {
+        if (rainChance > 0.50F && random.nextFloat() < rainChance) {
             worldIn.setBlockState(
                     pos,
                     Blocks.ACACIA_LEAVES.getDefaultState(),
