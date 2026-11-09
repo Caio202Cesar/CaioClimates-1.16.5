@@ -236,9 +236,13 @@ public abstract class SeasonalLeavesRandomTickMixin {
         Biome biome = world.getBiome(pos);
 
         DroughtPattern pattern = DroughtPatternRegistry.get(biome);
+
+        if (pattern == null) {
+            return;
+        }
+
         String phase = SeasonalPhase.getPhase(world.getDayTime());
 
-        assert pattern != null;
         float rainChance = pattern.getRainChance(SeasonalPhase.valueOf(phase));
         float dryness = 1.0F - rainChance;
 

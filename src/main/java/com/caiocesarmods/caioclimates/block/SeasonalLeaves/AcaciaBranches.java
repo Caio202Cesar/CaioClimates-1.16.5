@@ -1,8 +1,13 @@
 package com.caiocesarmods.caioclimates.block.SeasonalLeaves;
 
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPattern;
+import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPatternRegistry;
 import com.caiocesarmods.caioclimates.Seasons.Season;
+import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
+import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -28,35 +33,24 @@ public class AcaciaBranches extends LeavesBlock implements IForgeShearable {
 
     @Override
     public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-        String currentSeason = Season.getSeason(worldIn.getDayTime());
 
         Biome biome = worldIn.getBiome(pos);
-        float temp = biome.getTemperature(pos);
 
-        if ("WINTER".equals(currentSeason)
-                && nextStage != null && random.nextInt(15) == 0) {
+        DroughtPattern pattern = DroughtPatternRegistry.get(biome);
 
-            int distance = state.get(LeavesBlock.DISTANCE);
-            boolean persistent = state.get(LeavesBlock.PERSISTENT);
-
-            BlockState newState = nextStage.getDefaultState()
-                    .with(LeavesBlock.DISTANCE, distance)
-                    .with(LeavesBlock.PERSISTENT, persistent);
-
-            worldIn.setBlockState(pos, newState, 2);
+        if (pattern == null) {
+            return;
         }
 
-        if ("SPRING".equals(currentSeason)
-                && nextStage != null && random.nextInt(2) == 0) {
+        String phase = SeasonalPhase.getPhase(worldIn.getDayTime());
+        float rainChance = pattern.getRainChance(SeasonalPhase.valueOf(phase));
 
-            int distance = state.get(LeavesBlock.DISTANCE);
-            boolean persistent = state.get(LeavesBlock.PERSISTENT);
-
-            BlockState newState = nextStage.getDefaultState()
-                    .with(LeavesBlock.DISTANCE, distance)
-                    .with(LeavesBlock.PERSISTENT, persistent);
-
-            worldIn.setBlockState(pos, newState, 2);
+        if (rainChance > 0.55F && random.nextFloat() < rainChance) {
+            worldIn.setBlockState(
+                    pos,
+                    Blocks.ACACIA_LEAVES.getDefaultState(),
+                    3
+            );
         }
     }
 
