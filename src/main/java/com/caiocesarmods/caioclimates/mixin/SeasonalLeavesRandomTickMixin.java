@@ -234,7 +234,6 @@ public abstract class SeasonalLeavesRandomTickMixin {
         }
 
         Biome biome = world.getBiome(pos);
-
         DroughtPattern pattern = DroughtPatternRegistry.get(biome);
 
         if (pattern == null) {
