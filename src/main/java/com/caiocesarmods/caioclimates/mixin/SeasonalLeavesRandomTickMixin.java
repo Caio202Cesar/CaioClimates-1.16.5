@@ -247,9 +247,15 @@ public abstract class SeasonalLeavesRandomTickMixin {
         float dryness = 1.0F - rainChance;
 
         if (dryness > 0.65F && random.nextFloat() < dryness) {
+
+            int distance = state.get(LeavesBlock.DISTANCE);
+            boolean persistent = state.get(LeavesBlock.PERSISTENT);
+
             world.setBlockState(
                     pos,
-                    ModBlocks.ACACIA_BRANCHES.get().getDefaultState(),
+                    ModBlocks.ACACIA_BRANCHES.get().getDefaultState()
+                            .with(LeavesBlock.DISTANCE, distance)
+                            .with(LeavesBlock.PERSISTENT, persistent),
                     3
             );
         }

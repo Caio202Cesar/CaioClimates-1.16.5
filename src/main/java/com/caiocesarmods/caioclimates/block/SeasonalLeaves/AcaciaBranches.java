@@ -46,9 +46,15 @@ public class AcaciaBranches extends LeavesBlock implements IForgeShearable {
         float rainChance = pattern.getRainChance(SeasonalPhase.valueOf(phase));
 
         if (rainChance > 0.50F && random.nextFloat() < rainChance) {
+
+            int distance = state.get(LeavesBlock.DISTANCE);
+            boolean persistent = state.get(LeavesBlock.PERSISTENT);
+
             worldIn.setBlockState(
                     pos,
-                    Blocks.ACACIA_LEAVES.getDefaultState(),
+                    Blocks.ACACIA_LEAVES.getDefaultState()
+                            .with(LeavesBlock.DISTANCE, distance)
+                            .with(LeavesBlock.PERSISTENT, persistent),
                     3
             );
         }
