@@ -142,9 +142,11 @@ public class PlantClimateConditionsRegistry {
                 8, 10, 9, 0F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
         register(new ResourceLocation("brbiomesmod", "kapok_sapling"),
-                10, 12, 11, 7F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
-                Biome.RainType.NONE);
-
+                10, 12, 11, 7F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+        register(new ResourceLocation("brbiomesmod", "sapucaia_sapling"),
+                10, 12, 9, 0F, 1F, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.WARM,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
     }
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
