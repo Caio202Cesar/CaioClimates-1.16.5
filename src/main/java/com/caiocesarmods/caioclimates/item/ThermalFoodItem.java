@@ -12,19 +12,16 @@ import net.minecraft.world.World;
 public class ThermalFoodItem extends Item {
     private final int heatChange;
     private final int coldChange;
-    private final int effectDuration;
 
     public ThermalFoodItem(
             Item.Properties properties,
             int heatChange,
-            int coldChange,
-            int effectDuration
+            int coldChange
     ) {
         super(properties);
 
         this.heatChange = heatChange;
         this.coldChange = coldChange;
-        this.effectDuration = effectDuration;
     }
 
     @Override
@@ -56,33 +53,27 @@ public class ThermalFoodItem extends Item {
 
         EffectInstance current = entity.getActivePotionEffect(effect);
 
-        if (current == null && change < 0) {
+        if (current == null) {
             return;
         }
 
-        int currentLevel = current == null
-                ? -1
-                : current.getAmplifier();
+        int currentLevel = current.getAmplifier();
+        int newLevel = currentLevel + change;
 
-        int newLevel = Math.max(0,
-                Math.min(2, currentLevel + change));
-
-        if (currentLevel + change < 0) {
+        if (newLevel < 0) {
             entity.removeActivePotionEffect(effect);
             return;
         }
 
-        int duration = current == null
-                ? effectDuration
-                : current.getDuration();
+        newLevel = Math.min(2, newLevel);
 
         entity.addPotionEffect(new EffectInstance(
                 effect,
-                duration,
+                current.getDuration(),
                 newLevel,
                 false,
-                true,
-                true
+                current.doesShowParticles(),
+                current.isShowIcon()
         ));
     }
 }
