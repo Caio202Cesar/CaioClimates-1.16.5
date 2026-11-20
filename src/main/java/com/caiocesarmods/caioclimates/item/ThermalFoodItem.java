@@ -54,7 +54,7 @@ public class ThermalFoodItem extends Item {
             return;
         }
 
-        EffectInstance current = entity.getEffect(effect);
+        EffectInstance current = entity.getActivePotionEffect(effect);
 
         if (current == null && change < 0) {
             return;
@@ -67,8 +67,8 @@ public class ThermalFoodItem extends Item {
         int newLevel = Math.max(0,
                 Math.min(2, currentLevel + change));
 
-        if (newLevel < 0 || (currentLevel + change) < 0) {
-            entity.removeEffect(effect);
+        if (currentLevel + change < 0) {
+            entity.removeActivePotionEffect(effect);
             return;
         }
 
@@ -76,7 +76,7 @@ public class ThermalFoodItem extends Item {
                 ? effectDuration
                 : current.getDuration();
 
-        entity.addEffect(new EffectInstance(
+        entity.addPotionEffect(new EffectInstance(
                 effect,
                 duration,
                 newLevel,
