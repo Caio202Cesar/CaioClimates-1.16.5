@@ -7,6 +7,7 @@ import com.caiocesarmods.caioclimates.Seasons.Season;
 import com.caiocesarmods.caioclimates.Seasons.SeasonalPhase;
 import com.caiocesarmods.caioclimates.effect.ModEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -17,6 +18,17 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = CaioClimates.MOD_ID)
 public class SummerTemperatureEvents {
+
+    private static void applyClimateEffect(PlayerEntity player, Effect effect, int duration, int amplifier) {
+        EffectInstance current = player.getActivePotionEffect(effect);
+
+        // Don't overwrite an existing thermal effect.
+        if (current != null) {
+            return;
+        }
+
+        player.addPotionEffect(new EffectInstance(effect, duration, amplifier));
+    }
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -43,11 +55,11 @@ public class SummerTemperatureEvents {
             /// ICY
             if (heat == SummerHeat.ICY) {
                 if (hottestPartOfDay) {
-                    player.addPotionEffect(new EffectInstance(
+                    applyClimateEffect(player,
                             ModEffects.COLD.get(),
                             320,   // duration in ticks
                             1      // amplifier (Cold II)
-                    ));
+                    );
                 } else {
                     player.addPotionEffect(new EffectInstance(
                             ModEffects.COLD.get(),
@@ -101,7 +113,7 @@ public class SummerTemperatureEvents {
                 if (hottestPartOfDay) {
                     player.addPotionEffect(new EffectInstance(
                             ModEffects.HOT.get(),
-                            180,   // duration in ticks
+                            210,   // duration in ticks
                             0      // amplifier (Hot I)
                     ));
                 }
@@ -110,28 +122,34 @@ public class SummerTemperatureEvents {
             /// HOT
             if (heat == SummerHeat.HOT) {
                 if (hottestPartOfDay) {
-                    player.addPotionEffect(new EffectInstance(
+                    applyClimateEffect(player,
                             ModEffects.HOT.get(),
                             320,   // duration in ticks
                             1      // amplifier (Hot II)
-                    ));
+                    );
+                }  else {
+                    applyClimateEffect(player,
+                            ModEffects.HOT.get(),
+                            210,   // duration in ticks
+                            0      // amplifier (Hot I)
+                    );
                 }
             }
 
             /// VERY HOT
             if (heat == SummerHeat.VERY_HOT) {
                 if (hottestPartOfDay) {
-                    player.addPotionEffect(new EffectInstance(
+                    applyClimateEffect(player,
                             ModEffects.HOT.get(),
                             420,   // duration in ticks
                             2      // amplifier (Hot III)
-                    ));
+                    );
                 } else {
-                    player.addPotionEffect(new EffectInstance(
+                    applyClimateEffect(player,
                             ModEffects.HOT.get(),
                             210,   // duration in ticks
                             1      // amplifier (Hot II)
-                    ));
+                    );
                 }
             }
 

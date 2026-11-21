@@ -30,6 +30,8 @@ public class ThermalFoodItem extends Item {
 
         if (!worldIn.isRemote && entityLiving instanceof PlayerEntity) {
 
+            System.out.println("[ThermalFood] Food consumed!");
+
             applyThermalChange(
                     entityLiving,
                     ModEffects.HOT.get(),
@@ -53,7 +55,13 @@ public class ThermalFoodItem extends Item {
 
         EffectInstance current = entity.getActivePotionEffect(effect);
 
+        System.out.println("[ThermalFood] Effect: " + effect);
+        System.out.println("[ThermalFood] Current: " + current);
+        System.out.println("[ThermalFood] Change: " + change);
+
         if (current == null) {
+            System.out.println("[ThermalFood] Effect not active!");
+
             return;
         }
 
@@ -61,6 +69,8 @@ public class ThermalFoodItem extends Item {
         int newLevel = currentLevel + change;
 
         if (newLevel < 0) {
+            System.out.println("[ThermalFood] Effect removed!");
+
             entity.removeActivePotionEffect(effect);
             return;
         }
@@ -75,5 +85,7 @@ public class ThermalFoodItem extends Item {
                 current.doesShowParticles(),
                 current.isShowIcon()
         ));
+
+        System.out.println("[ThermalFood] New amplifier: " + newLevel);
     }
 }
