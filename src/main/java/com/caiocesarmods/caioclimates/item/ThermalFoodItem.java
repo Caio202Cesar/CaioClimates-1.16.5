@@ -55,37 +55,37 @@ public class ThermalFoodItem extends Item {
 
         EffectInstance current = entity.getActivePotionEffect(effect);
 
-        System.out.println("[ThermalFood] Effect: " + effect);
-        System.out.println("[ThermalFood] Current: " + current);
-        System.out.println("[ThermalFood] Change: " + change);
-
         if (current == null) {
-            System.out.println("[ThermalFood] Effect not active!");
-
             return;
         }
 
-        int currentLevel = current.getAmplifier();
-        int newLevel = currentLevel + change;
+        int newLevel = current.getAmplifier() + change;
 
+        // Remove the effect if its intensity reaches zero.
         if (newLevel < 0) {
-            System.out.println("[ThermalFood] Effect removed!");
-
             entity.removeActivePotionEffect(effect);
             return;
         }
 
+        // Maximum intensity: III (amplifier 2).
         newLevel = Math.min(2, newLevel);
+
+        // Preserve the existing effect properties.
+        int duration = current.getDuration();
+        boolean ambient = current.isAmbient();
+        boolean showParticles = current.doesShowParticles();
+        boolean showIcon = current.isShowIcon();
+
+        // Remove the old instance before adding the modified one.
+        entity.removeActivePotionEffect(effect);
 
         entity.addPotionEffect(new EffectInstance(
                 effect,
-                current.getDuration(),
+                duration,
                 newLevel,
-                false,
-                current.doesShowParticles(),
-                current.isShowIcon()
+                ambient,
+                showParticles,
+                showIcon
         ));
-
-        System.out.println("[ThermalFood] New amplifier: " + newLevel);
     }
 }
