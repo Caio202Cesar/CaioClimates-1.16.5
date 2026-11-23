@@ -44,7 +44,6 @@ public class ModBlocks {
                     .hardnessAndResistance(0.2F).tickRandomly().notSolid().sound(SoundType.PLANT)
                     .harvestTool(ToolType.HOE), Blocks.OAK_LEAVES));
 
-    //Dark Oak (Quercus velutina)
     public static final RegistryObject<Block> DARK_OAK_FALL_LEAVES = registerBlock("dark_oak_fall_leaves",
             () -> new DarkOakFallLeaves(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
                     .notSolid().sound(SoundType.PLANT).harvestTool(ToolType.HOE), ModBlocks.DARK_OAK_BRANCHES));
@@ -53,24 +52,20 @@ public class ModBlocks {
                     .hardnessAndResistance(0.2F).tickRandomly().notSolid().sound(SoundType.PLANT)
                     .harvestTool(ToolType.HOE), Blocks.DARK_OAK_LEAVES));
 
-    //Dry season
     public static final RegistryObject<Block> ACACIA_BRANCHES = registerBlock("acacia_branches",
             () -> new AcaciaBranches(AbstractBlock.Properties.create(Material.LEAVES)
                     .hardnessAndResistance(0.2F).tickRandomly().notSolid().sound(SoundType.PLANT)
                     .harvestTool(ToolType.HOE), Blocks.ACACIA_LEAVES));
-
 
     public static final RegistryObject<Block> BAMBOO_LEAVES = registerBlock("bamboo_leaves",
             ModBlocks::createLeavesBlock);
     public static final RegistryObject<Block> BAMBOO_TREE_SAPLING = registerBlock("bamboo_tree_sapling",
             BambooTreeSapling::new);
 
-
     //Dead bamboo
     public static final RegistryObject<Block> DEAD_BAMBOO_SHOOT = registerBlock("dead_bamboo_shoot",
             () -> new DeadBushBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS, MaterialColor.WOOD)
                     .doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.PLANT)));
-
 
     //Burnt Blocks
     public static final RegistryObject<Block> CHARRED_LOG = registerBlock("charred_log",
@@ -94,6 +89,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCORCHED_SHORT_PALM_FROND = registerBlock("scorched_short_palm_frond",
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_MONKEY_PUZZLE_LEAVES = registerBlock("scorched_monkey_puzzle_leaves",
+            CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_OLEANDER_LEAVES = registerBlock("scorched_oleander_leaves",
             CharredBranches::new);
 
     private static LeavesBlock createLeavesBlock() {

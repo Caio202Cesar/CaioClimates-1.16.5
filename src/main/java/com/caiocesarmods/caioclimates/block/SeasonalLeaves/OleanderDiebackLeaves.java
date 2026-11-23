@@ -1,6 +1,7 @@
 package com.caiocesarmods.caioclimates.block.SeasonalLeaves;
 
 import com.caiocesarmods.caioclimates.Seasons.Season;
+import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -15,7 +16,7 @@ import net.minecraftforge.common.IForgeShearable;
 import java.util.Random;
 import java.util.function.Supplier;
 
-public class OleanderDiebackLeaves  extends LeavesBlock implements IForgeShearable {
+public class OleanderDiebackLeaves extends LeavesBlock implements IForgeShearable {
     private final Supplier<Block> nextStage;
 
     public OleanderDiebackLeaves(Properties properties, Supplier<Block> nextStage) {
@@ -45,7 +46,7 @@ public class OleanderDiebackLeaves  extends LeavesBlock implements IForgeShearab
 
         boolean isSheltered = isSheltered(worldIn, pos);
 
-        if (temp < 0.84F) {
+        if (temp < 0.84F && temp > 0.75F) {
             if (isSheltered && "WINTER".equals(currentSeason) && nextStage != null && random.nextInt(35) == 0) {
 
                 int distance = state.get(LeavesBlock.DISTANCE);
@@ -85,6 +86,15 @@ public class OleanderDiebackLeaves  extends LeavesBlock implements IForgeShearab
 
                 worldIn.setBlockState(pos, newState, 2);
             }
+        }
+
+        //Permanent death in hardiness zone 7 to below
+        if (temp < 0.74F && random.nextInt(15) == 0) {
+            int distance = state.get(LeavesBlock.DISTANCE);
+            boolean persistent = state.get(LeavesBlock.PERSISTENT);
+
+            worldIn.setBlockState(pos, ModBlocks.SCORCHED_OLEANDER_LEAVES.get()
+                    .getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent), 3);
         }
     }
 
