@@ -2,7 +2,6 @@ package com.caiocesarmods.caioclimates.block;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.trees.Tree;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -15,7 +14,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public abstract class ClimaticTree extends Tree {
+public abstract class ClimaticTree {
     @Nullable
     protected abstract ConfiguredFeature<BaseTreeFeatureConfig, ?> getClimaticTreeFeature(Random random, boolean largeHive, World world, BlockPos pos);
 
