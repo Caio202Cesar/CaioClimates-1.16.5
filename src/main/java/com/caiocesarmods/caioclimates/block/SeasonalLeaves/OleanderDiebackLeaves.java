@@ -45,44 +45,46 @@ public class OleanderDiebackLeaves  extends LeavesBlock implements IForgeShearab
 
         boolean isSheltered = isSheltered(worldIn, pos);
 
-        if (temp <= 0.79F && isSheltered && "WINTER".equals(currentSeason) && nextStage != null && random.nextInt(15) == 0) {
+        if (temp < 0.84F) {
+            if (isSheltered && "WINTER".equals(currentSeason) && nextStage != null && random.nextInt(35) == 0) {
 
-            int distance = state.get(LeavesBlock.DISTANCE);
-            boolean persistent = state.get(LeavesBlock.PERSISTENT);
+                int distance = state.get(LeavesBlock.DISTANCE);
+                boolean persistent = state.get(LeavesBlock.PERSISTENT);
 
-            BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
+                BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
 
-            worldIn.setBlockState(pos, newState, 2);
-        }
+                worldIn.setBlockState(pos, newState, 2);
+            }
 
-        if (temp >= 0.75F && "SPRING".equals(currentSeason) && nextStage != null && random.nextInt(45) == 0) {
+            if ("SPRING".equals(currentSeason) && nextStage != null && random.nextInt(45) == 0) {
 
-            int distance = state.get(LeavesBlock.DISTANCE);
-            boolean persistent = state.get(LeavesBlock.PERSISTENT);
+                int distance = state.get(LeavesBlock.DISTANCE);
+                boolean persistent = state.get(LeavesBlock.PERSISTENT);
 
-            BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
+                BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
 
-            worldIn.setBlockState(pos, newState, 2);
-        }
+                worldIn.setBlockState(pos, newState, 2);
+            }
 
-        if (temp >= 0.75F && "SUMMER".equals(currentSeason) && nextStage != null && random.nextInt(2) == 0) {
+            if ("SUMMER".equals(currentSeason) && nextStage != null && random.nextInt(2) == 0) {
 
-            int distance = state.get(LeavesBlock.DISTANCE);
-            boolean persistent = state.get(LeavesBlock.PERSISTENT);
+                int distance = state.get(LeavesBlock.DISTANCE);
+                boolean persistent = state.get(LeavesBlock.PERSISTENT);
 
-            BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
+                BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
 
-            worldIn.setBlockState(pos, newState, 2);
-        }
+                worldIn.setBlockState(pos, newState, 2);
+            }
 
-        if (temp >= 0.75F && "FALL".equals(currentSeason) && nextStage != null && random.nextInt(2) == 0) {
+            if (temp > 0.8F && "FALL".equals(currentSeason) && nextStage != null && random.nextInt(2) == 0) {
 
-            int distance = state.get(LeavesBlock.DISTANCE);
-            boolean persistent = state.get(LeavesBlock.PERSISTENT);
+                int distance = state.get(LeavesBlock.DISTANCE);
+                boolean persistent = state.get(LeavesBlock.PERSISTENT);
 
-            BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
+                BlockState newState = nextStage.get().getDefaultState().with(LeavesBlock.DISTANCE, distance).with(LeavesBlock.PERSISTENT, persistent);
 
-            worldIn.setBlockState(pos, newState, 2);
+                worldIn.setBlockState(pos, newState, 2);
+            }
         }
     }
 
