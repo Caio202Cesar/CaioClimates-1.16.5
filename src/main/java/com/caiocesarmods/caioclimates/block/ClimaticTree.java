@@ -20,7 +20,7 @@ public abstract class ClimaticTree extends Tree {
     protected abstract ConfiguredFeature<BaseTreeFeatureConfig, ?> getClimaticTreeFeature(Random random, boolean largeHive, World world, BlockPos pos);
 
     public boolean attemptGrowTree(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state, Random rand) {
-        ConfiguredFeature<BaseTreeFeatureConfig, ?> configuredfeature = this.getTreeFeature(rand, this.hasNearbyFlora(world, pos));
+        ConfiguredFeature<BaseTreeFeatureConfig, ?> configuredfeature = this.getClimaticTreeFeature(rand, this.hasNearbyFlora(world, pos), world, pos);
         if (configuredfeature == null) {
             return false;
         } else {
