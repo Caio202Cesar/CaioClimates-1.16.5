@@ -240,12 +240,32 @@ public abstract class SeasonalLeavesRandomTickMixin {
             return;
         }
 
+        String currentSeason = Season.getSeason(world.getDayTime());
         String phase = SeasonalPhase.getPhase(world.getDayTime());
+        float temp = biome.getTemperature(pos);
 
         float rainChance = pattern.getRainChance(SeasonalPhase.valueOf(phase));
         float dryness = 1.0F - rainChance;
 
-        if (dryness > 0.65F && random.nextFloat() < dryness) {
+        //Pattern for tropical climates
+        if (temp > 0.9F) {
+            if (dryness > 0.90F && random.nextFloat() < dryness) {
+
+                int distance = state.get(LeavesBlock.DISTANCE);
+                boolean persistent = state.get(LeavesBlock.PERSISTENT);
+
+                world.setBlockState(
+                        pos,
+                        ModBlocks.ACACIA_BRANCHES.get().getDefaultState()
+                            .with(LeavesBlock.DISTANCE, distance)
+                            .with(LeavesBlock.PERSISTENT, persistent),
+                        3
+                );
+            }
+        }
+
+        //Pattern for zone 9 subtropical climates
+        if (temp < 0.89F && "WINTER".equals(currentSeason) && random.nextInt(151) == 0 ) {
 
             int distance = state.get(LeavesBlock.DISTANCE);
             boolean persistent = state.get(LeavesBlock.PERSISTENT);

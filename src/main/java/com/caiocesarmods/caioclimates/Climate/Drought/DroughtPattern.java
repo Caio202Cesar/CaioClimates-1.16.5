@@ -138,9 +138,9 @@ public enum DroughtPattern {
             0.01F,
 
             // WINTER
-            0.01F,
-            0.01F,
-            0.01F
+            0.15F,
+            0.21F,
+            0.11F
     );
 
     private final float earlySpring;
