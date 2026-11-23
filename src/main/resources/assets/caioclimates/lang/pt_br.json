@@ -7,26 +7,28 @@
   "block.caioclimates.dark_oak_branches": "Galhos de carvalho-escuro",
   "block.caioclimates.acacia_branches": "Galhos de acácia",
 
+  "block.caioclimates.charred_log": "Tronco carbonizado",
+  "block.caioclimates.charred_branches": "Galhos carbonizados",
+  "block.caioclimates.charred_japanese_maple_branches": "Galhos carbonizados",
+  "block.caioclimates.scorched_large_broad_leaves": "Folhas queimadas",
+  "block.caioclimates.scorched_small_broad_leaves": "Folhas queimadas",
+  "block.caioclimates.scorched_small_leaves": "Folhas queimadas",
+  "block.caioclimates.scorched_japanese_maple_leaves": "Folhas queimadas",
+  "block.caioclimates.scorched_conifer_leaves": "Agulhas queimadas",
+  "block.caioclimates.scorched_large_palm_frond": "Fronde queimada",
+  "block.caioclimates.scorched_short_palm_leaves": "Fronde queimada",
+  "block.caioclimates.scorched_monkey_puzzle_leaves": "Galhos de araucaria-chilena queimados",
+  "block.caioclimates.scorched_oleander_leaves": "Folhas queimadas",
+  "block.caioclimates.scorched_canary_date_fronds": "Fronde queimada",
+  "block.caioclimates.scorched_cashew_like_leaves": "Folhas queimadas",
+
   "item.caioclimates.gardener_helper": "Auxiliador de jardinagem",
 
   "tooltip.caioclimates.hardiness_scanner": "Segure shift e clique numa muda ou trepadeira para ver suas condições climáticas de cultivo. Condições de cultivo podem mudar.",
 
   "death.attack.hypothermia": "%1$s congelou até à morte.",
-  "death.attack.hyperthermia": "%1$s morreu de calor.",
+  "death.attack.hyperthermia": "%1$s morreu de calor."
 
 
-  "block.caioclimates.charred_log": "Charred Log",
-  "block.caioclimates.charred_branches": "Charred Branches",
-  "block.caioclimates.charred_japanese_maple_branches": "Charred Branches",
-  "block.caioclimates.scorched_large_broad_leaves": "Scorched Leaves",
-  "block.caioclimates.scorched_small_broad_leaves": "Scorched Leaves",
-  "block.caioclimates.scorched_small_leaves": "Scorched Leaves",
-  "block.caioclimates.scorched_japanese_maple_leaves": "Scorched Leaves",
-  "block.caioclimates.scorched_conifer_leaves": "Scorched Needles",
-  "block.caioclimates.scorched_large_palm_frond": "Scorched Fronds",
-  "block.caioclimates.scorched_short_palm_leaves": "Scorched Fronds",
-  "block.caioclimates.scorched_monkey_puzzle_leaves": "Scorched Monkey Puzzle Branches",
-  "block.caioclimates.scorched_oleander_leaves": "Scorched Leaves",
-  "block.caioclimates.scorched_canary_date_fronds": "Scorched Fronds",
-  "block.caioclimates.scorched_cashew_like_leaves": "Scorched Leaves"
+
 }
