@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+
+  ],
+  "optional": [
+    "caiocesarbiomes:tropical_almond_leaves",
+    "caiocesarbiomes:tropical_almond_fall_leaves",
+    "caiocesarbiomes:tropical_almond_new_leaves",
+    "caiocesarbiomes:teak_leaves",
+    "caiocesarbiomes:teak_flowering_leaves",
+    "caiocesarbiomes:teak_fruiting_leaves",
+    "caiocesarbiomes:teak_fall_leaves",
+    "brbiomesmod:cashew_leaves",
+    "brbiomesmod:cashew_fruiting_leaves"
+
+  ]
+}
