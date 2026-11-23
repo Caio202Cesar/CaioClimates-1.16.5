@@ -67,7 +67,7 @@ public class ModBlocks {
             () -> new DeadBushBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS, MaterialColor.WOOD)
                     .doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.PLANT)));
 
-    //Burnt Blocks
+    //Burnt Blocks (all leaves must be named "Scorched Leaves")
     public static final RegistryObject<Block> CHARRED_LOG = registerBlock("charred_log",
             CharredLog::new);
     public static final RegistryObject<Block> CHARRED_BRANCHES = registerBlock("charred_branches",
@@ -92,7 +92,7 @@ public class ModBlocks {
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_OLEANDER_LEAVES = registerBlock("scorched_oleander_leaves",
             CharredBranches::new);
-    public static final RegistryObject<Block> SCORCHED_CANARY_DATE_FROND = registerBlock("scorched_canary_date_leaves",
+    public static final RegistryObject<Block> SCORCHED_CANARY_DATE_FROND = registerBlock("scorched_canary_date_fronds",
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_CASHEW_LIKE_FROND = registerBlock("scorched_cashew_like_leaves",
             CharredBranches::new);
