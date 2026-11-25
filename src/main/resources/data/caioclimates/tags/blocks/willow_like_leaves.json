@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+
+  ],
+  "optional": [
+    "caiocesarbiomes:yellow_oleander_leaves",
+    "caiocesarbiomes:orange_oleander_leaves"
+  ]
+}

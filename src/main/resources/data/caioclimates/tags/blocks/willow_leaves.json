@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+
+  ],
+  "optional": [
+    "caiocesarbiomes:weeping_willow_leaves",
+    "brbiomesmod:humboldt_willow_leaves"
+  ]
+}

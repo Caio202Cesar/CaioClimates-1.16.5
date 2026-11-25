@@ -2,6 +2,6 @@
   "parent": "block/cube_all",
   "textures": {
     "all": "caioclimates:block/scorched_oleander_leaves",
-    "particle": "caioclimates:block/scorched_oleander_dieback_leaves"
+    "particle": "caioclimates:block/scorched_oleander_leaves"
   }
 }

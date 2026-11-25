@@ -100,6 +100,10 @@ public class ModBlocks {
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_OITICICA_LEAVES = registerBlock("scorched_oiticica_leaves",
             CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_WILLOW_LEAVES = registerBlock("scorched_willow_leaves",
+            CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_WILLOW_LIKE_LEAVES = registerBlock("scorched_willow_like_leaves",
+            CharredBranches::new); //for leaves like yellow oleander's
 
     private static LeavesBlock createLeavesBlock() {
         return new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()

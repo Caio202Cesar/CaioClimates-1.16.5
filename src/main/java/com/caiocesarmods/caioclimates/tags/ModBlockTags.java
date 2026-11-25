@@ -53,4 +53,10 @@ public final class ModBlockTags {
 
     public static final ITag.INamedTag<Block> OITICICA_LEAVES =
             BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "oiticica_leaves")));
+
+    public static final ITag.INamedTag<Block> WILLOW_LEAVES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "willow_leaves")));
+
+    public static final ITag.INamedTag<Block> WILLOW_LIKE_LEAVES =
+            BlockTags.makeWrapperTag(String.valueOf(new ResourceLocation("caioclimates", "willow_like_leaves")));
 }

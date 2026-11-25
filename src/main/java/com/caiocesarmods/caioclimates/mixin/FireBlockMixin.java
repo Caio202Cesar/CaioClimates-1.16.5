@@ -186,6 +186,24 @@ public class FireBlockMixin {
             ci.cancel();
         }
 
+        if (blockstate.isIn(ModBlockTags.WILLOW_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_WILLOW_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.WILLOW_LIKE_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_WILLOW_LIKE_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
         /*
         if (blockstate.isIn(BlockTags.LEAVES)) {
             if (random.nextFloat() < 0.8F) {
