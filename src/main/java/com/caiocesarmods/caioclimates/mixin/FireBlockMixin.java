@@ -141,6 +141,51 @@ public class FireBlockMixin {
             ci.cancel();
         }
 
+        if (blockstate.isIn(ModBlockTags.OLEANDER_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_OLEANDER_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.CANARY_PALM_FRONDS)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_CANARY_DATE_FROND.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.CASHEW_LIKE_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_CASHEW_LIKE_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.TEAK_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_TEAK_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
+        if (blockstate.isIn(ModBlockTags.OITICICA_LEAVES)) {
+            worldIn.setBlockState(
+                    pos,
+                    ModBlocks.SCORCHED_OITICICA_LEAVES.get().getDefaultState(),
+                    3
+            );
+            ci.cancel();
+        }
+
         /*
         if (blockstate.isIn(BlockTags.LEAVES)) {
             if (random.nextFloat() < 0.8F) {

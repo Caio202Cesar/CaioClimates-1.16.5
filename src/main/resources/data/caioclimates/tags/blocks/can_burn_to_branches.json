@@ -5,8 +5,12 @@
     "caioclimates:scorched_small_broad_leaves",
     "caioclimates:scorched_conifer_leaves",
     "caioclimates:scorched_oleander_leaves",
-    "brbiomesmod:cagaita_budding_leaves",
-    "brbiomesmod:cagaita_flowering_leaves",
-    "caiocesarbiomes:socotra_desert_rose_leaves"
+    "caioclimates:scorched_cashew_like_leaves",
+    "caioclimates:scorched_teak_leaves",
+    "caioclimates:scorched_oiticica_leaves"
+
+  ],
+  "optional": [
+
   ]
 }

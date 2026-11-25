@@ -94,9 +94,11 @@ public class ModBlocks {
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_CANARY_DATE_FROND = registerBlock("scorched_canary_date_fronds",
             CharredBranches::new);
-    public static final RegistryObject<Block> SCORCHED_CASHEW_LIKE_FROND = registerBlock("scorched_cashew_like_leaves",
+    public static final RegistryObject<Block> SCORCHED_CASHEW_LIKE_LEAVES = registerBlock("scorched_cashew_like_leaves",
             CharredBranches::new);
-    public static final RegistryObject<Block> SCORCHED_TEAK_FROND = registerBlock("scorched_teak_leaves",
+    public static final RegistryObject<Block> SCORCHED_TEAK_LEAVES = registerBlock("scorched_teak_leaves",
+            CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_OITICICA_LEAVES = registerBlock("scorched_oiticica_leaves",
             CharredBranches::new);
 
     private static LeavesBlock createLeavesBlock() {
