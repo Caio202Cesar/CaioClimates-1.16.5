@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+
+  ],
+  "optional": [
+    "caiocesarbiomes:teak_leaves",
+    "caiocesarbiomes:teak_flowering_leaves",
+    "caiocesarbiomes:teak_fruiting_leaves",
+    "caiocesarbiomes:teak_fall_leaves"
+
+  ]
+}
