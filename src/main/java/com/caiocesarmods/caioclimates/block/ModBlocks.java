@@ -96,6 +96,8 @@ public class ModBlocks {
             CharredBranches::new);
     public static final RegistryObject<Block> SCORCHED_CASHEW_LIKE_FROND = registerBlock("scorched_cashew_like_leaves",
             CharredBranches::new);
+    public static final RegistryObject<Block> SCORCHED_TEAK_FROND = registerBlock("scorched_teak_leaves",
+            CharredBranches::new);
 
     private static LeavesBlock createLeavesBlock() {
         return new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly()
