@@ -125,16 +125,19 @@ public class PlantClimateConditionsRegistry {
 
         ///Brazillian Biomes
         register(new ResourceLocation("brbiomesmod", "acai_sapling"),
-                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT,
+                11, 12, 11,0.5F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 Biome.RainType.NONE);
         register(new ResourceLocation("brbiomesmod", "acoita_cavalo_sapling"),
                 9, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 null);
         register(new ResourceLocation("brbiomesmod", "algarrobillo_sapling"),
-                9, 12, 10,0F, 0.75F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
+                9, 12, 10,0F, 0.75F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
+                null);
+        register(new ResourceLocation("brbiomesmod", "apricot_ipe_sapling"),
+                9, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
                 null);
         register(new ResourceLocation("brbiomesmod", "babassu_sapling"),
-                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.SCORCHING,
+                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
         register(new ResourceLocation("brbiomesmod", "bracatinga_sapling"),
                 8, 10, 9, 0.7F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.HOT,
