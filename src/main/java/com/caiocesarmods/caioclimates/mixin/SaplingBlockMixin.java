@@ -3,7 +3,7 @@ package com.caiocesarmods.caioclimates.mixin;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
-import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
+import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditions;
 import com.caiocesarmods.caioclimates.Seasons.Season;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -40,21 +40,21 @@ public abstract class SaplingBlockMixin {
         String currentSeason = Season.getSeason(world.getDayTime());
 
         int zone = HardinessZones.getZone(world, pos);
-        int minZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(sapling);
-        int minZoneSafeForSapling = PlantClimateConditionsRegistry.getMinWinterHardinessForSapling(sapling);
+        int minZone = PlantClimateConditions.getMinWinterHardinessForPlant(sapling);
+        int minZoneSafeForSapling = PlantClimateConditions.getMinWinterHardinessForSapling(sapling);
 
         SummerHeat summerHeat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
-        SummerHeat maxHeatForSapling = PlantClimateConditionsRegistry.getMaxSummerHeatForSapling(sapling);
+        SummerHeat maxHeatForSapling = PlantClimateConditions.getMaxSummerHeatForSapling(sapling);
 
         boolean tooColdWinter = zone < minZone;
         boolean tooColdWinterForUnshelteredSapling = zone < minZoneSafeForSapling;
         boolean tooHotSummerForUnshelteredSapling = summerHeat.ordinal() > maxHeatForSapling.ordinal();
 
-        if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
+        if (!PlantClimateConditions.isRegistered(sapling)) {
             return;
         }
 
-        if (!PlantClimateConditionsRegistry.isSuitable(sapling, world, pos)) {
+        if (!PlantClimateConditions.isSuitable(sapling, world, pos)) {
             ci.cancel();
         }
 
@@ -83,7 +83,7 @@ public abstract class SaplingBlockMixin {
     ) {
         ResourceLocation sapling = state.getBlock().getRegistryName();
 
-        if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
+        if (!PlantClimateConditions.isRegistered(sapling)) {
             return;
         }
 
@@ -94,7 +94,7 @@ public abstract class SaplingBlockMixin {
 
         World world = (World) worldIn;
 
-        if (!PlantClimateConditionsRegistry.isSuitable(sapling, world, pos)) {
+        if (!PlantClimateConditions.isSuitable(sapling, world, pos)) {
             cir.setReturnValue(false);
         }
     }
@@ -113,11 +113,11 @@ public abstract class SaplingBlockMixin {
     ) {
         ResourceLocation sapling = state.getBlock().getRegistryName();
 
-        if (!PlantClimateConditionsRegistry.isRegistered(sapling)) {
+        if (!PlantClimateConditions.isRegistered(sapling)) {
             return;
         }
 
-        if (!PlantClimateConditionsRegistry.isSuitable(sapling, world, pos)) {
+        if (!PlantClimateConditions.isSuitable(sapling, world, pos)) {
             cir.setReturnValue(false);
         }
     }

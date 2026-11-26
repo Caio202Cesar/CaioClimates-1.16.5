@@ -3,7 +3,7 @@ package com.caiocesarmods.caioclimates.mixin;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeatHelper;
 import com.caiocesarmods.caioclimates.HardinessZones.HardinessZones;
-import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
+import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditions;
 import com.caiocesarmods.caioclimates.Seasons.Season;
 import com.caiocesarmods.caioclimates.block.ModBlocks;
 import net.minecraft.block.BambooSaplingBlock;
@@ -40,21 +40,21 @@ public class BambooSaplingBlockMixin {
         String currentSeason = Season.getSeason(world.getDayTime());
 
         int zone = HardinessZones.getZone(world, pos);
-        int minZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(bambooSapling);
-        int minZoneSafeForSapling = PlantClimateConditionsRegistry.getMinWinterHardinessForSapling(bambooSapling);
+        int minZone = PlantClimateConditions.getMinWinterHardinessForPlant(bambooSapling);
+        int minZoneSafeForSapling = PlantClimateConditions.getMinWinterHardinessForSapling(bambooSapling);
 
         SummerHeat summerHeat = SummerHeat.fromTemperature(SummerHeatHelper.get(world, pos));
-        SummerHeat maxHeatForSapling = PlantClimateConditionsRegistry.getMaxSummerHeatForSapling(bambooSapling);
+        SummerHeat maxHeatForSapling = PlantClimateConditions.getMaxSummerHeatForSapling(bambooSapling);
 
         boolean tooColdWinter = zone < minZone;
         boolean tooColdWinterForSapling = zone < minZoneSafeForSapling;
         boolean tooHotSummerForUnshelteredSapling = summerHeat.ordinal() > maxHeatForSapling.ordinal();
 
-        if (!PlantClimateConditionsRegistry.isRegistered(bambooSapling)) {
+        if (!PlantClimateConditions.isRegistered(bambooSapling)) {
             return;
         }
 
-        if (!PlantClimateConditionsRegistry.isSuitable(bambooSapling, world, pos)) {
+        if (!PlantClimateConditions.isSuitable(bambooSapling, world, pos)) {
             ci.cancel();
         }
 
@@ -83,7 +83,7 @@ public class BambooSaplingBlockMixin {
     ) {
         ResourceLocation bambooSapling = state.getBlock().getRegistryName();
 
-        if (!PlantClimateConditionsRegistry.isRegistered(bambooSapling)) {
+        if (!PlantClimateConditions.isRegistered(bambooSapling)) {
             return;
         }
 
@@ -94,7 +94,7 @@ public class BambooSaplingBlockMixin {
 
         World world = (World) worldIn;
 
-        if (!PlantClimateConditionsRegistry.isSuitable(bambooSapling, world, pos)) {
+        if (!PlantClimateConditions.isSuitable(bambooSapling, world, pos)) {
             cir.setReturnValue(false);
         }
     }
@@ -113,11 +113,11 @@ public class BambooSaplingBlockMixin {
     ) {
         ResourceLocation bambooSapling = state.getBlock().getRegistryName();
 
-        if (!PlantClimateConditionsRegistry.isRegistered(bambooSapling)) {
+        if (!PlantClimateConditions.isRegistered(bambooSapling)) {
             return;
         }
 
-        if (!PlantClimateConditionsRegistry.isSuitable(bambooSapling, world, pos)) {
+        if (!PlantClimateConditions.isSuitable(bambooSapling, world, pos)) {
             cir.setReturnValue(false);
         }
     }

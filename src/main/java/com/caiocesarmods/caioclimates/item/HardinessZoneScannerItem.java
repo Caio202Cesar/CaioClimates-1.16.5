@@ -2,7 +2,7 @@ package com.caiocesarmods.caioclimates.item;
 
 import com.caiocesarmods.caioclimates.Climate.Drought.DroughtPattern;
 import com.caiocesarmods.caioclimates.Climate.SummerHeat.SummerHeat;
-import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditionsRegistry;
+import com.caiocesarmods.caioclimates.HardinessZones.PlantClimateConditions;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.VineBlock;
@@ -59,20 +59,20 @@ public class HardinessZoneScannerItem extends Item {
                     ResourceLocation id = state.getBlock().getRegistryName();
 
                     if (id != null) {
-                        int minWinterZone = PlantClimateConditionsRegistry.getMinWinterHardinessForPlant(id);
-                        int maxWinterZone = PlantClimateConditionsRegistry.getMaxWinterHardinessForPlant(id);
-                        int minSaplingWinterHardiness = PlantClimateConditionsRegistry.getMinWinterHardinessForSapling(id);
+                        int minWinterZone = PlantClimateConditions.getMinWinterHardinessForPlant(id);
+                        int maxWinterZone = PlantClimateConditions.getMaxWinterHardinessForPlant(id);
+                        int minSaplingWinterHardiness = PlantClimateConditions.getMinWinterHardinessForSapling(id);
 
-                        float minDownfall = PlantClimateConditionsRegistry.getMinDownfallForPlant(id);
-                        float maxDownfall = PlantClimateConditionsRegistry.getMaxDownfallForPlant(id);
+                        float minDownfall = PlantClimateConditions.getMinDownfallForPlant(id);
+                        float maxDownfall = PlantClimateConditions.getMaxDownfallForPlant(id);
 
-                        SummerHeat minSummerTemperature = PlantClimateConditionsRegistry.getMinSummerHeatForPlant(id);
-                        SummerHeat maxSummerTemperature = PlantClimateConditionsRegistry.getMaxSummerHeatForPlant(id);
-                        SummerHeat maxSaplingSummerHeat = PlantClimateConditionsRegistry.getMaxSummerHeatForSapling(id);
+                        SummerHeat minSummerTemperature = PlantClimateConditions.getMinSummerHeatForPlant(id);
+                        SummerHeat maxSummerTemperature = PlantClimateConditions.getMaxSummerHeatForPlant(id);
+                        SummerHeat maxSaplingSummerHeat = PlantClimateConditions.getMaxSummerHeatForSapling(id);
 
-                        Biome.RainType unsuitableBaseRainType = PlantClimateConditionsRegistry.getWrongRainTypeForPlant(id);
+                        Biome.RainType unsuitableBaseRainType = PlantClimateConditions.getWrongRainTypeForPlant(id);
 
-                        Set<DroughtPattern> unsuitableDroughtPatterns = PlantClimateConditionsRegistry.getRestrictedDroughtPatternForPlant(id);
+                        Set<DroughtPattern> unsuitableDroughtPatterns = PlantClimateConditions.getRestrictedDroughtPatternForPlant(id);
 
                         player.sendMessage(
                                 new StringTextComponent("§aMinimum Winter Zone: §e" + minWinterZone +
