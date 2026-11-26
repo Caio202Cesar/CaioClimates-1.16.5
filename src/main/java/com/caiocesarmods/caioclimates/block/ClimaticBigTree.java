@@ -33,10 +33,10 @@ public abstract class ClimaticBigTree extends ClimaticTree {
      * Get a {@link net.minecraft.world.gen.feature.ConfiguredFeature} of the huge variant of this tree
      */
     @Nullable
-    protected abstract ConfiguredFeature<BaseTreeFeatureConfig, ?> getHugeClimaticTreeFeature(Random rand);
+    protected abstract ConfiguredFeature<BaseTreeFeatureConfig, ?> getHugeClimaticTreeFeature(Random rand, World world, BlockPos pos);
 
     public boolean growBigTree(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state, Random rand, int branchX, int branchY) {
-        ConfiguredFeature<BaseTreeFeatureConfig, ?> configuredfeature = this.getHugeClimaticTreeFeature(rand);
+        ConfiguredFeature<BaseTreeFeatureConfig, ?> configuredfeature = this.getHugeClimaticTreeFeature(rand, world, pos);
         if (configuredfeature == null) {
             return false;
         } else {
