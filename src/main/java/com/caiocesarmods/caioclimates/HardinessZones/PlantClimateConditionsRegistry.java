@@ -139,6 +139,9 @@ public class PlantClimateConditionsRegistry {
         register(new ResourceLocation("brbiomesmod", "babassu_sapling"),
                 11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+        register(new ResourceLocation("brbiomesmod", "bacuri_sapling"),
+                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
         register(new ResourceLocation("brbiomesmod", "bracatinga_sapling"),
                 8, 10, 9, 0.7F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.HOT,
                 Biome.RainType.NONE);
