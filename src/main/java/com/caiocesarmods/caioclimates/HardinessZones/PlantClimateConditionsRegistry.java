@@ -128,8 +128,8 @@ public class PlantClimateConditionsRegistry {
                 11, 12, 11,0.5F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.HOT,
                 Biome.RainType.NONE);
         register(new ResourceLocation("brbiomesmod", "acoita_cavalo_sapling"),
-                9, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.VERY_HOT, SummerHeat.HOT,
-                null);
+                9, 12, 10,0F, 1F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
+                null, DroughtPattern.ARID);
         register(new ResourceLocation("brbiomesmod", "algarrobillo_sapling"),
                 9, 12, 10,0F, 0.75F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
                 null);
@@ -147,7 +147,7 @@ public class PlantClimateConditionsRegistry {
                 Biome.RainType.NONE);
         register(new ResourceLocation("brbiomesmod", "jenipapo_sapling"),
                 11, 12, 11, 0F, 1F, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
-                null);
+                null, DroughtPattern.ARID);
         register(new ResourceLocation("brbiomesmod", "parana_pine_sapling"),
                 8, 10, 9, 0F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.WARM,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
