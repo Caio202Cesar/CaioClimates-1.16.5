@@ -120,9 +120,21 @@ public class PlantClimateConditionsRegistry {
         PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "bacuri_sapling"),
                 11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+        PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "balsa_sapling"),
+                11, 12, 11,0F, 1F, SummerHeat.HOT, SummerHeat.VERY_HOT, SummerHeat.VERY_HOT,
+                null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+        PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "black_jurema_sapling"),
+                9, 12, 10, 0.0F, 0.6F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
+                null);
+        PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "black_sucupira_sapling"),
+                10, 12, 11, 0.0F, 1.0F, SummerHeat.WARM, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
+                null);
         PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "bracatinga_sapling"),
                 8, 10, 9, 0.7F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.HOT,
                 Biome.RainType.NONE);
+        PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "brazillian_pepper_sapling"),
+                9, 12, 10, 0.0F, 1F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
+                null);
         PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "cambuci_sapling"),
                 9, 11, 10, 0.8F, 1F, SummerHeat.MILD, SummerHeat.HOT, SummerHeat.HOT,
                 Biome.RainType.NONE);
