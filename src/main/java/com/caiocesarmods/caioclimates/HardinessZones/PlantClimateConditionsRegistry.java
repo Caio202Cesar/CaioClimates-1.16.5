@@ -150,5 +150,11 @@ public class PlantClimateConditionsRegistry {
         PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "sapucaia_sapling"),
                 10, 12, 9, 0F, 1F, SummerHeat.WARM, SummerHeat.VERY_HOT, SummerHeat.WARM,
                 null, DroughtPattern.SEMI_ARID, DroughtPattern.ARID);
+        PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "yellow_ipe_sapling"),
+                9, 12, 10, 0.0F, 1F, SummerHeat.MILD, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
+                null);
+        PlantClimateConditions.register(new ResourceLocation("brbiomesmod", "yellow_mombin_sapling"),
+                11, 12, 11, 0F, 1F, SummerHeat.HOT, SummerHeat.SCORCHING, SummerHeat.VERY_HOT,
+                null, DroughtPattern.ARID);
     }
 }
