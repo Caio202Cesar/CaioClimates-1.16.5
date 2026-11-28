@@ -33,27 +33,27 @@ public class PlantClimateConditions {
 
     public static int getMinWinterHardinessForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
-        return range.getMinZone();
+        return range != null ? range.getMinZone() : -1;
     }
 
     public static int getMaxWinterHardinessForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
-        return range.getMaxZone();
+        return range != null ? range.getMaxZone() : -1;
     }
 
     public static int getMinWinterHardinessForSapling(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
-        return range.getMinSaplingWinterHardiness();
+        return range != null ? range.getMinSaplingWinterHardiness() : -1;
     }
 
     public static float getMinDownfallForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
-        return range.getMinDownfall();
+        return range != null ? range.getMinDownfall() : -1;
     }
 
     public static float getMaxDownfallForPlant(ResourceLocation sapling) {
         SaplingHardiness range = RANGES.get(sapling);
-        return range.getMaxDownfall();
+        return range != null ? range.getMaxDownfall() : -1;
     }
 
     public static SummerHeat getMinSummerHeatForPlant(ResourceLocation sapling) {
